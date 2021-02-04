@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>오브젝트 on Call me Sam</title>
+    <link>https://example.com/tags/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8/</link>
+    <description>Recent content in 오브젝트 on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Aug 2019 22:00:50 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>객체, 설계</title>
+      <link>https://example.com/posts/2019-08-18-objects-01/</link>
+      <pubDate>Sun, 18 Aug 2019 22:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-08-18-objects-01/</guid>
+      <description>1. 객체 , 설계&amp;nbsp;¶ 책임의 이동(Shift of responsibility)&amp;nbsp;¶ 절차 지향&amp;nbsp;¶ 책임이 Theater에 집중되어 있는 것.
+객체지향 설계&amp;nbsp;¶ 제어의 흐름이 각 객체에 적절하게 분산.
+변경 전의 코드에서는 모든 책임이 Thearter에 존재하기에 Thearter가 모든 객체에 의존하고 있다. 그 결과가 변경에 취약한 설계.
+개선된 코드에서는 각 객체에 책임이 분산되고 더욱 중요한 점은 코드를 이해하기가 더 쉬워짐.
+설계를 어렵게 만드는 것은 의존성
+의존성을 제거하여 객체 사이의 결합도를 낮춰야함.
+객체지향 설계&amp;nbsp;¶ 좋은 설계란 무엇인가?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>개발서적 on Call me Sam</title>
+    <link>https://example.com/tags/%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%A0%81/</link>
+    <description>Recent content in 개발서적 on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Mar 2019 17:30:50 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>소프트웨어 장인</title>
+      <link>https://example.com/posts/2019-03-28-software-master/</link>
+      <pubDate>Thu, 28 Mar 2019 17:30:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-03-28-software-master/</guid>
+      <description>소프트웨어 장인&amp;nbsp;¶   일을 어떻게 했느냐는 일을 해낸 것만큼이나 중요하다.
+  커리어 패스를 정할 때는 내가 열정이 있는 것, 진정 즐겁게 할 수 있는 것을 따라야 한다.
+  기술적인 관점에서의 애자일 원칙
+   애자일 원칙의 기술적인 부분들은 개발, 확장, 유지보수, 제품을 출시(또는 납품, 서비스 배포) 하면서 겪는 어려움들에 대해 특정한 기술적 관례나 기술 자체를 매우 구체적으로 가이드한다. 테스트 주도 개발(TDD), 페어 프로그래밍, 지속적인 통합, 단순한 디자인 원칙 등과 같은 것들이다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Call me Sam</title>
+    <link>https://example.com/tags/</link>
+    <description>Recent content in Tags on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Feb 2021 14:34:59 +0900</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://example.com/tags/blog/</link>
+      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://example.com/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>story</title>
+      <link>https://example.com/tags/story/</link>
+      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://example.com/tags/story/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deview</title>
+      <link>https://example.com/tags/deview/</link>
+      <pubDate>Mon, 30 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/tags/deview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML</title>
+      <link>https://example.com/tags/ml/</link>
+      <pubDate>Mon, 30 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aws</title>
+      <link>https://example.com/tags/aws/</link>
+      <pubDate>Mon, 23 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>secrets manager</title>
+      <link>https://example.com/tags/secrets-manager/</link>
+      <pubDate>Mon, 23 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/tags/secrets-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>spring boot</title>
+      <link>https://example.com/tags/spring-boot/</link>
+      <pubDate>Mon, 23 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/tags/spring-boot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>objects</title>
+      <link>https://example.com/tags/objects/</link>
+      <pubDate>Tue, 05 May 2020 15:31:24 +0000</pubDate>
+      
+      <guid>https://example.com/tags/objects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>object</title>
+      <link>https://example.com/tags/object/</link>
+      <pubDate>Tue, 24 Mar 2020 16:30:43 +0000</pubDate>
+      
+      <guid>https://example.com/tags/object/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>clean architecture</title>
+      <link>https://example.com/tags/clean-architecture/</link>
+      <pubDate>Sun, 17 Nov 2019 22:10:29 +0000</pubDate>
+      
+      <guid>https://example.com/tags/clean-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>오브젝트</title>
+      <link>https://example.com/tags/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8/</link>
+      <pubDate>Sun, 18 Aug 2019 22:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/tags/%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apache</title>
+      <link>https://example.com/tags/apache/</link>
+      <pubDate>Mon, 01 Apr 2019 10:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logrotate</title>
+      <link>https://example.com/tags/logrotate/</link>
+      <pubDate>Mon, 01 Apr 2019 10:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/tags/logrotate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>개발서적</title>
+      <link>https://example.com/tags/%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%A0%81/</link>
+      <pubDate>Thu, 28 Mar 2019 17:30:50 +0900</pubDate>
+      
+      <guid>https://example.com/tags/%EA%B0%9C%EB%B0%9C%EC%84%9C%EC%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>소프트웨어장인</title>
+      <link>https://example.com/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EC%9E%A5%EC%9D%B8/</link>
+      <pubDate>Thu, 28 Mar 2019 17:30:50 +0900</pubDate>
+      
+      <guid>https://example.com/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EC%9E%A5%EC%9D%B8/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>object on Call me Sam</title>
+    <link>https://example.com/tags/object/</link>
+    <description>Recent content in object on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 24 Mar 2020 16:30:43 +0000</lastBuildDate><atom:link href="https://example.com/tags/object/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>chapter-10. 상속과 코드 재사용</title>
+      <link>https://example.com/posts/objects-10/</link>
+      <pubDate>Tue, 24 Mar 2020 16:30:43 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-10/</guid>
+      <description>chapter 10. 상속과 코드 재사용&amp;nbsp;¶ 01. 상속과 중복코드&amp;nbsp;¶ DRY 원칙&amp;nbsp;¶ Don&amp;rsquo;t Repet Yourself
+ 반복하지 마라 중복 여부를 판단하는 것은 변경이다. 요구사항이 변경되었을때 같이 수정되어야 하면 중복이다. 모양이 유사하다고 중복은 아니다.  중복과 변경&amp;nbsp;¶ 중복 코드 살펴보기&amp;nbsp;¶ 중복 코드 수정하기&amp;nbsp;¶ 타입 코드 사용하기&amp;nbsp;¶ enum PhoneType {REGULAR, NIGHTLY} public Money calculateFee { if(type === PhoneType.REGULAR) { ... } else{ ... } }  상속을 이용해서 중복 코드 제거하기&amp;nbsp;¶ 강하게 결합된 Phone 과 NightlyDiscountPhone&amp;nbsp;¶ 상속을 위한 경고1</description>
+    </item>
+    
+    <item>
+      <title>chapter-09. 유연한 설계</title>
+      <link>https://example.com/posts/objects-09/</link>
+      <pubDate>Fri, 13 Mar 2020 17:26:59 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-09/</guid>
+      <description>chapter 09. 유연한 설계&amp;nbsp;¶ 01. 개방-폐쇄 원칙&amp;nbsp;¶ 개방-폐쇄 원칙(Open-Closed Principle)
+ 소프트웨어 개체(클래스, 모듈, 함수 등등)는 확장에 대해 열려있어야 하고 수정에 대해서는 닫혀 있어야한다.
+ 확장, 수정
+ 확장에 대해 열려 있다 : 애플리케이션의 요구사항이 변경될 때 이 변경에 맞게 새로운 &amp;lsquo;동작&amp;rsquo;을 추가해서 애플리케이션의 기능을 확장할 수 있다.  수정에 대해 닫혀 있다 : 기존의 &amp;lsquo;코드&amp;rsquo;를 수정하지 않고도 애플리케이션의 동작을 추가하거나 변경할 수 있다.    컴파일타임 의존성을 고정시키고 런타임 의존성을 변경하라&amp;nbsp;¶ 확장에는 열려있고 수정에는 열려있는 할인 정책 설계</description>
+    </item>
+    
+    <item>
+      <title>chapter 08. 의존성 관리하기</title>
+      <link>https://example.com/posts/objects-08/</link>
+      <pubDate>Tue, 10 Mar 2020 23:57:34 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-08/</guid>
+      <description>chapter 08. 의존성 관리하기&amp;nbsp;¶ 01. 의존성 이해하기&amp;nbsp;¶ 잘 설계된 객체지향 애플리케이션은 작고 응집도 높은 객체들로 구성된다.
+작고 응집도 높은 객체란? 책임의 초점이 명확하고 한가지 일만 잘하는 객체를 의미.
+협력은 필수적이다. 하지만 과도한 협력은 설계를 곤경에 빠뜨린다.
+객체지향 설계의 핵심은 협력을 위해 필요한 의존성은 유지하면서도 변경을 방해하는 의존성은 제거하는데 있다. 이런 관점에서
+객체지향 설계란?
+ 의존성을 관리하는 것이고 객체가 변화를 받아들일 수 있게 의존성을 정리하는 기술이라 할수 있다.
+ 변경과 의존성&amp;nbsp;¶ 어떤 객체가 협력하기 위해 다른 객체를 필요로 할때 두 객체 사이에 의존성이 존재하게 된다.</description>
+    </item>
+    
+    <item>
+      <title>chapter 06. 메시지와 인터페이스</title>
+      <link>https://example.com/posts/objects-06/</link>
+      <pubDate>Tue, 18 Feb 2020 22:26:34 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-06/</guid>
+      <description>chapter 06. 메시지와 인터페이스&amp;nbsp;¶ 객체지향 프로그래밍에 대한 가장 흔한 오해
+ 애플리케이션은 클래스의 집합으로 구성된다.    애플리케이션은 클래스로 구성되지만 메시지를 통해 정의된다.
+ 01. 협력과 메시지&amp;nbsp;¶ 클라이언트-서버 모델&amp;nbsp;¶  협력안에서 메시지를 전송하는 객체를 클라이언트 메세지를 수신하는 객체를 서버  클라이언트와 서버 역할을 동시에 수행하는 Movie
+객체가 독립적으로 수향할 수 있는 것보다 더 큰 책임을 수행하기 위해서는 다른 객체와 협력해야 한다는 것.
+두 객체 사이의 협력을 가능하게 해주는 매개채가 바로 메시지.</description>
+    </item>
+    
+    <item>
+      <title>chapter 05. 책임 할당하기.</title>
+      <link>https://example.com/posts/objects-05/</link>
+      <pubDate>Tue, 11 Feb 2020 22:58:34 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-05/</guid>
+      <description>chapter 05. 책임 할당하기.&amp;nbsp;¶ 01. 책임 주도 설계를 향해&amp;nbsp;¶ 데이터 중심 설계에서 책임 중심 설계로 전환하기 위한 두가지 원칙
+ 데이터보다 행동을 먼저 결정하라 협력이라는 문맥 안에서 책임을 결정하라  데이터보다 행동을 먼저 결정하라.&amp;nbsp;¶ 클라이언트 관점에서 객체가 수행하는 행동이란 곧 객체의 책임이다.
+데이터는 객체가 책임을 수행하는데 필요한 재료일 뿐이다.
+너무 이른 시기에 데이터에 초점을 맞추면 객체의 캡슐화가 약화되기 때문에 낮은 응집도와 높은 결합도를 가진 객체들로 넘쳐나게 된다.
+객체의 데이터에서 행동으로 무게 중심을 옮기기 위한 기법</description>
+    </item>
+    
+    <item>
+      <title>chapter 04. 설계 품질과 트레이드오프</title>
+      <link>https://example.com/posts/object-04/</link>
+      <pubDate>Mon, 10 Feb 2020 01:05:07 +0000</pubDate>
+      
+      <guid>https://example.com/posts/object-04/</guid>
+      <description>chapter 04. 설계 품질과 트레이드오프&amp;nbsp;¶  객체지향 설계란 올바른 객체에게 올바른 책임을 할당하면서 낮은 결합도와 높은 응집도를 가진 구조를 창조하는 활동이다.
+  객체지향 설계의 핵심은 책임 책임을 할당하는 작업이 응집도와 결합도 같은 설계 품질과 깊이 연계되어있다.  01 . 데이터 중심의 영화 예매 시스템&amp;nbsp;¶ 객체지향 설계의 시스템을 객체로 분할하는 두가지 방법
+ 상태를 분할의 중심축으로 책임을 분할의 중심축으로  상태 =데이터
+데이터를 준비하자&amp;nbsp;¶ public class Movie { private String title; private Duration runningTime; private Money fee; private List&amp;lt;DiscountCondition&amp;gt; discountConditions; private MovieType movieType; private Money discountAmount; private double discountPercent; } public enum MovieType { AMOUNT_DISCOUNT, //금액 할인 정책  PERCENT_DISCOUNT, //비율 할인 정책  NONE_DISCOUNT // 미적용 } 객체지향의 가장 중요한 원칙인 캡슐화를 위해 Movie 클래스에 **접근자(accessor)**와 **수정자(mutator)**를 추가.</description>
+    </item>
+    
+    <item>
+      <title>chapter 03. 역할, 책임, 협력</title>
+      <link>https://example.com/posts/objects-03/</link>
+      <pubDate>Tue, 28 Jan 2020 23:09:06 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-03/</guid>
+      <description>Chapter 03. 역할, 책임, 협력&amp;nbsp;¶ 객체지향 패러다임의 핵심
+ 역할(role) 책임(responsibility) 협력(collaboration)  객체지향의 본질
+ 협력하는 객체들의 공동체를 창조하는 것
+ 객체지향 설계의 핵심
+ 협력을 구성하기 위해 적절한 객체를 찾고 적절한 책임을 할당하는 과정에서 나타난다.
+ 01. 협력&amp;nbsp;¶ 영화 예매 시스템 돌아보기&amp;nbsp;¶ 책임
+객체가 협력에 참여하기 위해 수행하는 로직
+역할
+객체들이 협력 안에서 수행하는 책임들이 모여 객체가 수행하는 일
+협력
+객체들이 애플리케이션의 기능을 구현하기 위해 수행하는 상호작용</description>
+    </item>
+    
+    <item>
+      <title>chapter 02. 객체지향 프로그래밍</title>
+      <link>https://example.com/posts/objects-02/</link>
+      <pubDate>Mon, 27 Jan 2020 16:19:36 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-02/</guid>
+      <description>chapter 02. 객체지향 프로그래밍&amp;nbsp;¶ 01. 영화 예매 시스템&amp;nbsp;¶ 요구사항&amp;nbsp;¶  영화 상영 할인 규칙  할인 조건  순서 조건 기간 조건   할인 정책  금액 할인 정책 비율 할인 정책      02. 객체지향 프로그래밍을 향해&amp;nbsp;¶ 협력, 객체, 클래스&amp;nbsp;¶  진정한 객체지향 패러다임으로서의 전환은 클래스가 아닌 객체에 초점을 맞출때 얻을수 있다.
+  어떤 클래스가 필요한지를 고민하기 전에 어떤 객체들이 필요한지 고민하라. 클래스는 공통적인 상태화 행동을 공유하는 객체들을 추상화한 것이다.</description>
+    </item>
+    
+    <item>
+      <title>chapter 01. 객체 , 설계</title>
+      <link>https://example.com/posts/objects-01/</link>
+      <pubDate>Mon, 27 Jan 2020 16:17:36 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-01/</guid>
+      <description>chapter 01. 객체 , 설계&amp;nbsp;¶ 티켓 판매 애플리케이션 구현하기&amp;nbsp;¶ 애플리케이션의 핵심 클래스
+무엇이 문제인가&amp;nbsp;¶ 로버트 마틴은 클린 소프트웨어에서 소프트웨어 모듈이 가져야 하는 세가지 기능에 관해 설명한다.
+ 모든 소프트웨어 모듈에는 세 가지의 목적이 있다. 첫번째 목적은 실행 중에 제대로 동작하는 것이다. 이것은 모듈의 존재 이유. 두번째 목적은 변경을 위해 존재하는 것이다. 대부분의 모듈은 생명주기 동안 변경되기 때문에 간단한 작업만으로도 변경이 가능해야 한다. 변경하기 어려운 모듈은 제대로 동작하더라도 개선해야한다. 모듈의 세번째 목적은 코드를 읽는 사람과 의사소통하는 것이다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="A new Hugo site.">
+<title>
+    AWSsecretsManager - Call me Sam
+</title>
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c5514d3530979d291f3497facc20da1cec870028dbc2a3630b64bab8721bbe49.css" integrity="sha256-xVFNNTCXnSkfNJf6zCDaHOyHACjbwqNjC2S6uHIbvkk=" crossorigin="anonymous" media="screen">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/tn.png"/>
+
+<meta name="twitter:title" content="AWSsecretsManager"/>
+<meta name="twitter:description" content="DB의 접속정보나 암호화에 사용될 Salt Key 등은 프로젝트 코드 내부에서 관리하기엔 위험이 따릅니다. 누구나 볼 수 있기 때문이죠.
+이건 사내 private 저장소를 사용해도 비슷합니다. 사내의 누구나 이 설정값을 확인할 수 있다면 위험하다고 보안 감사에서 지적 받을 수 있습니다.
+그래서 AWS Secrets manager 를 사용하게 되었습니다. Spring cloud config 를 사용할수도 있지만 사용하기 위해 서버등을 신규로 발급받아 설치를 해야하기에 AWS secrets manager를 선택하게 되었습니다.
+AWS secrets manager는 KMS 에 저장된 암호화 키로 secrets manager 에 자격 증명을 해서 필요한 보안 정보를 복호화해서 반환해주는 서비스입니다."/>
+
+<meta property="og:title" content="AWSsecretsManager" />
+<meta property="og:description" content="DB의 접속정보나 암호화에 사용될 Salt Key 등은 프로젝트 코드 내부에서 관리하기엔 위험이 따릅니다. 누구나 볼 수 있기 때문이죠.
+이건 사내 private 저장소를 사용해도 비슷합니다. 사내의 누구나 이 설정값을 확인할 수 있다면 위험하다고 보안 감사에서 지적 받을 수 있습니다.
+그래서 AWS Secrets manager 를 사용하게 되었습니다. Spring cloud config 를 사용할수도 있지만 사용하기 위해 서버등을 신규로 발급받아 설치를 해야하기에 AWS secrets manager를 선택하게 되었습니다.
+AWS secrets manager는 KMS 에 저장된 암호화 키로 secrets manager 에 자격 증명을 해서 필요한 보안 정보를 복호화해서 반환해주는 서비스입니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/awssecretsmanager/" />
+<meta property="og:image" content="https://example.com/tn.png"/>
+<meta property="article:published_time" content="2020-11-23T10:57:53+00:00" />
+<meta property="article:modified_time" content="2020-11-23T10:57:53+00:00" /><meta property="og:site_name" content="Call me Sam" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        AWSsecretsManager
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>AWSsecretsManager</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Mon Nov 23, 2020 &#183; 253 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/tags/aws/">
+                    aws
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/tags/secrets-manager/">
+                    secrets manager
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/tags/spring-boot/">
+                    spring boot
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        <p>DB의 접속정보나 암호화에 사용될 Salt Key 등은 프로젝트 코드 내부에서 관리하기엔 위험이 따릅니다. 누구나 볼 수 있기 때문이죠.</p>
+<p>이건 사내 private 저장소를 사용해도 비슷합니다. 사내의 누구나 이 설정값을 확인할 수 있다면 위험하다고 보안 감사에서 지적 받을 수 있습니다.</p>
+<p>그래서 AWS Secrets manager 를 사용하게 되었습니다. Spring cloud config 를 사용할수도 있지만 사용하기 위해 서버등을 신규로 발급받아 설치를 해야하기에 AWS secrets manager를 선택하게 되었습니다.</p>
+<p>AWS secrets manager는 KMS 에 저장된 암호화 키로 secrets manager 에 자격 증명을 해서 필요한 보안 정보를 복호화해서 반환해주는 서비스입니다.</p>
+<p>Spring Cloud에서 스프링 프로퍼티 소스를 이용해서 AWS Secrets manager 매커니즘을 사용할 수 있기에 org.springframework.cloud:spring-cloud-starter-aws-secrets-manager-config 를 간단하게 라이브러리를 추가해서 활성화 할수 있습니다.</p>
+<p>스프링 부트에서 제공하는 환경별로 프로퍼티를 구성하는 것처럼 동일하게 프로필을 명시해주면 모든 서비스 간에 공유가 가능해집니다.</p>
+<p>Spring Cloud는 bootstrap.yml(or properties)에서 설정을 로드하게 된다.</p>
+
+<h1 id="사용방법" class="anchor-link"><a href="#%ec%82%ac%ec%9a%a9%eb%b0%a9%eb%b2%95">사용방법<span class="pilcrow">&nbsp;¶</span></a></h1>
+
+<h2 id="aws-secrets-manager" class="anchor-link"><a href="#aws-secrets-manager">aws secrets manager<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="key-추가" class="anchor-link"><a href="#key-%ec%b6%94%ea%b0%80">key 추가<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><p style="text-align:center;">
+    <img src="image-20201123110336433.png" alt="image-20201123110336433"  />
+</p>
+</p>
+<p><p style="text-align:center;">
+    <img src="image-20201123110349449.png" alt="image-20201123110349449"  />
+</p>
+</p>
+
+<h2 id="spring-boot" class="anchor-link"><a href="#spring-boot">spring boot<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="gradle-추가" class="anchor-link"><a href="#gradle-%ec%b6%94%ea%b0%80">gradle 추가<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">implementation <span style="color:#e6db74">&#39;org.springframework.cloud:spring-cloud-starter-aws-secrets-manager-config:2.2.1.RELEASE&#39;</span>
+
+</code></pre></div>
+<h4 id="bootstrapyml-에-추가" class="anchor-link"><a href="#bootstrapyml-%ec%97%90-%ec%b6%94%ea%b0%80">bootstrap.yml 에 추가<span class="pilcrow">&nbsp;¶</span></a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"><span style="color:#f92672">aws</span>:
+  <span style="color:#f92672">secretsmanager</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">devel-ds-mls-api</span>
+    <span style="color:#f92672">prefix</span>:
+</code></pre></div>
+<h1 id="문제-발생" class="anchor-link"><a href="#%eb%ac%b8%ec%a0%9c-%eb%b0%9c%ec%83%9d">문제 발생<span class="pilcrow">&nbsp;¶</span></a></h1>
+<ol>
+<li>
+<p>인프라보안팀에서 secrets mananger 생성시 naming-rule 을 지정해줌</p>
+<p><code>{phase}-{team-name}-{app-name}``ex) devel-ds-mls-api</code></p>
+</li>
+<li>
+<p>문제점</p>
+<ol>
+<li>spring boot 에서는 secret manager 호출시 name 앞에 /( slash)가 기본적으로 붙어서 호출이 된다.</li>
+<li>위의 aws.secretsmanager.name = mls-api 로 호출하는 경우
+<ol>
+<li><strong>/msl-api</strong> 로 호출이 되어 없는 secrets-manager 라고 나오며 오류가 발생</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+<h2 id="해결방안" class="anchor-link"><a href="#%ed%95%b4%ea%b2%b0%eb%b0%a9%ec%95%88">해결방안<span class="pilcrow">&nbsp;¶</span></a></h2>
+<ol>
+<li>
+<p>인프라팀에 naming-rule 변경 요청</p>
+<ol>
+<li>시스템 관리시 예외케이스 작성으로 좋은 방법은 아님</li>
+<li>인프라팀에서 대안으로 devel-ds/mls-api 의 형태로 사용하는건 어떻겠냐고 문의</li>
+<li>aws.secretsmanager.prefix 추가로 해결 가능</li>
+</ol>
+</li>
+<li>
+<p>spring boot secrets-manager</p>
+<ol>
+<li>
+<p><a href="https://github.com/spring-cloud/spring-cloud-aws/issues/463">https://github.com/spring-cloud/spring-cloud-aws/issues/463</a></p>
+</li>
+<li>
+<p>(replace fr.anthofo.utils with the path of your own AwsSecretsManagerPropertySourceLocator copy)</p>
+</li>
+<li>
+<p>AwsSecretsManagerPropertySourceLocator 를 재정의</p>
+</li>
+</ol>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">중간쯤 baseContext 부분을 아래와 같이 수정
+String baseContext <span style="color:#f92672">=</span> prefix <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">+</span> appName<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>baseContext<span style="color:#f92672">.</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">)){</span>
+            baseContext <span style="color:#f92672">=</span> baseContext<span style="color:#f92672">.</span><span style="color:#a6e22e">replaceFirst</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+</code></pre></div><p><strong>참고</strong></p>
+<p><a href="https://devyounji.tistory.com/41">https://devyounji.tistory.com/41</a></p>
+<p><a href="https://github.com/spring-cloud/spring-cloud-aws/issues/463">https://github.com/spring-cloud/spring-cloud-aws/issues/463</a></p>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/posts">posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/gallery">gallery</a>
+        
+            &#183; 
+            <a href="/portfolio">portfolio</a>
+        
+            &#183; 
+            <a href="/about">who is stones?</a>
+        
+    
+    &#183; 
+    <a href="/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer">
+</footer>
+    
+    
+</body>
+
+</html>

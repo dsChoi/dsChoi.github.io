@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Call me Sam</title>
+    <link>https://example.com/categories/blog/</link>
+    <description>Recent content in blog on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Nov 2020 10:57:53 +0000</lastBuildDate><atom:link href="https://example.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>네이버 모델서빙 공통화</title>
+      <link>https://example.com/posts/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%86%BC-api/</link>
+      <pubDate>Mon, 30 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%86%BC-api/</guid>
+      <description>목차&amp;nbsp;¶ 1. 모델서빙 공통화 동기&amp;nbsp;¶  모델 수의 증가 지속적인 모델 학습과 배포  지속적으로 학습을 하면 배포가 필요한데 모델 배포한후 모델에 대한 a/b 테스트 로그로 인한 학습이 필요 서빙에서 가능한 부분은 작업   커스텀한 사내 시스템 연동  사내플랫폼 시스템이 다양하기에 불필요한 코드가 중복되지 않도록 정리   협업 가능한 환경 구축 (모델러 / 엔지니어)  모델이 늘어날수록 엔지니어가 작업할 내용이 많아짐      gateway - 인증, 로깅, 웨이트</description>
+    </item>
+    
+    <item>
+      <title>AWSsecretsManager</title>
+      <link>https://example.com/posts/awssecretsmanager/</link>
+      <pubDate>Mon, 23 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/posts/awssecretsmanager/</guid>
+      <description>DB의 접속정보나 암호화에 사용될 Salt Key 등은 프로젝트 코드 내부에서 관리하기엔 위험이 따릅니다. 누구나 볼 수 있기 때문이죠.
+이건 사내 private 저장소를 사용해도 비슷합니다. 사내의 누구나 이 설정값을 확인할 수 있다면 위험하다고 보안 감사에서 지적 받을 수 있습니다.
+그래서 AWS Secrets manager 를 사용하게 되었습니다. Spring cloud config 를 사용할수도 있지만 사용하기 위해 서버등을 신규로 발급받아 설치를 해야하기에 AWS secrets manager를 선택하게 되었습니다.
+AWS secrets manager는 KMS 에 저장된 암호화 키로 secrets manager 에 자격 증명을 해서 필요한 보안 정보를 복호화해서 반환해주는 서비스입니다.</description>
+    </item>
+    
+  </channel>
+</rss>

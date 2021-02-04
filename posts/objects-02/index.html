@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="A new Hugo site.">
+<title>
+    chapter 02. 객체지향 프로그래밍 - Call me Sam
+</title>
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c5514d3530979d291f3497facc20da1cec870028dbc2a3630b64bab8721bbe49.css" integrity="sha256-xVFNNTCXnSkfNJf6zCDaHOyHACjbwqNjC2S6uHIbvkk=" crossorigin="anonymous" media="screen">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/tn.png"/>
+
+<meta name="twitter:title" content="chapter 02. 객체지향 프로그래밍"/>
+<meta name="twitter:description" content="chapter 02. 객체지향 프로그래밍&nbsp;¶ 01. 영화 예매 시스템&nbsp;¶ 요구사항&nbsp;¶  영화 상영 할인 규칙  할인 조건  순서 조건 기간 조건   할인 정책  금액 할인 정책 비율 할인 정책      02. 객체지향 프로그래밍을 향해&nbsp;¶ 협력, 객체, 클래스&nbsp;¶  진정한 객체지향 패러다임으로서의 전환은 클래스가 아닌 객체에 초점을 맞출때 얻을수 있다.
+  어떤 클래스가 필요한지를 고민하기 전에 어떤 객체들이 필요한지 고민하라. 클래스는 공통적인 상태화 행동을 공유하는 객체들을 추상화한 것이다."/>
+
+<meta property="og:title" content="chapter 02. 객체지향 프로그래밍" />
+<meta property="og:description" content="chapter 02. 객체지향 프로그래밍&nbsp;¶ 01. 영화 예매 시스템&nbsp;¶ 요구사항&nbsp;¶  영화 상영 할인 규칙  할인 조건  순서 조건 기간 조건   할인 정책  금액 할인 정책 비율 할인 정책      02. 객체지향 프로그래밍을 향해&nbsp;¶ 협력, 객체, 클래스&nbsp;¶  진정한 객체지향 패러다임으로서의 전환은 클래스가 아닌 객체에 초점을 맞출때 얻을수 있다.
+  어떤 클래스가 필요한지를 고민하기 전에 어떤 객체들이 필요한지 고민하라. 클래스는 공통적인 상태화 행동을 공유하는 객체들을 추상화한 것이다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/objects-02/" />
+<meta property="og:image" content="https://example.com/tn.png"/>
+<meta property="article:published_time" content="2020-01-27T16:19:36+00:00" />
+<meta property="article:modified_time" content="2020-01-27T16:19:36+00:00" /><meta property="og:site_name" content="Call me Sam" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        chapter 02. 객체지향 프로그래밍
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>chapter 02. 객체지향 프로그래밍</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Mon Jan 27, 2020 &#183; 1076 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/tags/objects/">
+                    objects
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/tags/object/">
+                    object
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        
+<h1 id="chapter-02-객체지향-프로그래밍" class="anchor-link"><a href="#chapter-02-%ea%b0%9d%ec%b2%b4%ec%a7%80%ed%96%a5-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d">chapter 02. 객체지향 프로그래밍<span class="pilcrow">&nbsp;¶</span></a></h1>
+
+<h2 id="01-영화-예매-시스템" class="anchor-link"><a href="#01-%ec%98%81%ed%99%94-%ec%98%88%eb%a7%a4-%ec%8b%9c%ec%8a%a4%ed%85%9c">01. 영화 예매 시스템<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="요구사항" class="anchor-link"><a href="#%ec%9a%94%ea%b5%ac%ec%82%ac%ed%95%ad">요구사항<span class="pilcrow">&nbsp;¶</span></a></h3>
+<ul>
+<li>영화</li>
+<li>상영</li>
+<li>할인 규칙
+<ul>
+<li>할인 조건
+<ul>
+<li>순서 조건</li>
+<li>기간 조건</li>
+</ul>
+</li>
+<li>할인 정책
+<ul>
+<li>금액 할인 정책</li>
+<li>비율 할인 정책</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2 id="02-객체지향-프로그래밍을-향해" class="anchor-link"><a href="#02-%ea%b0%9d%ec%b2%b4%ec%a7%80%ed%96%a5-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d%ec%9d%84-%ed%96%a5%ed%95%b4">02. 객체지향 프로그래밍을 향해<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="협력-객체-클래스" class="anchor-link"><a href="#%ed%98%91%eb%a0%a5-%ea%b0%9d%ec%b2%b4-%ed%81%b4%eb%9e%98%ec%8a%a4">협력, 객체, 클래스<span class="pilcrow">&nbsp;¶</span></a></h3>
+<blockquote>
+<p>진정한 객체지향 패러다임으로서의 전환은 클래스가 아닌 객체에 초점을 맞출때 얻을수 있다.</p>
+</blockquote>
+<ol>
+<li>어떤 클래스가 필요한지를 고민하기 전에 어떤 객체들이 필요한지 고민하라. 클래스는 공통적인 상태화 행동을 공유하는 객체들을 추상화한 것이다.</li>
+<li>객체를 독립적인 존재가 아니라 기능을 구현하기 위해 협력하는 공통체의 일원으로 봐야한다. 객체는 홀로 존재하는 것이 아니다. 다른 객체에게 도움을 주거나 의존하면서 살아가는 협력적인 존재다. 객체 지향적으로 생각하고 싶다면 객체를 고립된 존재로 바라보지 말고 협력에 참여하는 협력자로 바라봐야한다.</li>
+</ol>
+
+<h3 id="도메인의-구조를-따르는-프로그램-구조" class="anchor-link"><a href="#%eb%8f%84%eb%a9%94%ec%9d%b8%ec%9d%98-%ea%b5%ac%ec%a1%b0%eb%a5%bc-%eb%94%b0%eb%a5%b4%eb%8a%94-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8-%ea%b5%ac%ec%a1%b0">도메인의 구조를 따르는 프로그램 구조<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><strong>도메인</strong></p>
+<blockquote>
+<p>문제를 해결하기 위해 사용자가 프로그램을 사용하는 분야</p>
+</blockquote>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+<h3 id="클래스-구현하기" class="anchor-link"><a href="#%ed%81%b4%eb%9e%98%ec%8a%a4-%ea%b5%ac%ed%98%84%ed%95%98%ea%b8%b0">클래스 구현하기<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Screening</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> Movie movie<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> sequence<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> LocalDateTime localDateTime<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Screening</span><span style="color:#f92672">(</span>Movie movie<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> sequence<span style="color:#f92672">,</span> LocalDateTime localDateTime<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">movie</span> <span style="color:#f92672">=</span> movie<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sequence</span> <span style="color:#f92672">=</span> sequence<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">localDateTime</span> <span style="color:#f92672">=</span> localDateTime<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Movie <span style="color:#a6e22e">getMovie</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> movie<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSequence</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> sequence<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sequence</span> <span style="color:#f92672">==</span> sequence<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">getMovieFee</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">return</span> movie<span style="color:#f92672">.</span><span style="color:#a6e22e">getFee</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+<h4 id="자율적인-객체" class="anchor-link"><a href="#%ec%9e%90%ec%9c%a8%ec%a0%81%ec%9d%b8-%ea%b0%9d%ec%b2%b4">자율적인 객체<span class="pilcrow">&nbsp;¶</span></a></h4>
+<ol>
+<li>객체는 상태(state)와 행동(behivior)를 함께 가지는 복합적인 존재.</li>
+<li>객체가 스스로 판단하고 행동하는 <strong>자율적인 존재</strong></li>
+</ol>
+<p><strong>캡슐화</strong></p>
+<p>데이터와 기능을 객체 내부로 함께 묶는 것</p>
+<p><strong>접근 제어(access control)</strong></p>
+<p><strong>접근 수정자 (access modifier)</strong></p>
+<p>캡슐화와 접근 제어는 객체를 두부분으로 나눈다.</p>
+<ol>
+<li>외부에서 접근가능한 부분 - <strong>퍼블릭 인터페이스(public interface)</strong></li>
+<li>외부에서는 접근 불가능 하고 오직 내부에서만 접근 가능한 부분 - <strong>구현(implementation)</strong></li>
+</ol>
+<p>알아두어야 할 키워드</p>
+<p>**인터페이스와 구현의 분리(separation of interface and implementation) 원칙 **</p>
+
+<h4 id="프로그래머의-자유" class="anchor-link"><a href="#%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%a8%b8%ec%9d%98-%ec%9e%90%ec%9c%a0">프로그래머의 자유<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p>프로그래머의 역할</p>
+<ol>
+<li>클래스 작성자 : 새로운 데이터 타입을 프로그램에 추가.</li>
+<li>클라이언트 프로그래머 : 클래스 작성자가 추가한 데이터 타입을 사용</li>
+</ol>
+<p><strong>구현 은닉(implementation hiding)</strong></p>
+<p>클래스 작성자가 숨겨놓은 부분에 마음대로 접근할 수 없도록 방지함으로써 클라이언트 프로그래머에 대한 영향을 걱정하지 않고도 내부 구현을 마음대로 변경 가능</p>
+<p>클래스 작성자는 인터페이스를 바꾸지 않는 한 외부에 미치는 영향을 걱정하지 않고도 내부 구현을 마음대로 변경할 수 있다. public 영역을 변경하지 않는다면 코드를 자유롭게 수정할 수 있다.</p>
+
+<h3 id="협력하는-객체들의-공동체" class="anchor-link"><a href="#%ed%98%91%eb%a0%a5%ed%95%98%eb%8a%94-%ea%b0%9d%ec%b2%b4%eb%93%a4%ec%9d%98-%ea%b3%b5%eb%8f%99%ec%b2%b4">협력하는 객체들의 공동체<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Screening</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> Money <span style="color:#a6e22e">calculateFee</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> audienceCount<span style="color:#f92672">){</span>   
+        <span style="color:#66d9ef">return</span> movie<span style="color:#f92672">.</span><span style="color:#a6e22e">calculateMovieFee</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">).</span><span style="color:#a6e22e">time</span><span style="color:#f92672">(</span>audienceCount<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.setin.study.objects.chapter02<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> java.math.BigDecimal<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Money</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Money ZERO <span style="color:#f92672">=</span> Money<span style="color:#f92672">.</span><span style="color:#a6e22e">wons</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> BigDecimal amount<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Money</span><span style="color:#f92672">(</span>BigDecimal amount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span> <span style="color:#f92672">=</span> amount<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Money <span style="color:#a6e22e">wons</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> amount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Money<span style="color:#f92672">(</span>BigDecimal<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>amount<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Money <span style="color:#a6e22e">wons</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> amount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Money<span style="color:#f92672">(</span>BigDecimal<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>amount<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">plus</span><span style="color:#f92672">(</span>Money amount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Money<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>amount<span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span>Money amount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Money<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">.</span><span style="color:#a6e22e">subtract</span><span style="color:#f92672">(</span>amount<span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">time</span><span style="color:#f92672">(</span>Money amount<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Money<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">.</span><span style="color:#a6e22e">multiply</span><span style="color:#f92672">(</span>amount<span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isLessThan</span><span style="color:#f92672">(</span>Money other<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> amount<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>other<span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">)</span> <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isGreater</span><span style="color:#f92672">(</span>Money other<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> amount<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>other<span style="color:#f92672">.</span><span style="color:#a6e22e">amount</span><span style="color:#f92672">)</span> <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>금액 구현을 위해 Money 타입을 생성</p>
+<p>금액과 관련된 로직이 서로 다른곳에 중복되어 구현되는 것을 막을수 있고. 저장하는 값이 금액과 관련되어 있다는 의미를 전달해 줄수 있다.</p>
+<p>영화를 예매하기 위해 Screening, Movie, Reservation 인스턴스들은 서로의 메서드를 호출하며 상호 작용한다.</p>
+<p>이처럼 시스템의 어떤 기능을 구현하기 위해 객체들 사이에 이뤄지는 상호작용을 <strong>협력(Collaboration)</strong> 이라 한다.</p>
+<p><!-- raw HTML omitted --></p>
+
+<h3 id="협력에-관한-짧은-이야기" class="anchor-link"><a href="#%ed%98%91%eb%a0%a5%ec%97%90-%ea%b4%80%ed%95%9c-%ec%a7%a7%ec%9d%80-%ec%9d%b4%ec%95%bc%ea%b8%b0">협력에 관한 짧은 이야기<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>객체는 다른 객체의 인터페이스에 공개된 행동을 수행하도록 <strong>요청(request)</strong></p>
+<p>요청을 받은 객체는 자율적인 방법에 따라 요청을 처리한 후 <strong>응답(response)</strong></p>
+<p>객체와 다른 객체와 상호 작용할 수 있는 유일한 방법은 <strong>메세지 전송(send a message)</strong></p>
+<p>다른 객체에게 요청이 도착할 때 해당 객체가 <strong>메세지 수신(receive a message)</strong></p>
+<p>메세지를 수신한 객체는 스스로의 결정에 따라 자율적으로 메세지를 처리할 방법을 결정<strong>메서드(method)</strong></p>
+<p><strong>다형성(polymorphism)</strong></p>
+
+<h2 id="03-할인-요금-구하기" class="anchor-link"><a href="#03-%ed%95%a0%ec%9d%b8-%ec%9a%94%ea%b8%88-%ea%b5%ac%ed%95%98%ea%b8%b0">03. 할인 요금 구하기<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="할인-요금-계산을-위한-협력-시작하기" class="anchor-link"><a href="#%ed%95%a0%ec%9d%b8-%ec%9a%94%ea%b8%88-%ea%b3%84%ec%82%b0%ec%9d%84-%ec%9c%84%ed%95%9c-%ed%98%91%eb%a0%a5-%ec%8b%9c%ec%9e%91%ed%95%98%ea%b8%b0">할인 요금 계산을 위한 협력 시작하기<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Duration runningTime<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Money fee<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> DiscountPolicy discountPolicy<span style="color:#f92672">;</span>
+
+
+    <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">getFee</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> fee<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">calculateMovieFee</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> fee<span style="color:#f92672">.</span><span style="color:#a6e22e">minus</span><span style="color:#f92672">(</span>discountPolicy<span style="color:#f92672">.</span><span style="color:#a6e22e">calculateDiscountAmount</span><span style="color:#f92672">(</span>screening<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>Movie 는 할인 정책을 판단하는 코드가 존재하지 않고 discountPolicy에게 메세지를 전송할 뿐이다.</p>
+
+<h3 id="할인-정책과-할인-조건" class="anchor-link"><a href="#%ed%95%a0%ec%9d%b8-%ec%a0%95%ec%b1%85%ea%b3%bc-%ed%95%a0%ec%9d%b8-%ec%a1%b0%ea%b1%b4">할인 정책과 할인 조건<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><strong>추상클래스</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiscountPolicy</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>DiscountCondition<span style="color:#f92672">&gt;</span> conditions <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+
+     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DiscountPolicy</span><span style="color:#f92672">(</span>DiscountCondition <span style="color:#f92672">...</span> conditions<span style="color:#f92672">){</span>
+         <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">conditions</span> <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>conditions<span style="color:#f92672">);</span>
+     <span style="color:#f92672">}</span>
+
+     <span style="color:#66d9ef">public</span> Money <span style="color:#a6e22e">calculateDiscountAmount</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">){</span>
+         <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>DiscountCondition condition <span style="color:#f92672">:</span> conditions<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+             <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>condition<span style="color:#f92672">.</span><span style="color:#a6e22e">isSatisfiedBy</span><span style="color:#f92672">(</span>screening<span style="color:#f92672">)){</span>
+                 <span style="color:#66d9ef">return</span> getDiscountAmount<span style="color:#f92672">(</span>screening<span style="color:#f92672">);</span>
+             <span style="color:#f92672">}</span>
+         <span style="color:#f92672">}</span>
+         <span style="color:#66d9ef">return</span> Money<span style="color:#f92672">.</span><span style="color:#a6e22e">ZERO</span><span style="color:#f92672">;</span>
+     <span style="color:#f92672">}</span>
+
+     <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">protected</span> Money <span style="color:#a6e22e">getDiscountAmount</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">);</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p><strong>Template Method pattern</strong></p>
+<p>부모클래스에 기본적인 알고리즘의 흐름을 구현하고 중간에 필요한 처리를 자식 클래스에 위임하는 디자인 패턴</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">DiscountCondition</span> <span style="color:#f92672">{</span>
+     <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSatisfiedBy</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PeriodCondition</span> <span style="color:#66d9ef">implements</span>  DiscountCondition <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> DayOfWeek dayOfWeek<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> LocalTime startTime<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> LocalTime endTime<span style="color:#f92672">;</span>
+
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSatisfiedBy</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> screening<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getDayOfWeek</span><span style="color:#f92672">().</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>dayOfWeek<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;&amp;</span>
+                startTime<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>screening<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toLocalTime</span><span style="color:#f92672">())</span> <span style="color:#f92672">&lt;=</span> 0 <span style="color:#f92672">&amp;&amp;</span>
+                endTime<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">(</span>screening<span style="color:#f92672">.</span><span style="color:#a6e22e">getStartTime</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toLocalTime</span><span style="color:#f92672">())</span> <span style="color:#f92672">&gt;=</span>0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SequenceCondition</span> <span style="color:#66d9ef">implements</span> DiscountCondition <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> sequence<span style="color:#f92672">;</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSatisfiedBy</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> screening<span style="color:#f92672">.</span><span style="color:#a6e22e">isSequence</span><span style="color:#f92672">(</span>sequence<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AmountDiscountPolicy</span> <span style="color:#66d9ef">extends</span> DiscountPolicy <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> Money discountAmount<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AmountDiscountPolicy</span><span style="color:#f92672">(</span>Money discountAmount<span style="color:#f92672">,</span> DiscountCondition<span style="color:#f92672">...</span> conditions<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>conditions<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">discountAmount</span> <span style="color:#f92672">=</span> discountAmount<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> Money <span style="color:#a6e22e">getDiscountAmount</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> discountAmount<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PercentDiscountPolicy</span> <span style="color:#66d9ef">extends</span> DiscountPolicy <span style="color:#f92672">{</span>
+
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> percent<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">PercentDiscountPolicy</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> percent<span style="color:#f92672">,</span> DiscountCondition<span style="color:#f92672">...</span> conditions<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>conditions<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">percent</span> <span style="color:#f92672">=</span> percent<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> Money <span style="color:#a6e22e">getDiscountAmount</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> screening<span style="color:#f92672">.</span><span style="color:#a6e22e">getMovieFee</span><span style="color:#f92672">().</span><span style="color:#a6e22e">times</span><span style="color:#f92672">(</span>percent<span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p><!-- raw HTML omitted --></p>
+
+<h3 id="할인-정책-구성하기" class="anchor-link"><a href="#%ed%95%a0%ec%9d%b8-%ec%a0%95%ec%b1%85-%ea%b5%ac%ec%84%b1%ed%95%98%ea%b8%b0">할인 정책 구성하기<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>생성자의 파라미터 목록을 이용해 초기화에 필요한 정보를 전달하도록 강제하면 올바른 상태를 가진 객체의 생성을 보장할수 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Movie avatar <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Movie<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;아바타&#34;</span><span style="color:#f92672">,</span> Duration<span style="color:#f92672">.</span><span style="color:#a6e22e">ofMinute</span><span style="color:#f92672">(</span>120<span style="color:#f92672">),</span> Money<span style="color:#f92672">.</span><span style="color:#a6e22e">wons</span><span style="color:#f92672">(</span>10000<span style="color:#f92672">),</span> 
+	<span style="color:#66d9ef">new</span> AmountDiscountPolicy<span style="color:#f92672">(</span>Money<span style="color:#f92672">.</span><span style="color:#a6e22e">wons</span><span style="color:#f92672">(</span>800<span style="color:#f92672">),</span> 
+  <span style="color:#66d9ef">new</span> SequenceCondition<span style="color:#f92672">(</span>1<span style="color:#f92672">),</span> 
+  <span style="color:#66d9ef">new</span> SequenceCondition<span style="color:#f92672">(</span>10<span style="color:#f92672">),</span> 
+  <span style="color:#66d9ef">new</span> PeriodCondition<span style="color:#f92672">(</span>DayOfWeek<span style="color:#f92672">.</span><span style="color:#a6e22e">Monday</span><span style="color:#f92672">,</span> LocalTime<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 0<span style="color:#f92672">),</span> LocalTime<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>11<span style="color:#f92672">,</span> 59<span style="color:#f92672">)),</span> 
+  <span style="color:#66d9ef">new</span> PeriodCondition<span style="color:#f92672">(</span>DayOfWeek<span style="color:#f92672">.</span><span style="color:#a6e22e">THURSDAY</span><span style="color:#f92672">,</span> LocalTime<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 0<span style="color:#f92672">),</span> LocalTime<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>20<span style="color:#f92672">,</span> 59<span style="color:#f92672">)),</span> 
+<span style="color:#f92672">)</span>
+</code></pre></div>
+<h2 id="04-상속과-다형성" class="anchor-link"><a href="#04-%ec%83%81%ec%86%8d%ea%b3%bc-%eb%8b%a4%ed%98%95%ec%84%b1">04. 상속과 다형성<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="컴파일-시간-의존성과-실행-시간-의존성" class="anchor-link"><a href="#%ec%bb%b4%ed%8c%8c%ec%9d%bc-%ec%8b%9c%ea%b0%84-%ec%9d%98%ec%a1%b4%ec%84%b1%ea%b3%bc-%ec%8b%a4%ed%96%89-%ec%8b%9c%ea%b0%84-%ec%9d%98%ec%a1%b4%ec%84%b1">컴파일 시간 의존성과 실행 시간 의존성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><!-- raw HTML omitted --></p>
+<p>코드의 의존성과 실행 시점의 의존성이 서로 다를수 있다.</p>
+<p>다시 말해 클래스 사이의 의존성과 객체 사이의 의존성은 동일하지 않을 수 있다.  <code>유연하고 쉽게 재사용할 수 있으며, 확장 가능한 객체지향 설계가 가지는 특징은 코드의 의존성과 실행 시점의 의존성이 다르다는 것</code>이다.</p>
+
+<h3 id="차이에-의한-프로그래밍" class="anchor-link"><a href="#%ec%b0%a8%ec%9d%b4%ec%97%90-%ec%9d%98%ed%95%9c-%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%98%eb%b0%8d">차이에 의한 프로그래밍<span class="pilcrow">&nbsp;¶</span></a></h3>
+
+<h3 id="상속과-인터페이스" class="anchor-link"><a href="#%ec%83%81%ec%86%8d%ea%b3%bc-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4">상속과 인터페이스<span class="pilcrow">&nbsp;¶</span></a></h3>
+
+<h3 id="다형성" class="anchor-link"><a href="#%eb%8b%a4%ed%98%95%ec%84%b1">다형성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<blockquote>
+<p>동일한 메세지를 수신했을 때 객체의 타입에 따라 다르게 응답할 수 있는 능력을 의미</p>
+<p>따라서&hellip; 다형적인 협력에 참여하는 객체들은 모두 같은 메시지를 이해할 수 있어야한다. -&gt; 인터페이스가 동일해야한다.다형성을 구현하는 방법</p>
+</blockquote>
+<p>**구현 상속과 인터페이스 상속 **</p>
+<blockquote>
+<p>상속을 구현 상속과 인터페이스 상속으로 분류할 수 있다. 구현 상속을 서브클래싱이라 부르고, 인터페이스 상속을 서브타이핑이라 한다. 순수하게 코드를 재사용하기 위한 목적으로 상속을 사용하는 것을 구현 상속, 다형적인 협력을 위해 부모 클래스와 자식 클래스가 인터페이스를 공유할 수 있도록 상속을 이용하는 것을 인터페이스 상속</p>
+<p>상속은 구현 상속이 아닌 인터페이스 상속을 위해 사용해야 한다. 인터페이스를 재사용할 목적이 아니라 재사용할 목적으로 상속을 사용하면 변경에 취약한 코드를 낳게 될 것이다.</p>
+</blockquote>
+
+<h3 id="인터페이스와-다형성" class="anchor-link"><a href="#%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4%ec%99%80-%eb%8b%a4%ed%98%95%ec%84%b1">인터페이스와 다형성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>추상클래스를 이용해 다형성을 구현했던 할인 정책과 달리 할인 조건은 구현을 공유할 필요가 없기에 인터페이스를 이용해 타입 계층을 구현했다.</p>
+<p><!-- raw HTML omitted --></p>
+
+<h2 id="05-추상화와-유연성" class="anchor-link"><a href="#05-%ec%b6%94%ec%83%81%ed%99%94%ec%99%80-%ec%9c%a0%ec%97%b0%ec%84%b1">05. 추상화와 유연성<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="추상화의-힘" class="anchor-link"><a href="#%ec%b6%94%ec%83%81%ed%99%94%ec%9d%98-%ed%9e%98">추상화의 힘<span class="pilcrow">&nbsp;¶</span></a></h3>
+
+<h3 id="유연한-설계" class="anchor-link"><a href="#%ec%9c%a0%ec%97%b0%ed%95%9c-%ec%84%a4%ea%b3%84">유연한 설계<span class="pilcrow">&nbsp;¶</span></a></h3>
+
+<h3 id="추상-클래스와-인터페이스-트레이드오프" class="anchor-link"><a href="#%ec%b6%94%ec%83%81-%ed%81%b4%eb%9e%98%ec%8a%a4%ec%99%80-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4-%ed%8a%b8%eb%a0%88%ec%9d%b4%eb%93%9c%ec%98%a4%ed%94%84">추상 클래스와 인터페이스 트레이드오프<span class="pilcrow">&nbsp;¶</span></a></h3>
+
+<h3 id="코드-재사용" class="anchor-link"><a href="#%ec%bd%94%eb%93%9c-%ec%9e%ac%ec%82%ac%ec%9a%a9">코드 재사용<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>상속보다는 합성이 더 좋은 방법이라는 이야기를 많이 한다.</p>
+<p>합성은 다른 객체의 인스턴스를 자신의 인스턴스 변수로 포함해서 재사용하는 방법</p>
+
+<h3 id="상속" class="anchor-link"><a href="#%ec%83%81%ec%86%8d">상속<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>상속은 두가지 관점에서 설계에 안좋은 영향을 끼친다.</p>
+<ol>
+<li>캡슐화를 위반한다는 것</li>
+<li>설계를 유연하지 못하게 만든다는 것</li>
+</ol>
+
+<h3 id="합성" class="anchor-link"><a href="#%ed%95%a9%ec%84%b1">합성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>합성은 상속이 가지는 두가지 문제점을 모두 해결가능하다.</p>
+<ol>
+<li>인터페이스에 정의된 메시지를 통해서만 재사용이 가능하기 때문에 구현을 효과적으로 캡슐화할 수 있다.</li>
+<li>의존하는 인스턴스를 교체하는 것이 비교적 쉽기 때문에 설계를 유연하게 만든다.</li>
+</ol>
+<p>상속은 클래스를 통해 강하게 결합되는 데 비해 합성은 메시지를 통해 느슨하게 결합된다.</p>
+<p><strong>코드 재사용을 위해서는 상속보다는 합성을 선호하는 것이 더 좋은 방법이다. [GOF94]</strong></p>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/posts">posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/gallery">gallery</a>
+        
+            &#183; 
+            <a href="/portfolio">portfolio</a>
+        
+            &#183; 
+            <a href="/about">who is stones?</a>
+        
+    
+    &#183; 
+    <a href="/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer">
+</footer>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring boot on Call me Sam</title>
+    <link>https://example.com/tags/spring-boot/</link>
+    <description>Recent content in spring boot on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 23 Nov 2020 10:57:53 +0000</lastBuildDate><atom:link href="https://example.com/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWSsecretsManager</title>
+      <link>https://example.com/posts/awssecretsmanager/</link>
+      <pubDate>Mon, 23 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/posts/awssecretsmanager/</guid>
+      <description>DB의 접속정보나 암호화에 사용될 Salt Key 등은 프로젝트 코드 내부에서 관리하기엔 위험이 따릅니다. 누구나 볼 수 있기 때문이죠.
+이건 사내 private 저장소를 사용해도 비슷합니다. 사내의 누구나 이 설정값을 확인할 수 있다면 위험하다고 보안 감사에서 지적 받을 수 있습니다.
+그래서 AWS Secrets manager 를 사용하게 되었습니다. Spring cloud config 를 사용할수도 있지만 사용하기 위해 서버등을 신규로 발급받아 설치를 해야하기에 AWS secrets manager를 선택하게 되었습니다.
+AWS secrets manager는 KMS 에 저장된 암호화 키로 secrets manager 에 자격 증명을 해서 필요한 보안 정보를 복호화해서 반환해주는 서비스입니다.</description>
+    </item>
+    
+  </channel>
+</rss>

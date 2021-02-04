@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Call me Sam</title>
+    <link>https://example.com/posts/</link>
+    <description>Recent content in Posts on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate><atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># 1. 파이썬 답게 생각하기 (better way 6 ~ 10)</title>
+      <link>https://example.com/posts/effectivepython_02/</link>
+      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_02/</guid>
+      <description>1. 파이썬 답게 생각하기 (better way 6 ~ 10)&amp;nbsp;¶ Better way 6 . 인덱스를 사용하는 대신 대입을 사용해 데이터를 언패킹하라&amp;nbsp;¶ snacks = [(&amp;#39;베이컨&amp;#39;, 350), (&amp;#39;도넛&amp;#39;,240), (&amp;#39;머핀&amp;#39;,190)] // 예제1. for i in range(len(snacks)) : item = snacks[i] name = item[0] calories = item[1] printf(f&amp;#39;#{i+1}: {name} 은 {calroies} 칼로리입니다.&amp;#39;) //예제 2. for rank, (name, calories) in enumerate(snacks, 1): printf(f&amp;#39;#{rank}: {name} 은 {calroies} 칼로리입니다.&amp;#39;)  기억해야 할 내용
+ 파이썬은 한 문장 안에서 여러 값을 대입할 수 있는 언패킹이라는 특별한 문법을 제공한다.</description>
+    </item>
+    
+    <item>
+      <title># 1. 파이썬 답게 생각하기 (better way 1 ~ 5)</title>
+      <link>https://example.com/posts/effectivepython_01/</link>
+      <pubDate>Fri, 29 Jan 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_01/</guid>
+      <description>1. 파이썬 답게 생각하기 (better way 1 ~ 5)&amp;nbsp;¶ Better way 1 . 사용중인 파이썬의 버전을 알아두라&amp;nbsp;¶ 파이썬 버전 확인
+2 버전
+python --version Python 2.7.10 3 버전
+python3 --version Python 3.8.0  기억해야 할 내용
+ 파이썬 3는 파이썬 최신 버전이며 현재 가장 잘 지원되고 있다. 따라서 프로젝트에서 파이썬 3을 써야 한다. 여러분의 시스템에 있는 파이썬 실행 파일이 여러분이 원하는 버전인지 확인하라. 파이썬 2는 사용하지 말라. 2020년 1월 1일 부터 파이썬 2는 더이상 지원하지 않는다.</description>
+    </item>
+    
+    <item>
+      <title>네이버 모델서빙 공통화</title>
+      <link>https://example.com/posts/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%86%BC-api/</link>
+      <pubDate>Mon, 30 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/posts/%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%87%E1%85%A5-%E1%84%86%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AF%E1%84%89%E1%85%A5%E1%84%87%E1%85%B5%E1%86%BC-api/</guid>
+      <description>목차&amp;nbsp;¶ 1. 모델서빙 공통화 동기&amp;nbsp;¶  모델 수의 증가 지속적인 모델 학습과 배포  지속적으로 학습을 하면 배포가 필요한데 모델 배포한후 모델에 대한 a/b 테스트 로그로 인한 학습이 필요 서빙에서 가능한 부분은 작업   커스텀한 사내 시스템 연동  사내플랫폼 시스템이 다양하기에 불필요한 코드가 중복되지 않도록 정리   협업 가능한 환경 구축 (모델러 / 엔지니어)  모델이 늘어날수록 엔지니어가 작업할 내용이 많아짐      gateway - 인증, 로깅, 웨이트</description>
+    </item>
+    
+    <item>
+      <title>AWSsecretsManager</title>
+      <link>https://example.com/posts/awssecretsmanager/</link>
+      <pubDate>Mon, 23 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/posts/awssecretsmanager/</guid>
+      <description>DB의 접속정보나 암호화에 사용될 Salt Key 등은 프로젝트 코드 내부에서 관리하기엔 위험이 따릅니다. 누구나 볼 수 있기 때문이죠.
+이건 사내 private 저장소를 사용해도 비슷합니다. 사내의 누구나 이 설정값을 확인할 수 있다면 위험하다고 보안 감사에서 지적 받을 수 있습니다.
+그래서 AWS Secrets manager 를 사용하게 되었습니다. Spring cloud config 를 사용할수도 있지만 사용하기 위해 서버등을 신규로 발급받아 설치를 해야하기에 AWS secrets manager를 선택하게 되었습니다.
+AWS secrets manager는 KMS 에 저장된 암호화 키로 secrets manager 에 자격 증명을 해서 필요한 보안 정보를 복호화해서 반환해주는 서비스입니다.</description>
+    </item>
+    
+    <item>
+      <title>성능테스트 삽질기</title>
+      <link>https://example.com/posts/blog1-md/</link>
+      <pubDate>Tue, 29 Sep 2020 15:52:51 +0900</pubDate>
+      
+      <guid>https://example.com/posts/blog1-md/</guid>
+      <description>상품통계 범례 API 개발 완료 후 성능테스트&amp;nbsp;¶ API 개발을 끝낸 후 성능테스트를 해야해서 ngrinder 설치 후 테스트 수행을 시작했다.
+목표 성능 수치 : 180tps - 서버가 두대니 한대에 100정도만 나오면 좋겠다
+처참한 성능
+cpu 사용률 100% / cpu load 10.
+성능테스트 결과
+   TPS 46.3     Peak TPS 54.5   Mean Test Time 173.42 ms   Executed Tests 13,698   Successful Tests 13,698    문제가 무엇일까?</description>
+    </item>
+    
+    <item>
+      <title>chapter-14. 일관성 있는 협력</title>
+      <link>https://example.com/posts/objects-14/</link>
+      <pubDate>Tue, 05 May 2020 15:31:24 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-14/</guid>
+      <description>14. 일관성 있는 협력&amp;nbsp;¶ 객체는 협력을 위해 존재한다.
+협력은 객체가 존재하는 이유와 문맥을 제공한다.
+객체지향 설계의 목표는 적절한 책임을 수행하는 객체들의 협력을 기반으로 결합도가 낮고 재사용 가능한 코드 구조를 창조하는 것
+객체지향 패러다임의 장점은 설계를 재사용할 수 있다는 것.
+재사용을 위해서는 객체들의 협력 방식을 일관성 있게 만들어야 한다.
+일관성 있는 설계가 주는 큰 이익은 코드가 이해하기 쉬워진다는 것.
+특정한 문제를 유사한 방법으로 해결하고 있다는 사실을 이해하는 것만으로도 코드의 구조를 예상할수 있다.</description>
+    </item>
+    
+    <item>
+      <title>chapter-13. 서브클래싱과 서브타이핑</title>
+      <link>https://example.com/posts/objects-13/</link>
+      <pubDate>Tue, 21 Apr 2020 22:00:57 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-13/</guid>
+      <description>13. 서브클래싱과 서브타이핑&amp;nbsp;¶ 상속의 두가지 용도
+ 타입 계층을 구현  부모 클래스는 자식 클래스의 일반화(genralization) 자식 클래스는 부모 클래스의 특수화(specialization)   코드 재사용  간단한 선언으로 부모 클래스의 코드를 재사용할수 있다. 재사용을 위해 상속을 사용할 경우 부모 클래스와 자식 클래스가 강하게 결합되기에 변경하기 어려운 코드를 얻게 될 확률이 높다.    동일한 메세지에 대해 서로 다르게 행동할 수 있는 다형적인 객체를 구현하기 위해서는 객체의 행동을 기반으로 타입 계층을 구성해야 한다.</description>
+    </item>
+    
+    <item>
+      <title>chapter-12. 다형성</title>
+      <link>https://example.com/posts/objects-12/</link>
+      <pubDate>Tue, 14 Apr 2020 10:10:57 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-12/</guid>
+      <description>chapter 12 . 다형성&amp;nbsp;¶ 상속의 목적
+ 상속은 타입 계층을 구조화하기 위해 사용해야한다.
+코드 재사용을 위해 사용해서는 안된다.
+ 상속을 사용하려는 목적
+ 단순히 코드를 재사용하기 위해서?  상속을 사용하면 안된다.   클라이언트 관점에서 인스턴스들을 동일하게 행동하는 그룹으로 묶기 위해서?  01 다형성&amp;nbsp;¶ 다형성(Polymorphism)
+다형성의 분류
+  오버로딩 다형성
+ 하나의 클래스 안에 동일한 이름의 메서드가 존재하는 경우 ex) Money 클래스 안에 서로 다른 타입의 파라미터를 받아 금액을 증가시키는 메서드 plus를 가짐    public class Money{ public Money plus(Money amount) {} public Money plus(BigDecimal amount) {} public Money plus(long amount) {} }   강제 다형성</description>
+    </item>
+    
+    <item>
+      <title>chapter-10. 상속과 코드 재사용</title>
+      <link>https://example.com/posts/objects-10/</link>
+      <pubDate>Tue, 24 Mar 2020 16:30:43 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-10/</guid>
+      <description>chapter 10. 상속과 코드 재사용&amp;nbsp;¶ 01. 상속과 중복코드&amp;nbsp;¶ DRY 원칙&amp;nbsp;¶ Don&amp;rsquo;t Repet Yourself
+ 반복하지 마라 중복 여부를 판단하는 것은 변경이다. 요구사항이 변경되었을때 같이 수정되어야 하면 중복이다. 모양이 유사하다고 중복은 아니다.  중복과 변경&amp;nbsp;¶ 중복 코드 살펴보기&amp;nbsp;¶ 중복 코드 수정하기&amp;nbsp;¶ 타입 코드 사용하기&amp;nbsp;¶ enum PhoneType {REGULAR, NIGHTLY} public Money calculateFee { if(type === PhoneType.REGULAR) { ... } else{ ... } }  상속을 이용해서 중복 코드 제거하기&amp;nbsp;¶ 강하게 결합된 Phone 과 NightlyDiscountPhone&amp;nbsp;¶ 상속을 위한 경고1</description>
+    </item>
+    
+    <item>
+      <title>chapter-11. 합성과 유연한 설계</title>
+      <link>https://example.com/posts/objects-11/</link>
+      <pubDate>Tue, 24 Mar 2020 16:30:43 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-11/</guid>
+      <description>chapter 11. 합성과 유연한 설계&amp;nbsp;¶  상속관계 : is - a 관계 합성관계 : has -a 관계  상속 : 구현은 간단하나 자식과 부모 클래스 사이의 결합도가 높아짐.
+ 클래스 사이의 정적인 관계  합성: 객체의 구현이 아닌 퍼블릭 인터페이스에 의존. 포함된 객체의 내부 구현이 변경되더라도 영향을 최소화 할 수 있다.
+ 객체 사이의 동적인 관계 변경하기 쉽고 유연한 설계를 얻을 수 있다.  코드 재사용을 위해서는  객체 합성이 클래스 상속보다 더 좋은 방법이다.</description>
+    </item>
+    
+    <item>
+      <title>chapter-09. 유연한 설계</title>
+      <link>https://example.com/posts/objects-09/</link>
+      <pubDate>Fri, 13 Mar 2020 17:26:59 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-09/</guid>
+      <description>chapter 09. 유연한 설계&amp;nbsp;¶ 01. 개방-폐쇄 원칙&amp;nbsp;¶ 개방-폐쇄 원칙(Open-Closed Principle)
+ 소프트웨어 개체(클래스, 모듈, 함수 등등)는 확장에 대해 열려있어야 하고 수정에 대해서는 닫혀 있어야한다.
+ 확장, 수정
+ 확장에 대해 열려 있다 : 애플리케이션의 요구사항이 변경될 때 이 변경에 맞게 새로운 &amp;lsquo;동작&amp;rsquo;을 추가해서 애플리케이션의 기능을 확장할 수 있다.  수정에 대해 닫혀 있다 : 기존의 &amp;lsquo;코드&amp;rsquo;를 수정하지 않고도 애플리케이션의 동작을 추가하거나 변경할 수 있다.    컴파일타임 의존성을 고정시키고 런타임 의존성을 변경하라&amp;nbsp;¶ 확장에는 열려있고 수정에는 열려있는 할인 정책 설계</description>
+    </item>
+    
+    <item>
+      <title>chapter 08. 의존성 관리하기</title>
+      <link>https://example.com/posts/objects-08/</link>
+      <pubDate>Tue, 10 Mar 2020 23:57:34 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-08/</guid>
+      <description>chapter 08. 의존성 관리하기&amp;nbsp;¶ 01. 의존성 이해하기&amp;nbsp;¶ 잘 설계된 객체지향 애플리케이션은 작고 응집도 높은 객체들로 구성된다.
+작고 응집도 높은 객체란? 책임의 초점이 명확하고 한가지 일만 잘하는 객체를 의미.
+협력은 필수적이다. 하지만 과도한 협력은 설계를 곤경에 빠뜨린다.
+객체지향 설계의 핵심은 협력을 위해 필요한 의존성은 유지하면서도 변경을 방해하는 의존성은 제거하는데 있다. 이런 관점에서
+객체지향 설계란?
+ 의존성을 관리하는 것이고 객체가 변화를 받아들일 수 있게 의존성을 정리하는 기술이라 할수 있다.
+ 변경과 의존성&amp;nbsp;¶ 어떤 객체가 협력하기 위해 다른 객체를 필요로 할때 두 객체 사이에 의존성이 존재하게 된다.</description>
+    </item>
+    
+    <item>
+      <title>chapter 06. 메시지와 인터페이스</title>
+      <link>https://example.com/posts/objects-06/</link>
+      <pubDate>Tue, 18 Feb 2020 22:26:34 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-06/</guid>
+      <description>chapter 06. 메시지와 인터페이스&amp;nbsp;¶ 객체지향 프로그래밍에 대한 가장 흔한 오해
+ 애플리케이션은 클래스의 집합으로 구성된다.    애플리케이션은 클래스로 구성되지만 메시지를 통해 정의된다.
+ 01. 협력과 메시지&amp;nbsp;¶ 클라이언트-서버 모델&amp;nbsp;¶  협력안에서 메시지를 전송하는 객체를 클라이언트 메세지를 수신하는 객체를 서버  클라이언트와 서버 역할을 동시에 수행하는 Movie
+객체가 독립적으로 수향할 수 있는 것보다 더 큰 책임을 수행하기 위해서는 다른 객체와 협력해야 한다는 것.
+두 객체 사이의 협력을 가능하게 해주는 매개채가 바로 메시지.</description>
+    </item>
+    
+    <item>
+      <title>chapter 05. 책임 할당하기.</title>
+      <link>https://example.com/posts/objects-05/</link>
+      <pubDate>Tue, 11 Feb 2020 22:58:34 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-05/</guid>
+      <description>chapter 05. 책임 할당하기.&amp;nbsp;¶ 01. 책임 주도 설계를 향해&amp;nbsp;¶ 데이터 중심 설계에서 책임 중심 설계로 전환하기 위한 두가지 원칙
+ 데이터보다 행동을 먼저 결정하라 협력이라는 문맥 안에서 책임을 결정하라  데이터보다 행동을 먼저 결정하라.&amp;nbsp;¶ 클라이언트 관점에서 객체가 수행하는 행동이란 곧 객체의 책임이다.
+데이터는 객체가 책임을 수행하는데 필요한 재료일 뿐이다.
+너무 이른 시기에 데이터에 초점을 맞추면 객체의 캡슐화가 약화되기 때문에 낮은 응집도와 높은 결합도를 가진 객체들로 넘쳐나게 된다.
+객체의 데이터에서 행동으로 무게 중심을 옮기기 위한 기법</description>
+    </item>
+    
+    <item>
+      <title>chapter 04. 설계 품질과 트레이드오프</title>
+      <link>https://example.com/posts/object-04/</link>
+      <pubDate>Mon, 10 Feb 2020 01:05:07 +0000</pubDate>
+      
+      <guid>https://example.com/posts/object-04/</guid>
+      <description>chapter 04. 설계 품질과 트레이드오프&amp;nbsp;¶  객체지향 설계란 올바른 객체에게 올바른 책임을 할당하면서 낮은 결합도와 높은 응집도를 가진 구조를 창조하는 활동이다.
+  객체지향 설계의 핵심은 책임 책임을 할당하는 작업이 응집도와 결합도 같은 설계 품질과 깊이 연계되어있다.  01 . 데이터 중심의 영화 예매 시스템&amp;nbsp;¶ 객체지향 설계의 시스템을 객체로 분할하는 두가지 방법
+ 상태를 분할의 중심축으로 책임을 분할의 중심축으로  상태 =데이터
+데이터를 준비하자&amp;nbsp;¶ public class Movie { private String title; private Duration runningTime; private Money fee; private List&amp;lt;DiscountCondition&amp;gt; discountConditions; private MovieType movieType; private Money discountAmount; private double discountPercent; } public enum MovieType { AMOUNT_DISCOUNT, //금액 할인 정책  PERCENT_DISCOUNT, //비율 할인 정책  NONE_DISCOUNT // 미적용 } 객체지향의 가장 중요한 원칙인 캡슐화를 위해 Movie 클래스에 **접근자(accessor)**와 **수정자(mutator)**를 추가.</description>
+    </item>
+    
+    <item>
+      <title>chapter 03. 역할, 책임, 협력</title>
+      <link>https://example.com/posts/objects-03/</link>
+      <pubDate>Tue, 28 Jan 2020 23:09:06 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-03/</guid>
+      <description>Chapter 03. 역할, 책임, 협력&amp;nbsp;¶ 객체지향 패러다임의 핵심
+ 역할(role) 책임(responsibility) 협력(collaboration)  객체지향의 본질
+ 협력하는 객체들의 공동체를 창조하는 것
+ 객체지향 설계의 핵심
+ 협력을 구성하기 위해 적절한 객체를 찾고 적절한 책임을 할당하는 과정에서 나타난다.
+ 01. 협력&amp;nbsp;¶ 영화 예매 시스템 돌아보기&amp;nbsp;¶ 책임
+객체가 협력에 참여하기 위해 수행하는 로직
+역할
+객체들이 협력 안에서 수행하는 책임들이 모여 객체가 수행하는 일
+협력
+객체들이 애플리케이션의 기능을 구현하기 위해 수행하는 상호작용</description>
+    </item>
+    
+    <item>
+      <title>chapter 02. 객체지향 프로그래밍</title>
+      <link>https://example.com/posts/objects-02/</link>
+      <pubDate>Mon, 27 Jan 2020 16:19:36 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-02/</guid>
+      <description>chapter 02. 객체지향 프로그래밍&amp;nbsp;¶ 01. 영화 예매 시스템&amp;nbsp;¶ 요구사항&amp;nbsp;¶  영화 상영 할인 규칙  할인 조건  순서 조건 기간 조건   할인 정책  금액 할인 정책 비율 할인 정책      02. 객체지향 프로그래밍을 향해&amp;nbsp;¶ 협력, 객체, 클래스&amp;nbsp;¶  진정한 객체지향 패러다임으로서의 전환은 클래스가 아닌 객체에 초점을 맞출때 얻을수 있다.
+  어떤 클래스가 필요한지를 고민하기 전에 어떤 객체들이 필요한지 고민하라. 클래스는 공통적인 상태화 행동을 공유하는 객체들을 추상화한 것이다.</description>
+    </item>
+    
+    <item>
+      <title>chapter 01. 객체 , 설계</title>
+      <link>https://example.com/posts/objects-01/</link>
+      <pubDate>Mon, 27 Jan 2020 16:17:36 +0000</pubDate>
+      
+      <guid>https://example.com/posts/objects-01/</guid>
+      <description>chapter 01. 객체 , 설계&amp;nbsp;¶ 티켓 판매 애플리케이션 구현하기&amp;nbsp;¶ 애플리케이션의 핵심 클래스
+무엇이 문제인가&amp;nbsp;¶ 로버트 마틴은 클린 소프트웨어에서 소프트웨어 모듈이 가져야 하는 세가지 기능에 관해 설명한다.
+ 모든 소프트웨어 모듈에는 세 가지의 목적이 있다. 첫번째 목적은 실행 중에 제대로 동작하는 것이다. 이것은 모듈의 존재 이유. 두번째 목적은 변경을 위해 존재하는 것이다. 대부분의 모듈은 생명주기 동안 변경되기 때문에 간단한 작업만으로도 변경이 가능해야 한다. 변경하기 어려운 모듈은 제대로 동작하더라도 개선해야한다. 모듈의 세번째 목적은 코드를 읽는 사람과 의사소통하는 것이다.</description>
+    </item>
+    
+    <item>
+      <title>clean-architecture-26-28</title>
+      <link>https://example.com/posts/clean-architecture-26-27/</link>
+      <pubDate>Sun, 17 Nov 2019 22:10:29 +0000</pubDate>
+      
+      <guid>https://example.com/posts/clean-architecture-26-27/</guid>
+      <description>26 메인 컴포넌트&amp;nbsp;¶ 궁극전인 세부사항&amp;nbsp;¶ 문자열 초기화
+public class Mian implements HtwMessageReceiver { private static HuntTheWumpus game; private static int hitPoints = 10; private static final List&amp;lt;String&amp;gt; caverns = new ArrayList&amp;lt;&amp;gt;(); private static final String[] environments = new String[] {&amp;#34;bright&amp;#34;, &amp;#34;humid&amp;#34;, &amp;#34;dry&amp;#34;, &amp;#34;creepy&amp;#34;, &amp;#34;ugly&amp;#34;, &amp;#34;foggy&amp;#34;, &amp;#34;hot&amp;#34;, &amp;#34;cold&amp;#34;, &amp;#34;drafty&amp;#34;, &amp;#34;dreadful&amp;#34;}; private static final String[] shapes = new String[] {&amp;#34;round&amp;#34;, &amp;#34;square&amp;#34;, &amp;#34;oval&amp;#34;, &amp;#34;irregualar&amp;#34;, &amp;#34;long&amp;#34;, &amp;#34;craggy&amp;#34;, &amp;#34;rough&amp;#34;, &amp;#34;tall&amp;#34;, &amp;#34;narrow&amp;#34;}; private static final String[] cavernTypes = new String[] {&amp;#34;cavern&amp;#34;, &amp;#34;room&amp;#34;, &amp;#34;chamber&amp;#34;.</description>
+    </item>
+    
+    <item>
+      <title>5부 아키텍처 22장 ~ 25장</title>
+      <link>https://example.com/posts/clean-architecture-22-25/</link>
+      <pubDate>Mon, 11 Nov 2019 20:11:19 +0000</pubDate>
+      
+      <guid>https://example.com/posts/clean-architecture-22-25/</guid>
+      <description>22장 클린아키텍처&amp;nbsp;¶ 시스템 아키텍처와 관련된 여러가지 아이디어
+ 육각형 아키텍처 (Hexagonal Architecture) DCI(Data Context and Interaction) BCE (Boundary-Control-Entity)  위 아키텍처의 목표?
+ 관심사의 분리  소프트웨어를 계층으로 분리함으로써 관심사의 분리 목표를 달성 최소한 업무 규칙을 위한 계층과, 사용자와 시스템인터페이스를 위한 또 다른 계층 하나를 포함해야한다.    특성
+ 프레임워크 독립성 테스트 용이성 UI 독립성 데이터베이스 독립성 모든 외부 에이전시에 대한 독립성   참고 : https://medium.com/@erish/python-django-clean-architecture-%EC%97%B0%EA%B5%AC%ED%95%98%EA%B8%B0-591d7a555059  의존성 규칙&amp;nbsp;¶  소스코드 의존성은 반드시 안쪽으로, 고수준의 정책을 향해야 한다.</description>
+    </item>
+    
+    <item>
+      <title>5부 아키텍처 18장 ~ 21장</title>
+      <link>https://example.com/posts/clean-architecture-18-20/</link>
+      <pubDate>Sun, 03 Nov 2019 18:07:19 +0000</pubDate>
+      
+      <guid>https://example.com/posts/clean-architecture-18-20/</guid>
+      <description>5부 아키텍처&amp;nbsp;¶ 18장 경계 해부학&amp;nbsp;¶  시스템 아키텍처는 일련의 소프트웨어 컴포넌트와 그 컴포넌트들을 분리하는 경계에 의해 정의된다.
+ 경계횡단하기&amp;nbsp;¶ &amp;lsquo;런타임에 경계를 횡단한다&amp;rsquo; 함은 경계 한쪽에 있는 기능에서 반대편 기능을 호출하여 데이터를 전달하는 일에 불과하다. 적절한 위치에서 경계를 횡단하게 하는 비결은 소스 코드 의존성 관리
+why Source Code
+소스 코드 모듈이 변경되면 의존하는 다른 소스 코드 모듈도 변경되거나, 다시 컴파일해서 새로 배포해야 할지도 모르기 때문.
+경계는 이러한 변경이 전파되는 것을 막는 방화벽을 구축하고 관리하는 수단</description>
+    </item>
+    
+    <item>
+      <title>4부 컴포넌트 원칙</title>
+      <link>https://example.com/posts/4_component_principle/</link>
+      <pubDate>Mon, 21 Oct 2019 18:34:32 +0000</pubDate>
+      
+      <guid>https://example.com/posts/4_component_principle/</guid>
+      <description>12. 컴포넌트&amp;nbsp;¶ 정의
+ 컴포넌트는 배포단위 시스템의 구성 요소로 배포할 수 있는 가장 작은 단위 Ex) java - jar, 루비 - gem, 닷넷 - dll, 인터프리터형 언어 - 소스 파일의 결합체, 모든 언어  컴포넌트의 간략한 역사&amp;nbsp;¶ * 200 TLS START, CLA TAD BUFR JMS GETSTR CLA TAD BUFR JMS, .... K177,	177 MCR, -15 *200 명령어는 메모리 주소 200에 로드할 코드를 생성하라고 컴파일러에 알려준다.
+재배치성&amp;nbsp;¶ 재배치가 가능한 바이너리(relocatable binary)</description>
+    </item>
+    
+    <item>
+      <title>클린아키텍처 3부 설계원칙</title>
+      <link>https://example.com/posts/2019-10-12-3%EB%B6%80_%EC%84%A4%EA%B3%84%EC%9B%90%EC%B9%99/</link>
+      <pubDate>Sat, 12 Oct 2019 21:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-10-12-3%EB%B6%80_%EC%84%A4%EA%B3%84%EC%9B%90%EC%B9%99/</guid>
+      <description>3부 설계 원칙&amp;nbsp;¶ 좋은 소프트웨어는 깔끔한 코드clean code 에서 시작한다.
+좋은 벽돌로 좋은 아키텍처를 정의하는 원칙이 필요함. 그것이 SOLID
+SOLID 원칙의 목적은 중간 수준의 소프트웨어 구조가 아래와 같도록 만드는데 있다.
+변경에 유연하다. 이해하기 쉽다. 많은 소프트웨어 시스템에 사용될 수 있는 컴포넌트의 기반이 된다.  중간 수준이란?&amp;nbsp;¶ 프로그래머가 이들 원칙을 모듈 수준에서 작업할 때 적용할 수 있다는 뜻.
+코드 수준보다 조금 상위에서 적용되며 모듈과 컴포넌트 내부에서 사용되는 소프트웨어 구조를 정의</description>
+    </item>
+    
+    <item>
+      <title>클린아키텍처-2부 벽돌부터 시작하기: 프로그래밍 패러다임</title>
+      <link>https://example.com/posts/2019-10-10-2%EB%B6%80_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/</link>
+      <pubDate>Thu, 10 Oct 2019 11:31:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-10-10-2%EB%B6%80_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%ED%8C%A8%EB%9F%AC%EB%8B%A4%EC%9E%84/</guid>
+      <description>2부 벽돌부터 시작하기: 프로그래밍 패러다임&amp;nbsp;¶ 3장 패러다임 개요&amp;nbsp;¶   구조적 프로그래밍
+  패러다임
+구조적 프로그래밍은 제어흐름의 전환에 대해 규칙을 부과한다.     객체 지향 프로그래밍
+  사실 구조적 프로그램보다 2년 앞선 1966년에 등장
+  패러다임
+객체지향 프로그래밍은 제어흐름의 간접적인 전환에 대해 규칙을 부과한다.     함수형 프로그래밍
+  최근 도입시작하긴했지만 세 패러다임중 가장 먼저 등장했다.
+  1958년 존 매카시가 만든 람다 계산법</description>
+    </item>
+    
+    <item>
+      <title>클린아키텍처 1부 목차</title>
+      <link>https://example.com/posts/2019-10-08-%ED%81%B4%EB%A6%B0%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98_%EB%AA%A9%EC%B0%A8/</link>
+      <pubDate>Tue, 08 Oct 2019 11:50:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-10-08-%ED%81%B4%EB%A6%B0%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98_%EB%AA%A9%EC%B0%A8/</guid>
+      <description>1부 소개&amp;nbsp;¶ 1장 설계와 아키텍처란?&amp;nbsp;¶  목표는? 사례 연구 결론  2장 두 가지 가치에 대한 이야기&amp;nbsp;¶  행위 아키텍처 더 높은 가치 아이젠하워 매트릭스 아키텍처를 위해 투쟁하라   2부 벽돌부터 시작하기: 프로그래밍 패러다임&amp;nbsp;¶ 3장 패러다임 개요&amp;nbsp;¶  구조적 프로그래밍 객체 지향 프로그래밍 함수형 프로그래밍 생각할 거리 결론  4장 구조적 프로그래밍&amp;nbsp;¶  증명 해로운 성명서 기능적 분해 엄밀한 증명은 없었다 과학이 구출하다 테스트 결론  5장 객체 지향 프로그래밍&amp;nbsp;¶  캡슐화?</description>
+    </item>
+    
+    <item>
+      <title>객체, 설계</title>
+      <link>https://example.com/posts/2019-08-18-objects-01/</link>
+      <pubDate>Sun, 18 Aug 2019 22:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-08-18-objects-01/</guid>
+      <description>1. 객체 , 설계&amp;nbsp;¶ 책임의 이동(Shift of responsibility)&amp;nbsp;¶ 절차 지향&amp;nbsp;¶ 책임이 Theater에 집중되어 있는 것.
+객체지향 설계&amp;nbsp;¶ 제어의 흐름이 각 객체에 적절하게 분산.
+변경 전의 코드에서는 모든 책임이 Thearter에 존재하기에 Thearter가 모든 객체에 의존하고 있다. 그 결과가 변경에 취약한 설계.
+개선된 코드에서는 각 객체에 책임이 분산되고 더욱 중요한 점은 코드를 이해하기가 더 쉬워짐.
+설계를 어렵게 만드는 것은 의존성
+의존성을 제거하여 객체 사이의 결합도를 낮춰야함.
+객체지향 설계&amp;nbsp;¶ 좋은 설계란 무엇인가?</description>
+    </item>
+    
+    <item>
+      <title>logrotate를 활용한 로그관리(compress, lotate)</title>
+      <link>https://example.com/posts/2019-04-02-logrotate/</link>
+      <pubDate>Mon, 01 Apr 2019 10:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-04-02-logrotate/</guid>
+      <description>logrotate를 활용한 로그 관리 (compress, lotate)&amp;nbsp;¶ 상황 : 아파치 로그 파일을 주기적으로(하루 단위로 rotation) 압축하여 일 별 관리하고 싶을 경우
+기존 아파치 설정
+httpd.conf&amp;nbsp;¶ CustomLog &amp;ldquo;|/program/httpd-2.2.20/bin/rotatelogs -l /program/httpd-2.2.20/logs/%y%m%d.sample.activity_log 86400&amp;rdquo; combined env=!nolog
+ErrorLog &amp;ldquo;|/program/httpd-2.2.20/bin/rotatelogs -l /program/httpd-2.2.20/logs/%y%m%d.sample.error_log 86400&amp;rdquo;
+ 하루 단위로 rotation 하고 있었지만 압축 저장하고 있지 않음.  해결방법 : 리눅스 기본 logrotate 활용!
+ * logrotate란?
+로그 파일(시스템 로그)을 rotates, compresses, and mails 을 할 수 있다. 설정 파일을 변경해도 관련 프로세스를 새로 시작할 필요 없이 cron 데몬이 주기적으로 실행 시켜준다.</description>
+    </item>
+    
+    <item>
+      <title>소프트웨어 장인</title>
+      <link>https://example.com/posts/2019-03-28-software-master/</link>
+      <pubDate>Thu, 28 Mar 2019 17:30:50 +0900</pubDate>
+      
+      <guid>https://example.com/posts/2019-03-28-software-master/</guid>
+      <description>소프트웨어 장인&amp;nbsp;¶   일을 어떻게 했느냐는 일을 해낸 것만큼이나 중요하다.
+  커리어 패스를 정할 때는 내가 열정이 있는 것, 진정 즐겁게 할 수 있는 것을 따라야 한다.
+  기술적인 관점에서의 애자일 원칙
+   애자일 원칙의 기술적인 부분들은 개발, 확장, 유지보수, 제품을 출시(또는 납품, 서비스 배포) 하면서 겪는 어려움들에 대해 특정한 기술적 관례나 기술 자체를 매우 구체적으로 가이드한다. 테스트 주도 개발(TDD), 페어 프로그래밍, 지속적인 통합, 단순한 디자인 원칙 등과 같은 것들이다.</description>
+    </item>
+    
+  </channel>
+</rss>

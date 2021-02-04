@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>story on Call me Sam</title>
+    <link>https://example.com/tags/story/</link>
+    <description>Recent content in story on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Feb 2021 14:34:59 +0900</lastBuildDate><atom:link href="https://example.com/tags/story/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title># 1. 파이썬 답게 생각하기 (better way 6 ~ 10)</title>
+      <link>https://example.com/posts/effectivepython_02/</link>
+      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_02/</guid>
+      <description>1. 파이썬 답게 생각하기 (better way 6 ~ 10)&amp;nbsp;¶ Better way 6 . 인덱스를 사용하는 대신 대입을 사용해 데이터를 언패킹하라&amp;nbsp;¶ snacks = [(&amp;#39;베이컨&amp;#39;, 350), (&amp;#39;도넛&amp;#39;,240), (&amp;#39;머핀&amp;#39;,190)] // 예제1. for i in range(len(snacks)) : item = snacks[i] name = item[0] calories = item[1] printf(f&amp;#39;#{i+1}: {name} 은 {calroies} 칼로리입니다.&amp;#39;) //예제 2. for rank, (name, calories) in enumerate(snacks, 1): printf(f&amp;#39;#{rank}: {name} 은 {calroies} 칼로리입니다.&amp;#39;)  기억해야 할 내용
+ 파이썬은 한 문장 안에서 여러 값을 대입할 수 있는 언패킹이라는 특별한 문법을 제공한다.</description>
+    </item>
+    
+    <item>
+      <title># 1. 파이썬 답게 생각하기 (better way 1 ~ 5)</title>
+      <link>https://example.com/posts/effectivepython_01/</link>
+      <pubDate>Fri, 29 Jan 2021 14:34:59 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_01/</guid>
+      <description>1. 파이썬 답게 생각하기 (better way 1 ~ 5)&amp;nbsp;¶ Better way 1 . 사용중인 파이썬의 버전을 알아두라&amp;nbsp;¶ 파이썬 버전 확인
+2 버전
+python --version Python 2.7.10 3 버전
+python3 --version Python 3.8.0  기억해야 할 내용
+ 파이썬 3는 파이썬 최신 버전이며 현재 가장 잘 지원되고 있다. 따라서 프로젝트에서 파이썬 3을 써야 한다. 여러분의 시스템에 있는 파이썬 실행 파일이 여러분이 원하는 버전인지 확인하라. 파이썬 2는 사용하지 말라. 2020년 1월 1일 부터 파이썬 2는 더이상 지원하지 않는다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Call me Sam</title>
+    <link>https://example.com/categories/</link>
+    <description>Recent content in Categories on Call me Sam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Nov 2020 10:57:53 +0000</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://example.com/categories/blog/</link>
+      <pubDate>Mon, 30 Nov 2020 10:57:53 +0000</pubDate>
+      
+      <guid>https://example.com/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>도서</title>
+      <link>https://example.com/categories/%EB%8F%84%EC%84%9C/</link>
+      <pubDate>Tue, 05 May 2020 15:31:24 +0000</pubDate>
+      
+      <guid>https://example.com/categories/%EB%8F%84%EC%84%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>운영</title>
+      <link>https://example.com/categories/%EC%9A%B4%EC%98%81/</link>
+      <pubDate>Mon, 01 Apr 2019 10:00:50 +0900</pubDate>
+      
+      <guid>https://example.com/categories/%EC%9A%B4%EC%98%81/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

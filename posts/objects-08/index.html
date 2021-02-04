@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="A new Hugo site.">
+<title>
+    chapter 08. 의존성 관리하기 - Call me Sam
+</title>
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c5514d3530979d291f3497facc20da1cec870028dbc2a3630b64bab8721bbe49.css" integrity="sha256-xVFNNTCXnSkfNJf6zCDaHOyHACjbwqNjC2S6uHIbvkk=" crossorigin="anonymous" media="screen">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/tn.png"/>
+
+<meta name="twitter:title" content="chapter 08. 의존성 관리하기"/>
+<meta name="twitter:description" content="chapter 08. 의존성 관리하기&nbsp;¶ 01. 의존성 이해하기&nbsp;¶ 잘 설계된 객체지향 애플리케이션은 작고 응집도 높은 객체들로 구성된다.
+작고 응집도 높은 객체란? 책임의 초점이 명확하고 한가지 일만 잘하는 객체를 의미.
+협력은 필수적이다. 하지만 과도한 협력은 설계를 곤경에 빠뜨린다.
+객체지향 설계의 핵심은 협력을 위해 필요한 의존성은 유지하면서도 변경을 방해하는 의존성은 제거하는데 있다. 이런 관점에서
+객체지향 설계란?
+ 의존성을 관리하는 것이고 객체가 변화를 받아들일 수 있게 의존성을 정리하는 기술이라 할수 있다.
+ 변경과 의존성&nbsp;¶ 어떤 객체가 협력하기 위해 다른 객체를 필요로 할때 두 객체 사이에 의존성이 존재하게 된다."/>
+
+<meta property="og:title" content="chapter 08. 의존성 관리하기" />
+<meta property="og:description" content="chapter 08. 의존성 관리하기&nbsp;¶ 01. 의존성 이해하기&nbsp;¶ 잘 설계된 객체지향 애플리케이션은 작고 응집도 높은 객체들로 구성된다.
+작고 응집도 높은 객체란? 책임의 초점이 명확하고 한가지 일만 잘하는 객체를 의미.
+협력은 필수적이다. 하지만 과도한 협력은 설계를 곤경에 빠뜨린다.
+객체지향 설계의 핵심은 협력을 위해 필요한 의존성은 유지하면서도 변경을 방해하는 의존성은 제거하는데 있다. 이런 관점에서
+객체지향 설계란?
+ 의존성을 관리하는 것이고 객체가 변화를 받아들일 수 있게 의존성을 정리하는 기술이라 할수 있다.
+ 변경과 의존성&nbsp;¶ 어떤 객체가 협력하기 위해 다른 객체를 필요로 할때 두 객체 사이에 의존성이 존재하게 된다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/objects-08/" />
+<meta property="og:image" content="https://example.com/tn.png"/>
+<meta property="article:published_time" content="2020-03-10T23:57:34+00:00" />
+<meta property="article:modified_time" content="2020-03-10T23:57:34+00:00" /><meta property="og:site_name" content="Call me Sam" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        chapter 08. 의존성 관리하기
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>chapter 08. 의존성 관리하기</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Tue Mar 10, 2020 &#183; 829 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/tags/objects/">
+                    objects
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/tags/object/">
+                    object
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        
+<h1 id="chapter-08-의존성-관리하기" class="anchor-link"><a href="#chapter-08-%ec%9d%98%ec%a1%b4%ec%84%b1-%ea%b4%80%eb%a6%ac%ed%95%98%ea%b8%b0">chapter 08. 의존성 관리하기<span class="pilcrow">&nbsp;¶</span></a></h1>
+
+<h2 id="01-의존성-이해하기" class="anchor-link"><a href="#01-%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%9d%b4%ed%95%b4%ed%95%98%ea%b8%b0">01. 의존성 이해하기<span class="pilcrow">&nbsp;¶</span></a></h2>
+<p>잘 설계된 객체지향 애플리케이션은 작고 응집도 높은 객체들로 구성된다.</p>
+<p>작고 응집도 높은 객체란? 책임의 초점이 명확하고 한가지 일만 잘하는 객체를 의미.</p>
+<p>협력은 필수적이다. 하지만 과도한 협력은 설계를 곤경에 빠뜨린다.</p>
+<p>객체지향 설계의 핵심은 협력을 위해 필요한 의존성은 유지하면서도 변경을 방해하는 의존성은 제거하는데 있다. 이런 관점에서</p>
+<p><strong>객체지향 설계란?</strong></p>
+<blockquote>
+<p>의존성을 관리하는 것이고 객체가 변화를 받아들일 수 있게 의존성을 정리하는 기술이라 할수 있다.</p>
+</blockquote>
+
+<h3 id="변경과-의존성" class="anchor-link"><a href="#%eb%b3%80%ea%b2%bd%ea%b3%bc-%ec%9d%98%ec%a1%b4%ec%84%b1">변경과 의존성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>어떤 객체가 협력하기 위해 다른 객체를 필요로 할때 두 객체 사이에 의존성이 존재하게 된다.</p>
+<p>의존성은 실행시점과 구현 시점에 다른 의미를 가진다.</p>
+<ul>
+<li>실행시점 : 의존하는 객체가 정상적으로 동작하기 위해서는 실행 시에 의존 대상 객체가 반드시 존재해야 한다.</li>
+<li>구현 시점: 의존 대상 객체가 변경될 경우 의존하는 객체도 함께 변경된다.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> Class PeriodCondition <span style="color:#66d9ef">implements</span> DiscountCondition <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> DayOfWeek dayOfWeek<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> LocalTime startTime<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> LocalTime endTime<span style="color:#f92672">;</span>
+  
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isSatisfiedBy</span><span style="color:#f92672">(</span>Screening screening<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">...;</span>
+  <span style="color:#f92672">}</span>
+  
+<span style="color:#f92672">}</span>
+</code></pre></div><p><!-- raw HTML omitted --></p>
+<hr>
+<p>두 요소 사이의 의존성은 의존되는 요소가 변경될때 의존하는 요소도 함께 변경될 수 있다는 것을 의미한다. 따라서 의존성은 변경에 의한 영향의 전파 가능성을 암시한다.</p>
+
+<h3 id="의존성-전이" class="anchor-link"><a href="#%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%a0%84%ec%9d%b4">의존성 전이<span class="pilcrow">&nbsp;¶</span></a></h3>
+<ul>
+<li>의존성 전이가 의미하는것은 peridoCondition이 Screening에 의존할 경우 PeriodCondition은 Screening이 의존하는 대상에 대해서도 자동적으로 의존하게 된다는 것.</li>
+</ul>
+<p><!-- raw HTML omitted --></p>
+<p><strong>의존성의 종류</strong></p>
+<ul>
+<li>직접 의존성 : 한 요소가 다른 요소에 직접 의존하는 경우를 가르킨다.
+<ul>
+<li>ex ) periodCondition 이 screening에 의존하는 경우</li>
+</ul>
+</li>
+<li>간접 의존성  : 직접적인 관계는 존재하지 않지만 의존성 전이에 의해 영향이 전파되는 경우를 가르킨다.</li>
+</ul>
+
+<h3 id="런타임-의존성과-컴파일타임-의존성" class="anchor-link"><a href="#%eb%9f%b0%ed%83%80%ec%9e%84-%ec%9d%98%ec%a1%b4%ec%84%b1%ea%b3%bc-%ec%bb%b4%ed%8c%8c%ec%9d%bc%ed%83%80%ec%9e%84-%ec%9d%98%ec%a1%b4%ec%84%b1">런타임 의존성과 컴파일타임 의존성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<ul>
+<li>런타임 의존성
+<ul>
+<li>애플리케이션이 실행되는 시점</li>
+</ul>
+</li>
+<li>컴파일타임 의존성
+<ul>
+<li>작성된 코드를 컴파일 하는 시점을 가르키지만 문맥에 따라서는 코드 자체를 가르키기도 한다.</li>
+</ul>
+</li>
+</ul>
+<p><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --></p>
+<blockquote>
+<p>객체지향 프로그램의 실행 구조는 소스코드 구조와 일치하지 않는 경우가 종종 있다. 코드 구조는 컴파일 시점에 확정되는 것이고 이 구조에는 고정된 상속 클래스 관계들이 포함된다. 그러나 프로그램의 실행 시점 구조는 협력하는 객체에 따라서 달라질 수 있다. 즉, 두 구조는 전혀 다른 별개의 독립성을 갖는다. 하나로부터 다른 하나를 이해하려는 것은 생태계의 동적인 성질을 식물과 동물과 같은 정적 분류 구조를 바탕으로 이해하려 하는 것과 똑같다. 컴파일 시점의 구조와 실행 시점 구조 사이에 차이가 있기 때문에 코드 자체가 시스템의 동작 방법을 모두 보여줄수 없다. 시스템의 실행 시점 구조는 언어가 아닌 설계자가 만든 타입들 간의 관련성으로 만들어진다. 그러므로 객체와 타입 간의 관계를 잘 정의해야 좋은 실행 구조를 만들어 낼수 있다.</p>
+</blockquote>
+
+<h3 id="컨텍스트-독립성" class="anchor-link"><a href="#%ec%bb%a8%ed%85%8d%ec%8a%a4%ed%8a%b8-%eb%8f%85%eb%a6%bd%ec%84%b1">컨텍스트 독립성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<blockquote>
+<p>클래스가 사용될 특정한 문맥에 대해 최소한의 가정으로만 이루어 져 있다면 다른 문맥에서 재사용하기 수월해진다.</p>
+<p>설계가 유연해지기 위해서는 가능한 한 자신이 실행될 컨텍스트에 대한 구체적인 정보를 최대한 적게 알아야한다.</p>
+</blockquote>
+
+<h3 id="의존성-해결하기" class="anchor-link"><a href="#%ec%9d%98%ec%a1%b4%ec%84%b1-%ed%95%b4%ea%b2%b0%ed%95%98%ea%b8%b0">의존성 해결하기<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><strong>의존성 해결</strong></p>
+<p>컴파일타임 의존성을 실행 컨텍스트에 맞는 적절한 런타임 의존성으로 교체하는 것</p>
+<p><strong>의존성 해결을 위한 방법 세가지</strong></p>
+<ul>
+<li>객체를 생성하는 시점에 생성자를 통해 의존성 해결</li>
+<li>객체 생성 후 setter 메서드를 통해 의존성 해결</li>
+<li>메서드 실행 시 인자를 이용해 의존성 해결</li>
+</ul>
+
+<h2 id="02-유연한-설계" class="anchor-link"><a href="#02-%ec%9c%a0%ec%97%b0%ed%95%9c-%ec%84%a4%ea%b3%84">02. 유연한 설계<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h3 id="의존성과-결합도" class="anchor-link"><a href="#%ec%9d%98%ec%a1%b4%ec%84%b1%ea%b3%bc-%ea%b2%b0%ed%95%a9%eb%8f%84">의존성과 결합도<span class="pilcrow">&nbsp;¶</span></a></h3>
+
+<h3 id="지식이-결합을-낳는다" class="anchor-link"><a href="#%ec%a7%80%ec%8b%9d%ec%9d%b4-%ea%b2%b0%ed%95%a9%ec%9d%84-%eb%82%b3%eb%8a%94%eb%8b%a4">지식이 결합을 낳는다<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>결합도의 정도는 한 요소가 자신이 의존하고 있는 다른 요소에 대하 알고 있는 정보의 양으로 결정된다. 한 요소가 다른 요소에 대하 더 많은 정보를 알고 있을수록 두 요소는 강하게 결합된다.</p>
+<p><strong>더 많이 알수록 더 많이 결합된다.</strong></p>
+<p>더 많이 알고 있다는 것은 더 적은 컨텍스트에서 재사용 가능하다는 것을 의미한다.</p>
+
+<h3 id="추상화에-의존하라" class="anchor-link"><a href="#%ec%b6%94%ec%83%81%ed%99%94%ec%97%90-%ec%9d%98%ec%a1%b4%ed%95%98%eb%9d%bc">추상화에 의존하라<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><strong>추상화란?</strong></p>
+<p>어떤 양상, 세부사항 , 구조를 좀 더 명확하게 이해하기 위해 특정 절차나 물체를 의도적으로 생략하거나 감춤으로써 복잡도를 극복하는 방법이다.</p>
+<p><strong>결합도가 큰 순서</strong></p>
+<ol>
+<li>구체 클래스 의존성</li>
+<li>추상 클래스 의존성</li>
+<li>인터페이스 의존성</li>
+</ol>
+<p><strong>결합도를 느슨하게 만들기 위해서는?</strong></p>
+<p>구체적인 클래스보다는 추상 클래스에, 추상 클래스 보다는 인터페이스에 의존하도록 만드는 것이 효과적이다.</p>
+<p>의존하는 대상이 추상적일 수록 결합도는 낮아진다.</p>
+
+<h3 id="명시적인-의존성" class="anchor-link"><a href="#%eb%aa%85%ec%8b%9c%ec%a0%81%ec%9d%b8-%ec%9d%98%ec%a1%b4%ec%84%b1">명시적인 의존성<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">...</span>
+<span style="color:#66d9ef">private</span> DiscountPolicy discountPolicy<span style="color:#f92672">;</span>
+  
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Movie</span><span style="color:#f92672">(</span>String title<span style="color:#f92672">,</span> Duration runningTime<span style="color:#f92672">,</span> Money fee<span style="color:#f92672">){</span>
+    <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">discountPolity</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AmountDiscountPolicy<span style="color:#f92672">(...);</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><strong>숨겨진 의존성(hidden dependency)</strong></p>
+<p><p style="text-align:center;">
+    <img src="objects-08/image-20200310232133291.png" alt="image-20200310232133291"  />
+</p>
+</p>
+<p><strong>명시적 의존성(explicit dependency)</strong></p>
+<p>명시적으로 퍼블릭 인터페이스에 노출시킴</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">...</span>
+<span style="color:#66d9ef">private</span> DiscountPolicy discountPolicy<span style="color:#f92672">;</span>
+  
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Movie</span><span style="color:#f92672">(</span>String title<span style="color:#f92672">,</span> Duration runningTime<span style="color:#f92672">,</span> Money fee<span style="color:#f92672">,</span> DiscountPolicy discountPolicy<span style="color:#f92672">){</span>
+    <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">discountPolity</span> <span style="color:#f92672">=</span> discountPolicy<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+<p>의존성이 명시적이지 않으면 클래스를 다른 컨텍스트에서 재사용하기 위해 내부 구현을 직접 변경해야 한다. 코드 수정은 언제나 버거 발생가능성을 내포한다. 의존성을 명시적으로 드러내면 코드를 직접 수정해야하는 위험을 피할 수 있다.</p>
+<p>의존성은 명시적으로 표현되야 한다. 의존성을 구현 내부에 숨겨두지 마라. 명시적은 의존성을 사용해야만 퍼블릭 인터페이스를 통해 컴파일 타임 의존성을 적절한 런타임 의존성으로 교체할 수 있다.</p>
+
+<h3 id="new-는-해롭다" class="anchor-link"><a href="#new-%eb%8a%94-%ed%95%b4%eb%a1%ad%eb%8b%a4">new 는 해롭다<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><strong>결합도 측면에서 new 가 해로운 이유 두가지</strong></p>
+<ul>
+<li>new 연산자를 사용하기 위해서는 구체 클래스의 이름을 직접 기술해야 한다. 따라서 new 를 사용하는 클라이언트는 추상화가 아닌 구체 클래스에 의존할 수 밖에 없기 때문에 결합도가 높아진다.</li>
+<li>new 연산자는 생성하려는 구체 클래스뿐 아니라 어떤 인자를 이용해 클래스의 생성자를 호출해야 하는지도 알아야 한다. 따라서 new 를 사용하면 클라이언트가 알아야 하는 지식의 양이 늘어나기 때문에 결합도가 높아진다.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span> <span style="color:#f92672">{</span>
+<span style="color:#f92672">...</span>
+<span style="color:#66d9ef">private</span> DiscountPolicy discountPolicy<span style="color:#f92672">;</span>
+  
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Movie</span><span style="color:#f92672">(</span>String title<span style="color:#f92672">,</span> Duration runningTime<span style="color:#f92672">,</span> Money fee<span style="color:#f92672">,</span> DiscountPolicy discountPolicy<span style="color:#f92672">){</span>
+    <span style="color:#f92672">...</span>
+      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">discountPolity</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AmountDiscountPolicy<span style="color:#f92672">(</span>Money<span style="color:#f92672">.</span><span style="color:#a6e22e">wons</span><span style="color:#f92672">(</span>800<span style="color:#f92672">),</span>
+                                 <span style="color:#66d9ef">new</span> SequenceCondition<span style="color:#f92672">(</span>1<span style="color:#f92672">),</span> 
+                                 <span style="color:#66d9ef">new</span> SequenceCondition<span style="color:#f92672">(</span>10<span style="color:#f92672">),</span> 
+                                 <span style="color:#66d9ef">new</span> PriodCondition<span style="color:#f92672">(....),</span> 
+                                 <span style="color:#66d9ef">new</span> PriodCondition<span style="color:#f92672">(....)</span>
+                                     				<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><p style="text-align:center;">
+    <img src="objects-08/image-20200310233738768.png" alt="image-20200310233738768"  />
+</p>
+</p>
+
+<h3 id="표준-클래스에-대한-의존은-해롭지-않다" class="anchor-link"><a href="#%ed%91%9c%ec%a4%80-%ed%81%b4%eb%9e%98%ec%8a%a4%ec%97%90-%eb%8c%80%ed%95%9c-%ec%9d%98%ec%a1%b4%ec%9d%80-%ed%95%b4%eb%a1%ad%ec%a7%80-%ec%95%8a%eb%8b%a4">표준 클래스에 대한 의존은 해롭지 않다<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiscountPolicy</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>DiscountCondition<span style="color:#f92672">&gt;</span> conditions <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>의존성에 의한 영향이 적은 경우데도 추상화에 의존하고 의존성을 명시적으로 드러내는 것은 좋은 설계 습관이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiscountPolicy</span> <span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>DiscountCondition<span style="color:#f92672">&gt;</span> conditions <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">();</span>
+  
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">switchConditions</span><span style="color:#f92672">(</span>List<span style="color:#f92672">&lt;</span>DiscountCondition<span style="color:#f92672">&gt;</span> conditions<span style="color:#f92672">){</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">conditions</span> <span style="color:#f92672">=</span> conditions<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+<h3 id="조합-가능한-행동" class="anchor-link"><a href="#%ec%a1%b0%ed%95%a9-%ea%b0%80%eb%8a%a5%ed%95%9c-%ed%96%89%eb%8f%99">조합 가능한 행동<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>유연하고 재사용 가능한 설계는 작은 객체들의 행동을 조합함으로써 새로운 행동을 이끌어낼 수 있는 설계다.</p>
+<p>훌륭한 객체지향 설계란 객체가 어떻게 하는지를 표현하는 것이 아니라 객체들의 조합을 선언적으로 표현함으로써 객체들이 무엇을 하는지를 표현하는 설계다. 그리고 지금까지 설명한 것처럼 이런 설계를 창조하는데 있어서의 핵심은 의존성을 관리하는 것이다.</p>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/posts">posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/gallery">gallery</a>
+        
+            &#183; 
+            <a href="/portfolio">portfolio</a>
+        
+            &#183; 
+            <a href="/about">who is stones?</a>
+        
+    
+    &#183; 
+    <a href="/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer">
+</footer>
+    
+    
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="A new Hugo site.">
+<title>
+    클린아키텍처 3부 설계원칙 - Call me Sam
+</title>
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c5514d3530979d291f3497facc20da1cec870028dbc2a3630b64bab8721bbe49.css" integrity="sha256-xVFNNTCXnSkfNJf6zCDaHOyHACjbwqNjC2S6uHIbvkk=" crossorigin="anonymous" media="screen">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/tn.png"/>
+
+<meta name="twitter:title" content="클린아키텍처 3부 설계원칙"/>
+<meta name="twitter:description" content="3부 설계 원칙&nbsp;¶ 좋은 소프트웨어는 깔끔한 코드clean code 에서 시작한다.
+좋은 벽돌로 좋은 아키텍처를 정의하는 원칙이 필요함. 그것이 SOLID
+SOLID 원칙의 목적은 중간 수준의 소프트웨어 구조가 아래와 같도록 만드는데 있다.
+변경에 유연하다. 이해하기 쉽다. 많은 소프트웨어 시스템에 사용될 수 있는 컴포넌트의 기반이 된다.  중간 수준이란?&nbsp;¶ 프로그래머가 이들 원칙을 모듈 수준에서 작업할 때 적용할 수 있다는 뜻.
+코드 수준보다 조금 상위에서 적용되며 모듈과 컴포넌트 내부에서 사용되는 소프트웨어 구조를 정의"/>
+
+<meta property="og:title" content="클린아키텍처 3부 설계원칙" />
+<meta property="og:description" content="3부 설계 원칙&nbsp;¶ 좋은 소프트웨어는 깔끔한 코드clean code 에서 시작한다.
+좋은 벽돌로 좋은 아키텍처를 정의하는 원칙이 필요함. 그것이 SOLID
+SOLID 원칙의 목적은 중간 수준의 소프트웨어 구조가 아래와 같도록 만드는데 있다.
+변경에 유연하다. 이해하기 쉽다. 많은 소프트웨어 시스템에 사용될 수 있는 컴포넌트의 기반이 된다.  중간 수준이란?&nbsp;¶ 프로그래머가 이들 원칙을 모듈 수준에서 작업할 때 적용할 수 있다는 뜻.
+코드 수준보다 조금 상위에서 적용되며 모듈과 컴포넌트 내부에서 사용되는 소프트웨어 구조를 정의" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/2019-10-12-3%EB%B6%80_%EC%84%A4%EA%B3%84%EC%9B%90%EC%B9%99/" />
+<meta property="og:image" content="https://example.com/tn.png"/>
+<meta property="article:published_time" content="2019-10-12T21:00:50+09:00" />
+<meta property="article:modified_time" content="2019-10-12T21:00:50+09:00" /><meta property="og:site_name" content="Call me Sam" />
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        클린아키텍처 3부 설계원칙
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>클린아키텍처 3부 설계원칙</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Sat Oct 12, 2019 &#183; 769 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/tags/clean-architecture/">
+                    clean architecture
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        
+<h1 id="3부-설계-원칙" class="anchor-link"><a href="#3%eb%b6%80-%ec%84%a4%ea%b3%84-%ec%9b%90%ec%b9%99">3부 설계 원칙<span class="pilcrow">&nbsp;¶</span></a></h1>
+<p>좋은 소프트웨어는 깔끔한 코드<code>clean code</code> 에서 시작한다.</p>
+<p>좋은 벽돌로 좋은 아키텍처를 정의하는 원칙이 필요함. 그것이  <code>SOLID</code></p>
+<p>SOLID 원칙의 목적은 중간 수준의 소프트웨어 구조가 아래와 같도록 만드는데 있다.</p>
+<pre><code>변경에 유연하다.
+이해하기 쉽다.
+많은 소프트웨어 시스템에 사용될 수 있는 컴포넌트의 기반이 된다.
+</code></pre>
+<h5 id="중간-수준이란" class="anchor-link"><a href="#%ec%a4%91%ea%b0%84-%ec%88%98%ec%a4%80%ec%9d%b4%eb%9e%80">중간 수준이란?<span class="pilcrow">&nbsp;¶</span></a></h5>
+<p>프로그래머가 이들 원칙을 모듈 수준에서 작업할 때 적용할 수 있다는 뜻.</p>
+<p>코드 수준보다 조금 상위에서 적용되며 모듈과 컴포넌트 내부에서 사용되는 소프트웨어 구조를 정의</p>
+
+<h4 id="solid" class="anchor-link"><a href="#solid">SOLID<span class="pilcrow">&nbsp;¶</span></a></h4>
+<ul>
+<li>
+<p>SRP : 단일 책임의 원칙</p>
+<ul>
+<li>소트트웨어 모듈은 변경의 이유가 하나여야한다.</li>
+</ul>
+</li>
+<li>
+<p>OCP : 개방-폐쇄 원칙</p>
+<ul>
+<li>기존 코드를 수정하기보다는 새로운 코드를 추가하는 방식으로 시스템을 설계.</li>
+</ul>
+</li>
+<li>
+<p>LSP : 리스코프 치환 원칙</p>
+<ul>
+<li>상호 대체 가능한 구성요소를 이용해 소프트웨어 시스템을 만들수 있으려면, 이들 구성요소는 서로 치환 가능해야한다.</li>
+</ul>
+</li>
+<li>
+<p>ISP: 인터페이스 분리 원칙</p>
+<ul>
+<li>사용하지 않는 것에 의존하지 않아야한다.</li>
+</ul>
+</li>
+<li>
+<p>DIP: 의존성 역전 원칙</p>
+<ul>
+<li>고수준 정책을 구현하는 코드는 저수준 세부사항을 구현하는 코드에 의존해서는 안된다.</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+
+<h2 id="7장-srp-단일-책임-원칙" class="anchor-link"><a href="#7%ec%9e%a5-srp-%eb%8b%a8%ec%9d%bc-%ec%b1%85%ec%9e%84-%ec%9b%90%ec%b9%99">7장. SRP: 단일 책임 원칙<span class="pilcrow">&nbsp;¶</span></a></h2>
+<p>단 하나의 일만 해야한다? 가 아니라 <code>단일 모듈은 변경의 이유가 하나여야한다.</code></p>
+<p><strong>하나의 모듈은 하나의 , 오직 하나의 액터에 대해서만 책임져야 한다.</strong></p>
+
+<h3 id="책임이란" class="anchor-link"><a href="#%ec%b1%85%ec%9e%84%ec%9d%b4%eb%9e%80">책임이란?<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p><strong>변경을 위한 이유</strong></p>
+
+<h5 id="모듈이란" class="anchor-link"><a href="#%eb%aa%a8%eb%93%88%ec%9d%b4%eb%9e%80">모듈이란?<span class="pilcrow">&nbsp;¶</span></a></h5>
+<ul>
+<li>가장 단순한 정의 : 소스파일</li>
+<li>일부 언어와 개발 환경:  함수와 데이터 구조로 구성된 응집된 집합</li>
+</ul>
+
+<h4 id="결론" class="anchor-link"><a href="#%ea%b2%b0%eb%a1%a0">결론<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p>SRP는 가장 간단한 원칙 중 하나임과 동시에 제대로 적용하기 어려운 원칙중 하나이다.</p>
+<p>책임들을 결합하는 것은 우리가 너무나 자연스럽게 해버리고 마는 일이다. 이런 책임을 찾고 하나씩 분리하는 것이 소프트웨어 설계에서 실제로 하는 일의 대부분이다.  이후에 논할 나머지 원칙들에서도 어떤 식으로든 이 문제로 돌아오게 된다.</p>
+
+<h2 id="8장-ocp-개방-폐쇄-원칙" class="anchor-link"><a href="#8%ec%9e%a5-ocp-%ea%b0%9c%eb%b0%a9-%ed%8f%90%ec%87%84-%ec%9b%90%ec%b9%99">8장. OCP: 개방-폐쇄 원칙<span class="pilcrow">&nbsp;¶</span></a></h2>
+<p>OCP 가 내포하는 일차적인 메커니즘은 추상화와 다형성이다.</p>
+<p><code>소프트웨어 개체(artifact)는 확장에는 열려 있어야 하고, 변경에는 닫혀 있어야한다.</code></p>
+<ol>
+<li>
+<p>확장에 열려있다.</p>
+<p>모듈의 행위가 확장될 수 있음을 의미한다. 애플리케이션의 요구사항이 변경될 때 , 이 변경에 맞게 새로운 행위를 추가해 모듈을 확장 할 수 있다. 즉 모듈이 하는 일을 변경할 수 있다.</p>
+</li>
+<li>
+<p>변경에 대해 닫혀있다.</p>
+<p>모듈의 행위를 확장하는 것이 그 모듈의 소스 코드나 바이너리 코드의 변경을 초래하지 않는다.</p>
+</li>
+</ol>
+<p>OCP 를 따르자면 비용이 많이 든다. 적절한 추상화를 만들기 위해서는 개발 시간과 노력이 들 뿐만 아니라, 이런 추상화는 소프트웨어 설계의 복잡성을 높인다.</p>
+<p>OCP 적용</p>
+<p>소프트웨어를 불필요한 복잡성의 부하에서 구하려면, 한번은 속아야한다.</p>
+
+<h5 id="나를-한-번-놀리면" class="anchor-link"><a href="#%eb%82%98%eb%a5%bc-%ed%95%9c-%eb%b2%88-%eb%86%80%eb%a6%ac%eb%a9%b4">나를 한 번 놀리면&hellip;<span class="pilcrow">&nbsp;¶</span></a></h5>
+<p><code>한 번 속지 두번 속냐?</code></p>
+<p>처음에는 코드가 변경되지 않을 것이라 생각하고 작성한다. 변경이 일어나면, 나중에 그런 종류의 변경으로부터 보호하는 추상화를 구현한다.</p>
+<p>즉 첫번째 총알은 그냥 맞고, 그 총에서 쏘는 다른 총알에 대해서는 확실히 보호한다는 뜻이다.</p>
+
+<h5 id="변경-시뮬레이션-하기" class="anchor-link"><a href="#%eb%b3%80%ea%b2%bd-%ec%8b%9c%eb%ae%ac%eb%a0%88%ec%9d%b4%ec%85%98-%ed%95%98%ea%b8%b0">변경 시뮬레이션 하기<span class="pilcrow">&nbsp;¶</span></a></h5>
+<p>첫번째 총알을 맞기로 결정했다면, 총알이 빨리 그리고 자주 날라올수록 유리하다. 개발 과정에서 너무 멀어지기 전에 어떤 종류의 변경이 일어날 것인지 알고 싶어한다. 어떤 종류의 변경이 일어날 것인지 알기 위해 기다리는 시간이 길어질수록 추상화를 만드는 일은 어려워진다.</p>
+
+<h6 id="변경-시뮬레이션-방법" class="anchor-link"><a href="#%eb%b3%80%ea%b2%bd-%ec%8b%9c%eb%ae%ac%eb%a0%88%ec%9d%b4%ec%85%98-%eb%b0%a9%eb%b2%95">변경 시뮬레이션 방법<span class="pilcrow">&nbsp;¶</span></a></h6>
+<ol>
+<li>테스트를 먼저 작성한다.</li>
+<li>아주 짧은 주기로 개발한다.</li>
+<li>기반 구조보다 기능 요소를 먼저 개발하고, 자주 이 기능 요소를 이해당사자에게 보여준다.</li>
+<li>가장 중요한 기능 요소를 먼저 개발한다.</li>
+<li>소프트웨어를 빨리, 그리고 자주 릴리즈한다.</li>
+</ol>
+
+<h4 id="결론-1" class="anchor-link"><a href="#%ea%b2%b0%eb%a1%a0-1">결론<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p>OCP 목표는 시스템을 확장하기 쉬운 동시에 변경으로 인해 시스템이 너무 많은 영향을 받지 않도록 하는데 있다.</p>
+<p>이러한 목표를 달성하려면 시스템을 컴포넌트 단위로 분리하고, 저수준 컴포넌트에서 발생한 변경으로부터 고수준 컴포넌트를 보호할 수 있는 형태의 의존성 계층구조가 만들어지도록 해야한다.</p>
+<p>어플리케이션의 모든 부분에 마구 추상화를 적용하는 것도 좋은 생각은 아니다. 그보다는 프로그램에서 자주 변경되는 부분에만 추상화를 적용하기 위한 개발자의 헌신이 필요하다. <strong>어설픈 추상화를 피하는 일은 추상화 자체만큼이나 중요하다.</strong></p>
+
+<h2 id="9장-lsp-리스코프-치환-원칙" class="anchor-link"><a href="#9%ec%9e%a5-lsp-%eb%a6%ac%ec%8a%a4%ec%bd%94%ed%94%84-%ec%b9%98%ed%99%98-%ec%9b%90%ec%b9%99">9장. LSP: 리스코프 치환 원칙<span class="pilcrow">&nbsp;¶</span></a></h2>
+<p>상속의 특별한 사용을 규율하은 설계 법칙.</p>
+<p><code>서브타입은 그것의 가반 타입으로 치환 가능해야한다.</code></p>
+<p>1998년 바버라 리스코프가 처음 이원칙을 작성했다.</p>
+
+<h3 id="lsp-위반의-간단한-예" class="anchor-link"><a href="#lsp-%ec%9c%84%eb%b0%98%ec%9d%98-%ea%b0%84%eb%8b%a8%ed%95%9c-%ec%98%88">LSP 위반의 간단한 예<span class="pilcrow">&nbsp;¶</span></a></h3>
+<p>drawShape 함수는 OCP 를 위한한다.</p>
+<p>Square와 circle 이 shape 를 대체할 수 없는 것은 LSP 위반이며, 이 위반은 OCP 위반을 유발한다.</p>
+<p>그러므로 LSP 위반은 잠재적인 OCP 위반이다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DrawShape</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> Shape s<span style="color:#f92672">){</span>
+	<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span> <span style="color:#f92672">==</span> Square<span style="color:#f92672">){</span>
+    blah blah
+  <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>s<span style="color:#f92672">.</span><span style="color:#a6e22e">type</span> <span style="color:#f92672">==</span> Circle<span style="color:#f92672">){</span>
+    blah blah
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+<h4 id="결론-2" class="anchor-link"><a href="#%ea%b2%b0%eb%a1%a0-2">결론<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p>LSP 는 아키텍처 수준까지 확장할 수 있고, 반드시 확장해야한다. 치환 가능성을 조금이라도 위배하면 시스템 아키텍처가 오염되어 상당량의 별도 메커니즘을 추가해야할 수 있기 때문이다.</p>
+<p>LSP 는 OCP를 가능하게 하는 주요 요 중 하나다. 이것은 기반 타입으로 표현된 모듈을 수정 없이도 확장 가능하게 만드는 서브타입의 치환 가능성을 말한다. 기반 타입의 계약사항은 명시적으로 강제되지 않은 경우 , 코드에서 분명하고 뚜렷해야하한다.</p>
+
+<h2 id="10장-isp-인터페이스-분리-원칙" class="anchor-link"><a href="#10%ec%9e%a5-isp-%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4-%eb%b6%84%eb%a6%ac-%ec%9b%90%ec%b9%99">10장. ISP: 인터페이스 분리 원칙<span class="pilcrow">&nbsp;¶</span></a></h2>
+<p>ISP 는 &lsquo;비대한&rsquo; 인터페이스의 단점을 해결한다. 비대한 인터페이스를 가지는 클래스는 응집력이 없는 인터페이스를 가지는 클래스다.</p>
+
+<h4 id="인터페이스-분리-원칙" class="anchor-link"><a href="#%ec%9d%b8%ed%84%b0%ed%8e%98%ec%9d%b4%ec%8a%a4-%eb%b6%84%eb%a6%ac-%ec%9b%90%ec%b9%99">인터페이스 분리 원칙<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p><code>클라이언트가 자신이 사용하지 않는 메소드에 의존하도록 강제도어서는 안된다.</code></p>
+
+<h4 id="결론-3" class="anchor-link"><a href="#%ea%b2%b0%eb%a1%a0-3">결론<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p>불필요한 짐을 실은 무언가에 의존하면 예상치 못한 문제에 빠진다.</p>
+
+<h2 id="11장-dip-의존성-역전-원칙" class="anchor-link"><a href="#11%ec%9e%a5-dip-%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%97%ad%ec%a0%84-%ec%9b%90%ec%b9%99">11장. DIP: 의존성 역전 원칙<span class="pilcrow">&nbsp;¶</span></a></h2>
+
+<h4 id="의존성-역전-원칙" class="anchor-link"><a href="#%ec%9d%98%ec%a1%b4%ec%84%b1-%ec%97%ad%ec%a0%84-%ec%9b%90%ec%b9%99">의존성 역전 원칙<span class="pilcrow">&nbsp;¶</span></a></h4>
+<ol>
+<li>상위 수준의 모듈은 하위 수준의 모듈에 의존해서는 안된다. 둘 모두 추상화에 의존해야한다.</li>
+<li>추상화는 구체적인 사항에 의존해서는 안된다. 구체적인 사항은 추상화에 의존해야한다.</li>
+</ol>
+<p>Button 객체가 Lamp 객체를 제어하는 시스템을 설계해보자.</p>
+<p><!-- raw HTML omitted --></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Button</span><span style="color:#f92672">{</span>
+	<span style="color:#66d9ef">private</span> Lamp lamp<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">poll</span><span style="color:#f92672">(){</span>
+    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#75715e">/* 어떤 조건 */</span><span style="color:#f92672">){</span>
+      lamp<span style="color:#f92672">.</span><span style="color:#a6e22e">turnOn</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Lamp 객체의 의존성을 역전시킴.</p>
+<p><!-- raw HTML omitted --></p>
+
+<h4 id="안정된-추상화" class="anchor-link"><a href="#%ec%95%88%ec%a0%95%eb%90%9c-%ec%b6%94%ec%83%81%ed%99%94">안정된 추상화<span class="pilcrow">&nbsp;¶</span></a></h4>
+
+<h5 id="안정된-소프트웨어-아키텍처를-구성하기-위한-코딩-실천법" class="anchor-link"><a href="#%ec%95%88%ec%a0%95%eb%90%9c-%ec%86%8c%ed%94%84%ed%8a%b8%ec%9b%a8%ec%96%b4-%ec%95%84%ed%82%a4%ed%85%8d%ec%b2%98%eb%a5%bc-%ea%b5%ac%ec%84%b1%ed%95%98%ea%b8%b0-%ec%9c%84%ed%95%9c-%ec%bd%94%eb%94%a9-%ec%8b%a4%ec%b2%9c%eb%b2%95">안정된 소프트웨어 아키텍처를 구성하기 위한 코딩 실천법<span class="pilcrow">&nbsp;¶</span></a></h5>
+<ul>
+<li>변동성이 큰 구체 클래스를 참조하지 말라.</li>
+<li>변동성이 큰 구체 클래스로부터 파생하지 말라.</li>
+<li>구체 함수를 오버라이드 하지 말라.</li>
+<li>구체적이며 변동성이 크다면 절대로 그 이름을 언급하지 말라.</li>
+</ul>
+
+<h4 id="결론-4" class="anchor-link"><a href="#%ea%b2%b0%eb%a1%a0-4">결론<span class="pilcrow">&nbsp;¶</span></a></h4>
+<p>의존성은 아키텍처 경게로 추상적인 엔티티가 있는 쪽으로만 향한다.</p>
+
+    </article>
+</div>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/posts">posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/gallery">gallery</a>
+        
+            &#183; 
+            <a href="/portfolio">portfolio</a>
+        
+            &#183; 
+            <a href="/about">who is stones?</a>
+        
+    
+    &#183; 
+    <a href="/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer">
+</footer>
+    
+    
+</body>
+
+</html>
