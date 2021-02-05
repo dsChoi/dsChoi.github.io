@@ -23,7 +23,9 @@
       <pubDate>Fri, 29 Jan 2021 15:42:49 +0900</pubDate>
       
       <guid>https://example.com/about/</guid>
-      <description></description>
+      <description>최두석(Dusoek Choi)&amp;nbsp;¶ email : setin82@gmail.com phone: 010-2585-5246
+Skills&amp;nbsp;¶ java, spring, oracle, mysql, javascript, linux
+Exprience&amp;nbsp;¶ 무신사(2020.09~ 현재)&amp;nbsp;¶ 데이터 솔루션팀 Backend API 개발&amp;nbsp;¶ NHN 티켓링크 (2015.10 ~ 2020.08)&amp;nbsp;¶ 데이터 다운로드 모듈 작성&amp;nbsp;¶  도메인에 헤더, 포맷, 데이터 타입을 사용자가 원하는 형태로 유연하게 지정하여 엑셀 포맷으로 변환 및 다운로드 가능  티켓링크 서버 성능 테스트 및 개선&amp;nbsp;¶  리팩토링 가능하도록 테스트 케이스 작성 테스트 케이스를 기반으로 기존 시스템의 안정성을 유지한 상태로 리팩토링 및 성능 개선  배치 작업 자동화&amp;nbsp;¶  티켓링크 스포츠/공연 일괄 취소 서비스 자동화 모듈 작성 공연 취소시 1만건 이상의 예매 및 결제 취소 자동화 모듈 작성  티켓링크 운영업무&amp;nbsp;¶  예매, 결제 관련 기능 유지보수  외부 시스템 연동&amp;nbsp;¶  네이버예약 서비스 연동 GS-POINT 신한 SOL 회원 연동  Education&amp;nbsp;¶ 용인대학교 컴퓨터 정보처리학 졸업(2008.</description>
     </item>
     
     <item>
@@ -37,15 +39,6 @@
 python --version Python 2.7.10 3 버전
 python3 --version Python 3.8.0  기억해야 할 내용
  파이썬 3는 파이썬 최신 버전이며 현재 가장 잘 지원되고 있다. 따라서 프로젝트에서 파이썬 3을 써야 한다. 여러분의 시스템에 있는 파이썬 실행 파일이 여러분이 원하는 버전인지 확인하라. 파이썬 2는 사용하지 말라. 2020년 1월 1일 부터 파이썬 2는 더이상 지원하지 않는다.</description>
-    </item>
-    
-    <item>
-      <title>[deview] 네이버 모델서빙</title>
-      <link>https://example.com/posts/deview_naver_model_serve/</link>
-      <pubDate>Mon, 30 Nov 2020 10:57:53 +0000</pubDate>
-      
-      <guid>https://example.com/posts/deview_naver_model_serve/</guid>
-      <description>목차&amp;nbsp;¶ 1. 모델서빙 공통화 동기&amp;nbsp;¶  모델 수의 증가 지속적인 모델 학습과 배포  지속적으로 학습을 하면 배포가 필요한데 모델 배포한후 모델에 대한 a/b 테스트 로그로 인한 학습이 필요 서빙에서 가능한 부분은 작업   커스텀한 사내 시스템 연동  사내플랫폼 시스템이 다양하기에 불필요한 코드가 중복되지 않도록 정리   협업 가능한 환경 구축 (모델러 / 엔지니어)  모델이 늘어날수록 엔지니어가 작업할 내용이 많아짐      gateway - 인증, 로깅, 웨이트</description>
     </item>
     
     <item>

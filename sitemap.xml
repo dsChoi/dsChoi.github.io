@@ -38,37 +38,22 @@
   </url>
   
   <url>
-    <loc>https://example.com/posts/deview_naver_model_serve/</loc>
-    <lastmod>2020-11-30T10:57:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/blog/</loc>
-    <lastmod>2020-11-30T10:57:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/categories/</loc>
-    <lastmod>2020-11-30T10:57:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/deview/</loc>
-    <lastmod>2020-11-30T10:57:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/ml/</loc>
-    <lastmod>2020-11-30T10:57:53+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/tags/aws/</loc>
     <lastmod>2020-11-23T10:57:53+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/posts/awssecretsmanager/</loc>
+    <lastmod>2020-11-23T10:57:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/blog/</loc>
+    <lastmod>2020-11-23T10:57:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
     <lastmod>2020-11-23T10:57:53+00:00</lastmod>
   </url>
   
