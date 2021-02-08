@@ -8,22 +8,27 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/blog/</loc>
-    <lastmod>2021-02-02T14:34:59+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/</loc>
     <lastmod>2021-02-02T14:34:59+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/tags/story/</loc>
+    <loc>https://example.com/tags/python/</loc>
     <lastmod>2021-02-02T14:34:59+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/</loc>
+    <lastmod>2021-02-02T14:34:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+    <lastmod>2021-02-02T14:34:59+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
     <lastmod>2021-02-02T14:34:59+09:00</lastmod>
   </url>
   
