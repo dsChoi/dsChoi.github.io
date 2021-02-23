@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="stones blog.">
+<title>
+    mongodb query example - my name is Stones
+</title>
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c5514d3530979d291f3497facc20da1cec870028dbc2a3630b64bab8721bbe49.css" integrity="sha256-xVFNNTCXnSkfNJf6zCDaHOyHACjbwqNjC2S6uHIbvkk=" crossorigin="anonymous" media="screen">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/tn.png"/>
+
+<meta name="twitter:title" content="mongodb query example"/>
+<meta name="twitter:description" content="MongoDB query sample&nbsp;¶ 저장&nbsp;¶ &gt; db.users.insert({username: &#34;smith&#34;}) WriteResult({&#34;nInserted&#34;:1})  조회&nbsp;¶ db.users.count() &gt; 2 db.users.find({username:&#34;jones&#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&#34;60346898322b4f0e916382b6&#34;)}, { username : &#34;smith&#34;} ]}) # or  db.users.find({ $or: [ { username : &#34;smith&#34;}, { username : &#34;jones&#34;} ]})  수정&nbsp;¶ ## update db.users.updateOne({username :&#34;jones&#34;}, {$set : {country: &#34;Canada&#34;}}); ## 실수하는 부문 db.users.updateOne({username :&#34;jones&#34;},{country: &#34;Canada&#34;}) db.users.find({ username : &#34;jones&#34;}) &gt;&gt;  삭제&nbsp;¶ ### delete db.users.deleteOne({username : &#34;smith&#34;}) ## collection drop db."/>
+
+<meta property="og:title" content="mongodb query example" />
+<meta property="og:description" content="MongoDB query sample&nbsp;¶ 저장&nbsp;¶ &gt; db.users.insert({username: &#34;smith&#34;}) WriteResult({&#34;nInserted&#34;:1})  조회&nbsp;¶ db.users.count() &gt; 2 db.users.find({username:&#34;jones&#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&#34;60346898322b4f0e916382b6&#34;)}, { username : &#34;smith&#34;} ]}) # or  db.users.find({ $or: [ { username : &#34;smith&#34;}, { username : &#34;jones&#34;} ]})  수정&nbsp;¶ ## update db.users.updateOne({username :&#34;jones&#34;}, {$set : {country: &#34;Canada&#34;}}); ## 실수하는 부문 db.users.updateOne({username :&#34;jones&#34;},{country: &#34;Canada&#34;}) db.users.find({ username : &#34;jones&#34;}) &gt;&gt;  삭제&nbsp;¶ ### delete db.users.deleteOne({username : &#34;smith&#34;}) ## collection drop db." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/mongodb_02/" />
+<meta property="og:image" content="https://example.com/tn.png"/>
+<meta property="article:published_time" content="2021-02-23T15:33:33+09:00" />
+<meta property="article:modified_time" content="2021-02-23T15:33:33+09:00" /><meta property="og:site_name" content="my name is stones" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184252439-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        mongodb query example
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>mongodb query example</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Tue Feb 23, 2021 &#183; 347 words
+        <div class="tag-container">
+            
+            
+            
+            
+            <span class="tag">
+                <a href="/tags/mongdodb/">
+                    mongdoDB
+                </a>
+            </span>
+            
+            
+            
+            <span class="tag">
+                <a href="/tags/mongo/">
+                    mongo
+                </a>
+            </span>
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        
+<h1 id="mongodb-query-sample" class="anchor-link"><a href="#mongodb-query-sample">MongoDB query sample<span class="pilcrow">&nbsp;¶</span></a></h1>
+
+<h2 id="저장" class="anchor-link"><a href="#%ec%a0%80%ec%9e%a5">저장<span class="pilcrow">&nbsp;¶</span></a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">db.users.insert(</span>{<span style="color:#960050;background-color:#1e0010">username:</span> <span style="color:#f92672">&#34;smith&#34;</span>}<span style="color:#960050;background-color:#1e0010">)</span>
+<span style="color:#960050;background-color:#1e0010">WriteResult(</span>{<span style="color:#f92672">&#34;nInserted&#34;</span>:<span style="color:#ae81ff">1</span>}<span style="color:#960050;background-color:#1e0010">)</span>
+</code></pre></div>
+<h2 id="조회" class="anchor-link"><a href="#%ec%a1%b0%ed%9a%8c">조회<span class="pilcrow">&nbsp;¶</span></a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">db.users.count<span style="color:#f92672">()</span>
+&gt; <span style="color:#ae81ff">2</span>
+
+db.users.find<span style="color:#f92672">({</span>username:<span style="color:#e6db74">&#34;jones&#34;</span><span style="color:#f92672">})</span>
+
+<span style="color:#75715e"># and</span>
+db.users.find<span style="color:#f92672">({</span> $and: <span style="color:#f92672">[</span>
+        <span style="color:#f92672">{</span> _id : ObjectId<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;60346898322b4f0e916382b6&#34;</span><span style="color:#f92672">)}</span>,
+        <span style="color:#f92672">{</span> username : <span style="color:#e6db74">&#34;smith&#34;</span><span style="color:#f92672">}</span>
+    <span style="color:#f92672">]})</span>
+    
+    
+<span style="color:#75715e"># or    </span>
+db.users.find<span style="color:#f92672">({</span> $or: <span style="color:#f92672">[</span>
+        <span style="color:#f92672">{</span> username : <span style="color:#e6db74">&#34;smith&#34;</span><span style="color:#f92672">}</span>,
+        <span style="color:#f92672">{</span> username : <span style="color:#e6db74">&#34;jones&#34;</span><span style="color:#f92672">}</span>
+    <span style="color:#f92672">]})</span>    
+
+
+</code></pre></div>
+<h4 id="수정" class="anchor-link"><a href="#%ec%88%98%ec%a0%95">수정<span class="pilcrow">&nbsp;¶</span></a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+<span style="color:#75715e">## update</span>
+
+db.users.updateOne<span style="color:#f92672">({</span>username :<span style="color:#e6db74">&#34;jones&#34;</span><span style="color:#f92672">}</span>,
+    <span style="color:#f92672">{</span>$set : <span style="color:#f92672">{</span>country: <span style="color:#e6db74">&#34;Canada&#34;</span><span style="color:#f92672">}})</span>;
+    
+<span style="color:#75715e">## 실수하는 부문</span>
+
+db.users.updateOne<span style="color:#f92672">({</span>username :<span style="color:#e6db74">&#34;jones&#34;</span><span style="color:#f92672">}</span>,<span style="color:#f92672">{</span>country: <span style="color:#e6db74">&#34;Canada&#34;</span><span style="color:#f92672">})</span>
+db.users.find<span style="color:#f92672">({</span> username : <span style="color:#e6db74">&#34;jones&#34;</span><span style="color:#f92672">})</span>    
+&gt;&gt;
+
+
+
+
+</code></pre></div>
+<h4 id="삭제" class="anchor-link"><a href="#%ec%82%ad%ec%a0%9c">삭제<span class="pilcrow">&nbsp;¶</span></a></h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">### delete</span>
+
+db.users.deleteOne<span style="color:#f92672">({</span>username : <span style="color:#e6db74">&#34;smith&#34;</span><span style="color:#f92672">})</span>
+
+<span style="color:#75715e">## collection drop</span>
+db.users.drop<span style="color:#f92672">()</span>
+</code></pre></div>
+<h3 id="인덱스-생성과-질의" class="anchor-link"><a href="#%ec%9d%b8%eb%8d%b1%ec%8a%a4-%ec%83%9d%ec%84%b1%ea%b3%bc-%ec%a7%88%ec%9d%98">인덱스 생성과 질의<span class="pilcrow">&nbsp;¶</span></a></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span> i <span style="color:#f92672">=</span> 0; i &lt; 20000; i++<span style="color:#f92672">){</span>
+    db.numbers.insertOne<span style="color:#f92672">({</span>num: i<span style="color:#f92672">})</span>;
+<span style="color:#f92672">}</span>
+
+
+<span style="color:#75715e">## num == 500 찾기</span>
+db.numbers.find<span style="color:#f92672">({</span>num:500<span style="color:#f92672">})</span>;
+
+<span style="color:#75715e">## 범위 쿼리</span>
+db.numbers.find<span style="color:#f92672">({</span>num:<span style="color:#f92672">{</span>$gt: 19995<span style="color:#f92672">}})</span>
+
+&gt;&gt; 
+    <span style="color:#f92672">[</span>
+    <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;_id&#34;</span>: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$oid<span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74">&#34;603499ceadceb46ff7e6f178&#34;</span><span style="color:#f92672">}</span>,
+        <span style="color:#e6db74">&#34;num&#34;</span>: <span style="color:#ae81ff">19996</span>
+    <span style="color:#f92672">}</span>,
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;_id&#34;</span>: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$oid<span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74">&#34;603499ceadceb46ff7e6f179&#34;</span><span style="color:#f92672">}</span>,
+            <span style="color:#e6db74">&#34;num&#34;</span>: <span style="color:#ae81ff">19997</span>
+        <span style="color:#f92672">}</span>,
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;_id&#34;</span>: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$oid<span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74">&#34;603499ceadceb46ff7e6f17a&#34;</span><span style="color:#f92672">}</span>,
+            <span style="color:#e6db74">&#34;num&#34;</span>: <span style="color:#ae81ff">19998</span>
+        <span style="color:#f92672">}</span>,
+        <span style="color:#f92672">{</span>
+            <span style="color:#e6db74">&#34;_id&#34;</span>: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$oid<span style="color:#e6db74">&#34;</span>: <span style="color:#e6db74">&#34;603499ceadceb46ff7e6f17b&#34;</span><span style="color:#f92672">}</span>,
+            <span style="color:#e6db74">&#34;num&#34;</span>: <span style="color:#ae81ff">19999</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">]</span>
+ 
+ 
+ <span style="color:#75715e">## 20 초과 25 미만</span>
+db.numbers.find<span style="color:#f92672">({</span>num:<span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;</span>$gt<span style="color:#e6db74">&#34;</span>: 20, <span style="color:#e6db74">&#34;</span>$lt<span style="color:#e6db74">&#34;</span> : 25<span style="color:#f92672">}})</span>;
+ 
+<span style="color:#75715e">## 20 이상 25 이하</span>
+db.numbers.find<span style="color:#f92672">({</span>num:<span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;</span>$gte<span style="color:#e6db74">&#34;</span>: 20, <span style="color:#e6db74">&#34;</span>$lte<span style="color:#e6db74">&#34;</span> : 25<span style="color:#f92672">}})</span>;
+
+<span style="color:#75715e">## index 생성</span>
+db.numbers.createIndex<span style="color:#f92672">({</span>num:1<span style="color:#f92672">})</span>;
+
+
+<span style="color:#75715e">## index 타는 쿼리 추가</span>
+db.numbers.find<span style="color:#f92672">({</span>num: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$gt<span style="color:#e6db74">&#34;</span>: 199990<span style="color:#f92672">}})</span>.explain<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;executionStats&#34;</span><span style="color:#f92672">)</span>;
+
+  <span style="color:#f92672">[</span>
+    <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;executionStats&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;executionSuccess&#34;</span>: true,
+        <span style="color:#e6db74">&#34;executionTimeMillis&#34;</span>: <span style="color:#e6db74">&#34;0.190&#34;</span>,
+        <span style="color:#e6db74">&#34;planningTimeMillis&#34;</span>: <span style="color:#e6db74">&#34;0.169&#34;</span>,
+        <span style="color:#e6db74">&#34;executionStages&#34;</span>: <span style="color:#f92672">{</span>
+          <span style="color:#e6db74">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;IXSCAN&#34;</span>,
+          <span style="color:#e6db74">&#34;nReturned&#34;</span>: <span style="color:#e6db74">&#34;0&#34;</span>,
+          <span style="color:#e6db74">&#34;executionTimeMillisEstimate&#34;</span>: <span style="color:#e6db74">&#34;0.007&#34;</span>,
+          <span style="color:#e6db74">&#34;indexName&#34;</span>: <span style="color:#e6db74">&#34;num_1&#34;</span>,
+          <span style="color:#e6db74">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;forward&#34;</span>
+        <span style="color:#f92672">}</span>
+      <span style="color:#f92672">}</span>,
+      <span style="color:#e6db74">&#34;ok&#34;</span>: 1,
+      <span style="color:#e6db74">&#34;queryPlanner&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;plannerVersion&#34;</span>: 1,
+        <span style="color:#e6db74">&#34;namespace&#34;</span>: <span style="color:#e6db74">&#34;user_activity.numbers&#34;</span>,
+        <span style="color:#e6db74">&#34;winningPlan&#34;</span>: <span style="color:#f92672">{</span>
+          <span style="color:#e6db74">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;IXSCAN&#34;</span>,
+          <span style="color:#e6db74">&#34;indexName&#34;</span>: <span style="color:#e6db74">&#34;num_1&#34;</span>,
+          <span style="color:#e6db74">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;forward&#34;</span>
+        <span style="color:#f92672">}</span>
+      <span style="color:#f92672">}</span>,
+      <span style="color:#e6db74">&#34;serverInfo&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;historydb-devel&#34;</span>,
+        <span style="color:#e6db74">&#34;port&#34;</span>: 27017,
+        <span style="color:#e6db74">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;3.6.0&#34;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">]</span>
+  
+<span style="color:#75715e">## 범위 조회이기는 하나 index 타지는 않음. 0~ 199999 의 데이터중 아래에서 50개 자겨오는 경우 index 타지 않음  </span>
+db.numbers.find<span style="color:#f92672">({</span>num: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$gt<span style="color:#e6db74">&#34;</span>: 50<span style="color:#f92672">}})</span>.explain<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;executionStats&#34;</span><span style="color:#f92672">)</span>;
+
+  <span style="color:#f92672">[</span>
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;executionStats&#34;</span>: <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;executionSuccess&#34;</span>: true,
+      <span style="color:#e6db74">&#34;executionTimeMillis&#34;</span>: <span style="color:#e6db74">&#34;18.445&#34;</span>,
+      <span style="color:#e6db74">&#34;planningTimeMillis&#34;</span>: <span style="color:#e6db74">&#34;0.179&#34;</span>,
+      <span style="color:#e6db74">&#34;executionStages&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;COLLSCAN&#34;</span>,
+        <span style="color:#e6db74">&#34;nReturned&#34;</span>: <span style="color:#e6db74">&#34;19949&#34;</span>,
+        <span style="color:#e6db74">&#34;executionTimeMillisEstimate&#34;</span>: <span style="color:#e6db74">&#34;17.524&#34;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>,
+    <span style="color:#e6db74">&#34;ok&#34;</span>: 1,
+    <span style="color:#e6db74">&#34;queryPlanner&#34;</span>: <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;plannerVersion&#34;</span>: 1,
+      <span style="color:#e6db74">&#34;namespace&#34;</span>: <span style="color:#e6db74">&#34;user_activity.numbers&#34;</span>,
+      <span style="color:#e6db74">&#34;winningPlan&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;COLLSCAN&#34;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>,
+    <span style="color:#e6db74">&#34;serverInfo&#34;</span>: <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;historydb-devel&#34;</span>,
+      <span style="color:#e6db74">&#34;port&#34;</span>: 27017,
+      <span style="color:#e6db74">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;3.6.0&#34;</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">]</span>
+  
+  
+ <span style="color:#75715e">## 범위 조회시 index 타는 것을 볼수 있다. </span>
+ db.numbers.find<span style="color:#f92672">({</span>num: <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;</span>$gte<span style="color:#e6db74">&#34;</span>: 20, <span style="color:#e6db74">&#34;</span>$lte<span style="color:#e6db74">&#34;</span>: 25<span style="color:#f92672">}})</span>.explain<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;executionStats&#34;</span><span style="color:#f92672">)</span>;
+ 
+  
+  <span style="color:#f92672">[</span>
+  <span style="color:#f92672">{</span>
+    <span style="color:#e6db74">&#34;executionStats&#34;</span>: <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;executionSuccess&#34;</span>: true,
+      <span style="color:#e6db74">&#34;executionTimeMillis&#34;</span>: <span style="color:#e6db74">&#34;0.372&#34;</span>,
+      <span style="color:#e6db74">&#34;planningTimeMillis&#34;</span>: <span style="color:#e6db74">&#34;0.341&#34;</span>,
+      <span style="color:#e6db74">&#34;executionStages&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;IXSCAN&#34;</span>,
+        <span style="color:#e6db74">&#34;nReturned&#34;</span>: <span style="color:#e6db74">&#34;6&#34;</span>,
+        <span style="color:#e6db74">&#34;executionTimeMillisEstimate&#34;</span>: <span style="color:#e6db74">&#34;0.015&#34;</span>,
+        <span style="color:#e6db74">&#34;indexName&#34;</span>: <span style="color:#e6db74">&#34;num_1&#34;</span>,
+        <span style="color:#e6db74">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;forward&#34;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>,
+    <span style="color:#e6db74">&#34;ok&#34;</span>: 1,
+    <span style="color:#e6db74">&#34;queryPlanner&#34;</span>: <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;plannerVersion&#34;</span>: 1,
+      <span style="color:#e6db74">&#34;namespace&#34;</span>: <span style="color:#e6db74">&#34;user_activity.numbers&#34;</span>,
+      <span style="color:#e6db74">&#34;winningPlan&#34;</span>: <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;stage&#34;</span>: <span style="color:#e6db74">&#34;IXSCAN&#34;</span>,
+        <span style="color:#e6db74">&#34;indexName&#34;</span>: <span style="color:#e6db74">&#34;num_1&#34;</span>,
+        <span style="color:#e6db74">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;forward&#34;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>,
+    <span style="color:#e6db74">&#34;serverInfo&#34;</span>: <span style="color:#f92672">{</span>
+      <span style="color:#e6db74">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;historydb-devel&#34;</span>,
+      <span style="color:#e6db74">&#34;port&#34;</span>: 27017,
+      <span style="color:#e6db74">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;3.6.0&#34;</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">]</span>
+  
+ 
+</code></pre></div>
+    </article>
+</div>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dschoi-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/posts">posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/gallery">gallery</a>
+        
+            &#183; 
+            <a href="/portfolio">portfolio</a>
+        
+            &#183; 
+            <a href="/about">who is stones?</a>
+        
+    
+    &#183; 
+    <a href="/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer">
+</footer>
+    
+    
+</body>
+
+</html>

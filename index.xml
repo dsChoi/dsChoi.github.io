@@ -6,7 +6,38 @@
     <description>Recent content on my name is Stones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Feb 2021 14:34:59 +0900</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 15:33:33 +0900</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mongodb query example</title>
+      <link>https://example.com/posts/mongodb_02/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/posts/mongodb_02/</guid>
+      <description>MongoDB query sample&amp;nbsp;¶ 저장&amp;nbsp;¶ &amp;gt; db.users.insert({username: &amp;#34;smith&amp;#34;}) WriteResult({&amp;#34;nInserted&amp;#34;:1})  조회&amp;nbsp;¶ db.users.count() &amp;gt; 2 db.users.find({username:&amp;#34;jones&amp;#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&amp;#34;60346898322b4f0e916382b6&amp;#34;)}, { username : &amp;#34;smith&amp;#34;} ]}) # or  db.users.find({ $or: [ { username : &amp;#34;smith&amp;#34;}, { username : &amp;#34;jones&amp;#34;} ]})  수정&amp;nbsp;¶ ## update db.users.updateOne({username :&amp;#34;jones&amp;#34;}, {$set : {country: &amp;#34;Canada&amp;#34;}}); ## 실수하는 부문 db.users.updateOne({username :&amp;#34;jones&amp;#34;},{country: &amp;#34;Canada&amp;#34;}) db.users.find({ username : &amp;#34;jones&amp;#34;}) &amp;gt;&amp;gt;  삭제&amp;nbsp;¶ ### delete db.users.deleteOne({username : &amp;#34;smith&amp;#34;}) ## collection drop db.</description>
+    </item>
+    
+    <item>
+      <title>2 리스트와 딕셔너리 (better way 11 ~ 14)</title>
+      <link>https://example.com/posts/effectivepython_03/</link>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_03/</guid>
+      <description>2 리스트와 딕셔너리 (better way 11 ~ 14)&amp;nbsp;¶ Better way 11. 시퀀스를 슬라이싱하는 방법을 익혀라.&amp;nbsp;¶   시퀀스를 여러조각(슬라이스(slice))으로 나누는 슬라이싱 구문이 있다.
+a = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;g&amp;#39;, &amp;#39;h&amp;#39;] print(&amp;#39;가운데 2개:&amp;#39; , a[3:5]) print(&amp;#39;마지막을 제외한 나머지:&amp;#39;, a[1:7]) &amp;gt;&amp;gt; 가운데 2개 : [&amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;] &amp;gt;&amp;gt; 마지막을 제외한 나머지: [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;g&amp;#39;]   리스트의 맨 앞부터 슬라이싱할 때는 시각적 잡음을 없애기 위해 0을 생략하라
+assert a[:5] == a[0:5]   리스트의 끝까지 슬라이싱할 때는 쓸데없이 끝 인덱스를 적지말라.</description>
+    </item>
+    
+    <item>
+      <title>몽고디비란?</title>
+      <link>https://example.com/posts/mongodb_01/</link>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/mongodb_01/</guid>
+      <description>몽고디비란?&amp;nbsp;¶ MongoDB의 핵심 기능
+ 도큐먼트 데이터 모델 애드훅 쿼리 인덱스 복제 속도와 내구성 확장  데이터 베이스 패밀리
+    예 데이터 모델 확장 모델 용례     간단한 키-값 저장시스템 맴캐시디 키-값, 여기서 값은 이진 blob 여러가지가 있다. 맴캐시디는 이용 가능한 램으로 노드에 걸쳐 확장함으로써 하나의 단일한 데이터 스토어로 변한다. 캐싱, 웹 ops   정교한 키-값 저장시스템 카산드라, 볼드모트 프로젝트(Project Voldemort), 리악(Riak) 여러가지가 있다.</description>
+    </item>
+    
     <item>
       <title>1. 파이썬 답게 생각하기 (better way 6 ~ 10)</title>
       <link>https://example.com/posts/effectivepython_02/</link>

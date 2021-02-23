@@ -6,11 +6,38 @@
     <description>Recent content in Tags on my name is Stones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Feb 2021 14:34:59 +0900</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 15:33:33 +0900</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mongdoDB</title>
+      <link>https://example.com/tags/mongdodb/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/tags/mongdodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongo</title>
+      <link>https://example.com/tags/mongo/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/tags/mongo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>몽고디비</title>
+      <link>https://example.com/tags/%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/tags/%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>python</title>
       <link>https://example.com/tags/python/</link>
-      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
       
       <guid>https://example.com/tags/python/</guid>
       <description></description>
@@ -19,7 +46,7 @@
     <item>
       <title>이펙티브파이썬</title>
       <link>https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/</link>
-      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
       
       <guid>https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/</guid>
       <description></description>
@@ -28,7 +55,7 @@
     <item>
       <title>파이썬</title>
       <link>https://example.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</link>
-      <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
       
       <guid>https://example.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</guid>
       <description></description>

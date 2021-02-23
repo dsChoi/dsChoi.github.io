@@ -6,7 +6,18 @@
     <description>Recent content in 이펙티브파이썬 on my name is Stones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Feb 2021 14:34:59 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 Feb 2021 17:21:08 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2 리스트와 딕셔너리 (better way 11 ~ 14)</title>
+      <link>https://example.com/posts/effectivepython_03/</link>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_03/</guid>
+      <description>2 리스트와 딕셔너리 (better way 11 ~ 14)&amp;nbsp;¶ Better way 11. 시퀀스를 슬라이싱하는 방법을 익혀라.&amp;nbsp;¶   시퀀스를 여러조각(슬라이스(slice))으로 나누는 슬라이싱 구문이 있다.
+a = [&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;g&amp;#39;, &amp;#39;h&amp;#39;] print(&amp;#39;가운데 2개:&amp;#39; , a[3:5]) print(&amp;#39;마지막을 제외한 나머지:&amp;#39;, a[1:7]) &amp;gt;&amp;gt; 가운데 2개 : [&amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;] &amp;gt;&amp;gt; 마지막을 제외한 나머지: [&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;, &amp;#39;d&amp;#39;, &amp;#39;e&amp;#39;, &amp;#39;f&amp;#39;, &amp;#39;g&amp;#39;]   리스트의 맨 앞부터 슬라이싱할 때는 시각적 잡음을 없애기 위해 0을 생략하라
+assert a[:5] == a[0:5]   리스트의 끝까지 슬라이싱할 때는 쓸데없이 끝 인덱스를 적지말라.</description>
+    </item>
+    
     <item>
       <title>1. 파이썬 답게 생각하기 (better way 6 ~ 10)</title>
       <link>https://example.com/posts/effectivepython_02/</link>

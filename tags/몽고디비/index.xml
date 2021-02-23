@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>몽고디비 on my name is Stones</title>
+    <link>https://example.com/tags/%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84/</link>
+    <description>Recent content in 몽고디비 on my name is Stones</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 23 Feb 2021 15:33:33 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mongodb query example</title>
+      <link>https://example.com/posts/mongodb_02/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/posts/mongodb_02/</guid>
+      <description>MongoDB query sample&amp;nbsp;¶ 저장&amp;nbsp;¶ &amp;gt; db.users.insert({username: &amp;#34;smith&amp;#34;}) WriteResult({&amp;#34;nInserted&amp;#34;:1})  조회&amp;nbsp;¶ db.users.count() &amp;gt; 2 db.users.find({username:&amp;#34;jones&amp;#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&amp;#34;60346898322b4f0e916382b6&amp;#34;)}, { username : &amp;#34;smith&amp;#34;} ]}) # or  db.users.find({ $or: [ { username : &amp;#34;smith&amp;#34;}, { username : &amp;#34;jones&amp;#34;} ]})  수정&amp;nbsp;¶ ## update db.users.updateOne({username :&amp;#34;jones&amp;#34;}, {$set : {country: &amp;#34;Canada&amp;#34;}}); ## 실수하는 부문 db.users.updateOne({username :&amp;#34;jones&amp;#34;},{country: &amp;#34;Canada&amp;#34;}) db.users.find({ username : &amp;#34;jones&amp;#34;}) &amp;gt;&amp;gt;  삭제&amp;nbsp;¶ ### delete db.users.deleteOne({username : &amp;#34;smith&amp;#34;}) ## collection drop db.</description>
+    </item>
+    
+    <item>
+      <title>몽고디비란?</title>
+      <link>https://example.com/posts/mongodb_01/</link>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/mongodb_01/</guid>
+      <description>몽고디비란?&amp;nbsp;¶ MongoDB의 핵심 기능
+ 도큐먼트 데이터 모델 애드훅 쿼리 인덱스 복제 속도와 내구성 확장  데이터 베이스 패밀리
+    예 데이터 모델 확장 모델 용례     간단한 키-값 저장시스템 맴캐시디 키-값, 여기서 값은 이진 blob 여러가지가 있다. 맴캐시디는 이용 가능한 램으로 노드에 걸쳐 확장함으로써 하나의 단일한 데이터 스토어로 변한다. 캐싱, 웹 ops   정교한 키-값 저장시스템 카산드라, 볼드모트 프로젝트(Project Voldemort), 리악(Riak) 여러가지가 있다.</description>
+    </item>
+    
+  </channel>
+</rss>
