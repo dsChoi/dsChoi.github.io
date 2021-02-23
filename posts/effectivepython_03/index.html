@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="stones blog.">
+<title>
+    2 리스트와 딕셔너리 (better way 11 ~ 14) - my name is Stones
+</title>
+
+
+<link rel="shortcut icon" href="/sam.ico">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.c5514d3530979d291f3497facc20da1cec870028dbc2a3630b64bab8721bbe49.css" integrity="sha256-xVFNNTCXnSkfNJf6zCDaHOyHACjbwqNjC2S6uHIbvkk=" crossorigin="anonymous" media="screen">
+
+
+
+
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://example.com/tn.png"/>
+
+<meta name="twitter:title" content="2 리스트와 딕셔너리 (better way 11 ~ 14)"/>
+<meta name="twitter:description" content="2 리스트와 딕셔너리 (better way 11 ~ 14)&nbsp;¶ Better way 11. 시퀀스를 슬라이싱하는 방법을 익혀라.&nbsp;¶   시퀀스를 여러조각(슬라이스(slice))으로 나누는 슬라이싱 구문이 있다.
+a = [&#39;a&#39;, &#39;b&#39;,&#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;] print(&#39;가운데 2개:&#39; , a[3:5]) print(&#39;마지막을 제외한 나머지:&#39;, a[1:7]) &gt;&gt; 가운데 2개 : [&#39;d&#39;, &#39;e&#39;] &gt;&gt; 마지막을 제외한 나머지: [&#39;b&#39;,&#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]   리스트의 맨 앞부터 슬라이싱할 때는 시각적 잡음을 없애기 위해 0을 생략하라
+assert a[:5] == a[0:5]   리스트의 끝까지 슬라이싱할 때는 쓸데없이 끝 인덱스를 적지말라."/>
+
+<meta property="og:title" content="2 리스트와 딕셔너리 (better way 11 ~ 14)" />
+<meta property="og:description" content="2 리스트와 딕셔너리 (better way 11 ~ 14)&nbsp;¶ Better way 11. 시퀀스를 슬라이싱하는 방법을 익혀라.&nbsp;¶   시퀀스를 여러조각(슬라이스(slice))으로 나누는 슬라이싱 구문이 있다.
+a = [&#39;a&#39;, &#39;b&#39;,&#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;] print(&#39;가운데 2개:&#39; , a[3:5]) print(&#39;마지막을 제외한 나머지:&#39;, a[1:7]) &gt;&gt; 가운데 2개 : [&#39;d&#39;, &#39;e&#39;] &gt;&gt; 마지막을 제외한 나머지: [&#39;b&#39;,&#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;]   리스트의 맨 앞부터 슬라이싱할 때는 시각적 잡음을 없애기 위해 0을 생략하라
+assert a[:5] == a[0:5]   리스트의 끝까지 슬라이싱할 때는 쓸데없이 끝 인덱스를 적지말라." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/posts/effectivepython_03/" />
+<meta property="og:image" content="https://example.com/tn.png"/>
+<meta property="article:published_time" content="2021-02-08T17:21:08+09:00" />
+<meta property="article:modified_time" content="2021-02-08T17:21:08+09:00" /><meta property="og:site_name" content="my name is stones" />
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-184252439-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        2 리스트와 딕셔너리 (better way 11 ~ 14)
+        
+    </title>
+</head>
+
+<body>
+    
+    
+    <header class="wrap flex-container">
+        <h1>2 리스트와 딕셔너리 (better way 11 ~ 14)</h1>
+    </header>
+    
+    <main class="wrap">
+        
+<div class="flex-container">
+    <aside role="complementary">
+        Mon Feb 08, 2021 &#183; 820 words
+        <div class="tag-container">
+            
+            
+            <span class="tag">
+                <a href="/tags/python/">
+                    python
+                </a>
+            </span>
+            
+            
+            
+            
+            
+            
+        </div>
+    </aside>
+    <hr />
+    <article role="article">
+        
+<h1 id="2-리스트와-딕셔너리-better-way-11--14" class="anchor-link"><a href="#2-%eb%a6%ac%ec%8a%a4%ed%8a%b8%ec%99%80-%eb%94%95%ec%85%94%eb%84%88%eb%a6%ac-better-way-11--14">2 리스트와 딕셔너리 (better way 11 ~ 14)<span class="pilcrow">&nbsp;¶</span></a></h1>
+
+<h2 id="better-way-11-시퀀스를-슬라이싱하는-방법을-익혀라" class="anchor-link"><a href="#better-way-11-%ec%8b%9c%ed%80%80%ec%8a%a4%eb%a5%bc-%ec%8a%ac%eb%9d%bc%ec%9d%b4%ec%8b%b1%ed%95%98%eb%8a%94-%eb%b0%a9%eb%b2%95%ec%9d%84-%ec%9d%b5%ed%98%80%eb%9d%bc">Better way 11. 시퀀스를 슬라이싱하는 방법을 익혀라.<span class="pilcrow">&nbsp;¶</span></a></h2>
+<ul>
+<li>
+<p>시퀀스를 여러조각(슬라이스(slice))으로 나누는 슬라이싱 구문이 있다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> a <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;h&#39;</span>]
+ <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;가운데 2개:&#39;</span> , a[<span style="color:#ae81ff">3</span>:<span style="color:#ae81ff">5</span>])
+ <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;마지막을 제외한 나머지:&#39;</span>, a[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">7</span>])
+      
+ <span style="color:#f92672">&gt;&gt;</span> <span style="color:#960050;background-color:#1e0010">가운데</span> <span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">개</span> : [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>]
+ <span style="color:#f92672">&gt;&gt;</span> <span style="color:#960050;background-color:#1e0010">마지막을</span> <span style="color:#960050;background-color:#1e0010">제외한</span> <span style="color:#960050;background-color:#1e0010">나머지</span>: [<span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>]
+  
+</code></pre></div></li>
+<li>
+<p>리스트의 맨 앞부터 슬라이싱할 때는 시각적 잡음을 없애기 위해 0을 생략하라</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">assert</span> a[:<span style="color:#ae81ff">5</span>] <span style="color:#f92672">==</span> a[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">5</span>]
+</code></pre></div></li>
+<li>
+<p>리스트의 끝까지 슬라이싱할 때는 쓸데없이 끝 인덱스를 적지말라.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">assert</span> a[<span style="color:#ae81ff">5</span>:] <span style="color:#f92672">==</span> a[<span style="color:#ae81ff">5</span>:len(a)]
+</code></pre></div></li>
+<li>
+<p>리스트를 슬라이싱한 결과는 완전히 새로운 리스트이며, 원래 리스트에 대한 참조는 그대로 유지된다. 슬라이싱한 결과로 얻은 리스트를 변경해도 원래 리스트는 바뀌지 않는다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> a[<span style="color:#ae81ff">3</span>:]
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;이전:&#39;</span>, b)
+b[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">99</span>
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;이후:&#39;</span>, b)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;변화없음:&#39;</span>, a)
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+<span style="color:#960050;background-color:#1e0010">이전</span>: [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>,<span style="color:#e6db74">&#39;f&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;h&#39;</span>]
+<span style="color:#960050;background-color:#1e0010">이후</span>: [<span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#ae81ff">99</span>,<span style="color:#e6db74">&#39;f&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;h&#39;</span>]
+<span style="color:#960050;background-color:#1e0010">변화없음</span>:  [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>, <span style="color:#e6db74">&#39;g&#39;</span>, <span style="color:#e6db74">&#39;h&#39;</span>]
+</code></pre></div></li>
+</ul>
+<blockquote>
+<p><strong>기억해야 할 내용</strong></p>
+<ul>
+<li>슬라이싱 할때는 간결하게 하라. 시작 인덱스에 0을 넣거나, 끝 인덱스에 시퀀스 길이를 넣지 말라.</li>
+<li>슬라이싱은 범위를 넘어가는 시작 인덱스나 끝 인덱스도 허용한다. 따라서 시퀀스의 시작이나 끝에서 길이를 제한하는 슬라이스(a[:20]) 이나 a[-20:] 를 쉽게 표현할 수 있다.</li>
+<li>리스트 슬라이스에 대입하면 원래 시퀀스에서 슬라이스가 가리키는 부분을 대입 연산자 오른쪽에 있는 시퀀스로 대치한다. 이때 슬라이스와 대치되는 시퀀스의 길이가 달라도 된다.</li>
+</ul>
+</blockquote>
+
+<h2 id="better-way-12-스트라이드와-슬라이스를-한-식에-함께-사용하지-말라" class="anchor-link"><a href="#better-way-12-%ec%8a%a4%ed%8a%b8%eb%9d%bc%ec%9d%b4%eb%93%9c%ec%99%80-%ec%8a%ac%eb%9d%bc%ec%9d%b4%ec%8a%a4%eb%a5%bc-%ed%95%9c-%ec%8b%9d%ec%97%90-%ed%95%a8%ea%bb%98-%ec%82%ac%ec%9a%a9%ed%95%98%ec%a7%80-%eb%a7%90%eb%9d%bc">Better way 12. 스트라이드와 슬라이스를 한 식에 함께 사용하지 말라.<span class="pilcrow">&nbsp;¶</span></a></h2>
+<p><strong>스트라이드(stride)</strong></p>
+<blockquote>
+<p>리스트[시작:끝:증가값]으로 ( 증가값으로 지정한) 일정한 간격을 두고 슬라이싱을 할 수 있는 특별한 구문</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;빨강&#39;</span>, <span style="color:#e6db74">&#39;주황&#39;</span>, <span style="color:#e6db74">&#39;노랑&#39;</span>, <span style="color:#e6db74">&#39;초록&#39;</span>, <span style="color:#e6db74">&#39;파랑&#39;</span>, <span style="color:#e6db74">&#39;자주&#39;</span>]
+odds <span style="color:#f92672">=</span> x[::<span style="color:#ae81ff">2</span>]
+evens <span style="color:#f92672">=</span> x[<span style="color:#ae81ff">1</span>::<span style="color:#ae81ff">2</span>]
+
+<span style="color:#66d9ef">print</span>(odds)
+<span style="color:#66d9ef">print</span>(evens)
+
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+[<span style="color:#e6db74">&#39;빨강&#39;</span>,  <span style="color:#e6db74">&#39;노랑&#39;</span>, <span style="color:#e6db74">&#39;파랑&#39;</span>]
+[ <span style="color:#e6db74">&#39;주황&#39;</span>, <span style="color:#e6db74">&#39;초록&#39;</span>, <span style="color:#e6db74">&#39;자주&#39;</span>]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>,<span style="color:#e6db74">&#39;c&#39;</span>,<span style="color:#e6db74">&#39;d&#39;</span>,<span style="color:#e6db74">&#39;e&#39;</span>,<span style="color:#e6db74">&#39;f&#39;</span>,<span style="color:#e6db74">&#39;g&#39;</span>,<span style="color:#e6db74">&#39;h&#39;</span>]
+x[::<span style="color:#ae81ff">2</span>] <span style="color:#75715e">#[&#39;a&#39;,&#39;c&#39;,&#39;e&#39;,&#39;g&#39;]</span>
+x[::<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#75715e">#[&#39;h&#39;, &#39;f&#39;, &#39;d&#39;, &#39;b&#39;]</span>
+</code></pre></div><p>아래처럼 쓰면 헷갈린다.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x[<span style="color:#ae81ff">2</span>::<span style="color:#ae81ff">2</span>] <span style="color:#75715e">#[&#39;c&#39;, &#39;e&#39;, &#39;g&#39;]</span>
+x[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>::<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#75715e">#[&#39;g&#39;, &#39;e&#39;, &#39;c&#39;, &#39;a&#39;]</span>
+x[<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">2</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#75715e">#[&#39;g&#39;, &#39;e&#39;]</span>
+x[<span style="color:#ae81ff">2</span>:<span style="color:#ae81ff">2</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>] <span style="color:#75715e">#[]</span>
+</code></pre></div><p>시작값이나 끝값을 증가값과 함께 사용하지 말것을 권한다.</p>
+<p>시작이나 끝 인덱스와 함께 증가값을 사용해야 한다면 스트라이딩한 결과를 변수에 대입한 다음 슬라이싱하라.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y <span style="color:#f92672">=</span> x[::<span style="color:#ae81ff">2</span>]
+z <span style="color:#f92672">=</span> y[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+</code></pre></div><blockquote>
+<p><strong>기억해야할 내용</strong></p>
+<ul>
+<li>슬라이스에 시작 , 끝, 증가값을 함께 지정하면 코드의 의미를 혼동하기 쉽다.</li>
+<li>시작이나 끝 인덱스가 없는 슬라이스를 만들 때는 양수 증가값을 사용하라, 가급적 음수 증가값은 피하라.</li>
+<li>한 슬라이스 안에서 시작, 끝 증가값을 함께 사용하지 말라. 세 파라미터를 모두 써야 하는 경우, 두번 대입을 사용(한 번은 스트라이딩, 한번은 슬라이싱) 하거나 itertools 내장 모듈의 islice 를 사용하라.</li>
+</ul>
+</blockquote>
+
+<h2 id="better-way-13-슬라이싱보다는-나머지를-모두-잡아내는-언패킹을-사용하라" class="anchor-link"><a href="#better-way-13-%ec%8a%ac%eb%9d%bc%ec%9d%b4%ec%8b%b1%eb%b3%b4%eb%8b%a4%eb%8a%94-%eb%82%98%eb%a8%b8%ec%a7%80%eb%a5%bc-%eb%aa%a8%eb%91%90-%ec%9e%a1%ec%95%84%eb%82%b4%eb%8a%94-%ec%96%b8%ed%8c%a8%ed%82%b9%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%98%eb%9d%bc">Better way 13. 슬라이싱보다는 나머지를 모두 잡아내는 언패킹을 사용하라.<span class="pilcrow">&nbsp;¶</span></a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">car_ages <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">19</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">15</span>]
+car_ages_descending <span style="color:#f92672">=</span> sorted(car_ages, reverse<span style="color:#f92672">=</span>True)
+oldest, second_oldest <span style="color:#f92672">=</span> car_ags_descending
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+   Tracback<span style="color:#f92672">...</span>
+  valueError: too many values to unpack (expected <span style="color:#ae81ff">2</span>)
+    
+ <span style="color:#f92672">----</span>
+<span style="color:#75715e"># 예전 코드</span>
+
+oldest <span style="color:#f92672">=</span> car_ages_descending[<span style="color:#ae81ff">0</span>]
+second_oldest <span style="color:#f92672">=</span> car_ages_descending[<span style="color:#ae81ff">1</span>]
+others <span style="color:#f92672">=</span> car_ages_descending[<span style="color:#ae81ff">2</span>:]
+<span style="color:#66d9ef">print</span>(oldest, second_oldest, others)
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">19</span> [<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]
+
+<span style="color:#75715e">##</span>
+oldest, second_oldest, <span style="color:#f92672">*</span>others <span style="color:#f92672">=</span> car_ages_descending
+<span style="color:#66d9ef">print</span>(oldest, second_oldest, others)
+<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">19</span> [<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>]
+
+oldest, <span style="color:#f92672">*</span>others, youngest <span style="color:#f92672">=</span> car_ages_descending
+<span style="color:#66d9ef">print</span>(oldest,youngest, others)
+<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">0</span> [<span style="color:#ae81ff">19</span>,<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">1</span>]
+
+
+<span style="color:#f92672">*</span>others, second_youngest, youngest <span style="color:#f92672">=</span> car_ages_descending
+<span style="color:#66d9ef">print</span>(youngest,second_youngest, others)
+<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span> ,[<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">19</span> ,<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">4</span>]
+
+
+<span style="color:#75715e"># 별표식만 사용할수 없다.</span>
+<span style="color:#f92672">*</span>others <span style="color:#f92672">=</span> car_ages_descending
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+Trackback<span style="color:#f92672">...</span>
+<span style="color:#a6e22e">SyntaxError</span>: starred assignment target must be <span style="color:#f92672">in</span> a list <span style="color:#f92672">or</span> tuple
+
+    
+<span style="color:#75715e"># 한 수준의 언패킹에서 두개의 별표식을 쓸수 없다.</span>
+
+first, <span style="color:#f92672">*</span>middle, <span style="color:#f92672">*</span>second_middle, last <span style="color:#f92672">=</span> car_ages_descending
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+Trackback<span style="color:#f92672">...</span>
+<span style="color:#a6e22e">SyntaxError</span>: two starred expressions <span style="color:#f92672">in</span> assignment
+</code></pre></div><blockquote>
+<p><strong>1차이 나는 인덱스로 인한 오류(off-by-one error)</strong></p>
+<p>3 이상 6 이하인 폐구간의 원소 개수는? 크기가 20인 리스트의 마지막 원소의 인덱스는? 13명을 네명씩 그룹으로 만들 때 전체 그룹의 숫자는? 이런식으로 개수를 따질 때 실수로 정답에 비해 1이 더 많거나 적은 답을 내놓는 경우.</p>
+<p>이런 오류를 off-by-one-error 라 한다. 리스트의 원소 개수를 세거나 어떤 작업을 정해진 수의 덩어리로 처리하기 위해 루프를 돌아야 하는 경우 이런 실수를 저지르기 쉽다.</p>
+</blockquote>
+<blockquote>
+<p><strong>기억해야 할 내용</strong></p>
+<ul>
+<li>언패킹 대입에 별표 식을 사용하면 언패킹 패턴에서 대입되지 않는 모든 부분을 리스트에 잡아낼 수 있다.</li>
+<li>별표 식은 언패킹 패턴의 어떤 위치에든 놓을 수 있다. 별표 식에 대입된 결과는 항상 리스트가 되며, 이 리스트에는 별표 식이 받은 값이 0개 또는 그 이상 들어간다.</li>
+<li>리스트를 서로 겹치지 않게 여러 조각으로 나눌 경우, 슬라이싱과 인덱싱을 사용하기보다는 나머지를 모두 잡아내는 언패킹을 사용해야  실수할 여지가 줄어든다.</li>
+</ul>
+</blockquote>
+
+<h2 id="better-way-14-복잡한-기준을-사용해-정렬할-때는-key-파라미터를-사용하라" class="anchor-link"><a href="#better-way-14-%eb%b3%b5%ec%9e%a1%ed%95%9c-%ea%b8%b0%ec%a4%80%ec%9d%84-%ec%82%ac%ec%9a%a9%ed%95%b4-%ec%a0%95%eb%a0%ac%ed%95%a0-%eb%95%8c%eb%8a%94-key-%ed%8c%8c%eb%9d%bc%eb%af%b8%ed%84%b0%eb%a5%bc-%ec%82%ac%ec%9a%a9%ed%95%98%eb%9d%bc">Better way 14. 복잡한 기준을 사용해 정렬할 때는 key 파라미터를 사용하라.<span class="pilcrow">&nbsp;¶</span></a></h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;미정렬:&#39;</span>, repr(tools))
+tools<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">.</span>name)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;정렬:&#39;</span>, tools)
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+<span style="color:#960050;background-color:#1e0010">미정렬</span> : [Tool(<span style="color:#e6db74">&#39;수준계&#39;</span>, <span style="color:#ae81ff">3.5</span>), Tool(<span style="color:#e6db74">&#39;해머&#39;</span>, <span style="color:#ae81ff">1.25</span>), Tool(<span style="color:#e6db74">&#39;스크류드라이버&#39;</span>, <span style="color:#ae81ff">0.5</span>),Tool(<span style="color:#e6db74">&#39;끌&#39;</span>, <span style="color:#ae81ff">0.25</span>)]
+ <span style="color:#960050;background-color:#1e0010">정렬</span>  : [Tool(<span style="color:#e6db74">&#39;끌&#39;</span>, <span style="color:#ae81ff">0.25</span>), Tool(<span style="color:#e6db74">&#39;수준계&#39;</span>, <span style="color:#ae81ff">3.5</span>), Tool(<span style="color:#e6db74">&#39;스크류드라이버&#39;</span>, <span style="color:#ae81ff">0.5</span>),Tool(<span style="color:#e6db74">&#39;해머&#39;</span>, <span style="color:#ae81ff">1.25</span>)]
+    
+    
+tools<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">.</span>weight)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;무게순 정렬:&#39;</span>, tools)
+<span style="color:#f92672">&gt;&gt;&gt;</span>
+<span style="color:#960050;background-color:#1e0010">무게순</span> <span style="color:#960050;background-color:#1e0010">정렬</span> :  [Tool(<span style="color:#e6db74">&#39;끌&#39;</span>, <span style="color:#ae81ff">0.25</span>) , Tool(<span style="color:#e6db74">&#39;스크류드라이버&#39;</span>, <span style="color:#ae81ff">0.5</span>) , Tool(<span style="color:#e6db74">&#39;해머&#39;</span>, <span style="color:#ae81ff">1.25</span>), Tool(<span style="color:#e6db74">&#39;수준계&#39;</span>, <span style="color:#ae81ff">3.5</span>)]
+    
+    
+    
+power_tools<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: (x<span style="color:#f92672">.</span>weight, x<span style="color:#f92672">.</span>name))
+<span style="color:#66d9ef">print</span>(power_tools)
+
+
+power_tools<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">.</span>name) <span style="color:#75715e">#name 기준 오름차순</span>
+power_tools<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">.</span>weight, reverset<span style="color:#f92672">=</span>True) <span style="color:#75715e"># weight 기준 내림차순</span>
+
+</code></pre></div><blockquote>
+<p><strong>기억해야 할 내용</strong></p>
+<ul>
+<li>리스트 타입에 들어 있는 sort 메서드를 사용하면 원소 타입이 문자열, 정수 , 튜플 등과 같은 내장 타입인 경우 자연스러운 순서로 리스트의 원소를 정렬할 수 있다.</li>
+<li>원소 타입에 특별 메서드를 통해 자연스러운 순서가 정의돼 있지 않으면 sort 메서드를 쓸 수 없다. 하지만 원소 타입에 순서 특별 메서드를 정의하는 경우는 드물다.</li>
+<li>sort 메서드의 key 파라미터를 사용하면 리스트의 각 원소 대신 비교에 사용할 객체를 반환하는 도우미 함수를 제공할 수 있다.</li>
+<li>key 함수에서 튜플을 반환하면 여러 정렬 기준을 하나로 엮을 수 있다. 단항 부호 반전 연산자를 사용하면 부호를 바꿀 수 있는 타입이 정렬 기준인 경우 정렬 순서를 반대로 바꿀 수 있다.</li>
+<li>부호를 바꿀 수 없는 타입의 경우 여러 정렬 기준을 조합하려면 각 정렬 기준마다 reverse 값으로 정렬 순서를 지정하면서 sort 메서드를 여러번 사용해야 한다. 이때 정렬 기준의 우선순위가 점점 높아지는 순서로 sort 를 해야한다.</li>
+</ul>
+</blockquote>
+
+    </article>
+</div>
+<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "dschoi-github-io" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        
+<nav role="navigation" class="flex-container bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+
+    
+        
+            <a href="/posts">posts</a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/gallery">gallery</a>
+        
+            &#183; 
+            <a href="/portfolio">portfolio</a>
+        
+            &#183; 
+            <a href="/about">who is stones?</a>
+        
+    
+    &#183; 
+    <a href="/">
+        main
+    </a>
+
+</p>
+</nav>
+
+    </main>
+    
+    <footer class="flex-container footer">
+</footer>
+    
+    
+</body>
+
+</html>
