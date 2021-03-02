@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/python/</loc>
+    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/</loc>
+    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
+    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/effectivepython_04/</loc>
+    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/mongdodb/</loc>
     <lastmod>2021-02-23T15:33:33+09:00</lastmod>
   </url>
@@ -18,28 +48,8 @@
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2021-02-23T15:33:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/</loc>
-    <lastmod>2021-02-23T15:33:33+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/tags/%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84/</loc>
     <lastmod>2021-02-23T15:33:33+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/posts/effectivepython_03/</loc>
-    <lastmod>2021-02-08T17:21:08+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/python/</loc>
-    <lastmod>2021-02-08T17:21:08+09:00</lastmod>
   </url>
   
   <url>
@@ -48,17 +58,7 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-    <lastmod>2021-02-08T17:21:08+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-    <lastmod>2021-02-08T17:21:08+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/posts/effectivepython_04/</loc>
+    <loc>https://example.com/posts/effectivepython_03/</loc>
     <lastmod>2021-02-08T17:21:08+09:00</lastmod>
   </url>
   

@@ -6,9 +6,20 @@
     <description>Recent content in 이펙티브파이썬 on my name is Stones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Feb 2021 17:21:08 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 17:22:08 +0900</lastBuildDate><atom:link href="https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>2 리스트와 딕셔너리 (better way 11 ~ 14)</title>
+      <title>파이썬 코딩의 기술 better way 15 ~ 18</title>
+      <link>https://example.com/posts/effectivepython_04/</link>
+      <pubDate>Mon, 01 Mar 2021 17:22:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_04/</guid>
+      <description>2. 리스트와 딕셔너리 (better way 15 ~ 18)&amp;nbsp;¶ Better way 15. 딕셔너리 삽입 순서에 의존할 떄는 조심하라&amp;nbsp;¶ python 3.5 이전 버전에서는 딕셔너리 구현이 내장 hash 함수와 파이썬 인터프리터가 시작할 때 초기화되는 난수 씨앗값을 사용하는 해시 테이블 알고리즘으로 만들어졌기 때문에 입력 순서와 출력순서가 달라진다.
+python 3.6 부터는 딕셔너리가 삽입 순서를 보존하도록 동작이 개선되었다.
+baby_names = { &amp;#39;cat&amp;#39;: &amp;#39;kitten&amp;#39; , &amp;#39;dog&amp;#39;: &amp;#39;puppy&amp;#39; } print(baby_names) &amp;gt;&amp;gt;&amp;gt; 3.5 {&amp;#39;dog&amp;#39;:&amp;#39;puppy&amp;#39; , &amp;#39;cat&amp;#39; : &amp;#39;kitten&amp;#39;} &amp;gt;&amp;gt; 3.</description>
+    </item>
+    
+    <item>
+      <title>파이썬 코딩의 기술 better way 11 ~ 14</title>
       <link>https://example.com/posts/effectivepython_03/</link>
       <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
       
@@ -19,18 +30,7 @@ assert a[:5] == a[0:5]   리스트의 끝까지 슬라이싱할 때는 쓸데없
     </item>
     
     <item>
-      <title>파이썬코딩의 기술</title>
-      <link>https://example.com/posts/effectivepython_04/</link>
-      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
-      
-      <guid>https://example.com/posts/effectivepython_04/</guid>
-      <description>2 리스트와 딕셔너리 (better way 15 ~ 18)&amp;nbsp;¶ Better way 15. 딕셔너리 삽입 순서에 의존할 떄는 조심하라&amp;nbsp;¶ python 3.5 이전 버전에서는 딕셔너리 구현이 내장 hash 함수와 파이썬 인터프리터가 시작할 때 초기화되는 난수 씨앗값을 사용하는 해시 테이블 알고리즘으로 만들어졌기 때문에 입력 순서와 출력순서가 달라진다.
-python 3.6 부터는 딕셔너리가 삽입 순서를 보존하도록 동작이 개선되었다.
-baby_names = { &amp;#39;cat&amp;#39;: &amp;#39;kitten&amp;#39; , &amp;#39;dog&amp;#39;: &amp;#39;puppy&amp;#39; } print(baby_names) &amp;gt;&amp;gt;&amp;gt; 3.5 {&amp;#39;dog&amp;#39;:&amp;#39;puppy&amp;#39; , &amp;#39;cat&amp;#39; : &amp;#39;kitten&amp;#39;} &amp;gt;&amp;gt; 3.</description>
-    </item>
-    
-    <item>
-      <title>1. 파이썬 답게 생각하기 (better way 6 ~ 10)</title>
+      <title>파이썬 코딩의 기술 better way 6 ~ 10</title>
       <link>https://example.com/posts/effectivepython_02/</link>
       <pubDate>Tue, 02 Feb 2021 14:34:59 +0900</pubDate>
       
@@ -40,7 +40,7 @@ baby_names = { &amp;#39;cat&amp;#39;: &amp;#39;kitten&amp;#39; , &amp;#39;dog&am
     </item>
     
     <item>
-      <title>1. 파이썬 답게 생각하기 (better way 1 ~ 5)</title>
+      <title>파이썬 코딩의 기술 better way 1 ~ 5</title>
       <link>https://example.com/posts/effectivepython_01/</link>
       <pubDate>Fri, 29 Jan 2021 14:34:59 +0900</pubDate>
       
