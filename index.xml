@@ -13,7 +13,7 @@
       <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
       
       <guid>https://example.com/posts/mongodb_02/</guid>
-      <description>MongoDB query sample&amp;nbsp;¶ 저장&amp;nbsp;¶ &amp;gt; db.users.insert({username: &amp;#34;smith&amp;#34;}) WriteResult({&amp;#34;nInserted&amp;#34;:1})  조회&amp;nbsp;¶ db.users.count() &amp;gt; 2 db.users.find({username:&amp;#34;jones&amp;#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&amp;#34;60346898322b4f0e916382b6&amp;#34;)}, { username : &amp;#34;smith&amp;#34;} ]}) # or  db.users.find({ $or: [ { username : &amp;#34;smith&amp;#34;}, { username : &amp;#34;jones&amp;#34;} ]})  수정&amp;nbsp;¶ ## update db.users.updateOne({username :&amp;#34;jones&amp;#34;}, {$set : {country: &amp;#34;Canada&amp;#34;}}); ## 실수하는 부문 db.users.updateOne({username :&amp;#34;jones&amp;#34;},{country: &amp;#34;Canada&amp;#34;}) db.users.find({ username : &amp;#34;jones&amp;#34;}) &amp;gt;&amp;gt;  삭제&amp;nbsp;¶ ### delete db.users.deleteOne({username : &amp;#34;smith&amp;#34;}) ## collection drop db.</description>
+      <description>MongoDB query sample&amp;nbsp;¶ 저장&amp;nbsp;¶ db.users.insert({username: &amp;#34;smith&amp;#34;}) WriteResult({&amp;#34;nInserted&amp;#34;:1})  조회&amp;nbsp;¶ db.users.count() &amp;gt;&amp;gt; 2 db.users.find({username:&amp;#34;jones&amp;#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&amp;#34;60346898322b4f0e916382b6&amp;#34;)}, { username : &amp;#34;smith&amp;#34;} ]}) # or  db.users.find({ $or: [ { username : &amp;#34;smith&amp;#34;}, { username : &amp;#34;jones&amp;#34;} ]})  수정&amp;nbsp;¶ ## update db.users.updateOne({username :&amp;#34;jones&amp;#34;}, {$set : {country: &amp;#34;Canada&amp;#34;}}); ## 실수하는 부문 db.users.updateOne({username :&amp;#34;jones&amp;#34;},{country: &amp;#34;Canada&amp;#34;}) db.users.find({ username : &amp;#34;jones&amp;#34;}) &amp;gt;&amp;gt;  삭제&amp;nbsp;¶ ### delete db.users.deleteOne({username : &amp;#34;smith&amp;#34;}) ## collection drop db.</description>
     </item>
     
     <item>
@@ -36,6 +36,17 @@ assert a[:5] == a[0:5]   리스트의 끝까지 슬라이싱할 때는 쓸데없
       <description>몽고디비란?&amp;nbsp;¶ MongoDB의 핵심 기능
  도큐먼트 데이터 모델 애드훅 쿼리 인덱스 복제 속도와 내구성 확장  데이터 베이스 패밀리
     예 데이터 모델 확장 모델 용례     간단한 키-값 저장시스템 맴캐시디 키-값, 여기서 값은 이진 blob 여러가지가 있다. 맴캐시디는 이용 가능한 램으로 노드에 걸쳐 확장함으로써 하나의 단일한 데이터 스토어로 변한다. 캐싱, 웹 ops   정교한 키-값 저장시스템 카산드라, 볼드모트 프로젝트(Project Voldemort), 리악(Riak) 여러가지가 있다.</description>
+    </item>
+    
+    <item>
+      <title>파이썬코딩의 기술</title>
+      <link>https://example.com/posts/effectivepython_04/</link>
+      <pubDate>Mon, 08 Feb 2021 17:21:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_04/</guid>
+      <description>2 리스트와 딕셔너리 (better way 15 ~ 18)&amp;nbsp;¶ Better way 15. 딕셔너리 삽입 순서에 의존할 떄는 조심하라&amp;nbsp;¶ python 3.5 이전 버전에서는 딕셔너리 구현이 내장 hash 함수와 파이썬 인터프리터가 시작할 때 초기화되는 난수 씨앗값을 사용하는 해시 테이블 알고리즘으로 만들어졌기 때문에 입력 순서와 출력순서가 달라진다.
+python 3.6 부터는 딕셔너리가 삽입 순서를 보존하도록 동작이 개선되었다.
+baby_names = { &amp;#39;cat&amp;#39;: &amp;#39;kitten&amp;#39; , &amp;#39;dog&amp;#39;: &amp;#39;puppy&amp;#39; } print(baby_names) &amp;gt;&amp;gt;&amp;gt; 3.5 {&amp;#39;dog&amp;#39;:&amp;#39;puppy&amp;#39; , &amp;#39;cat&amp;#39; : &amp;#39;kitten&amp;#39;} &amp;gt;&amp;gt; 3.</description>
     </item>
     
     <item>
@@ -393,10 +404,10 @@ ErrorLog &amp;ldquo;|/program/httpd-2.2.20/bin/rotatelogs -l /program/httpd-2.2.
     
     <item>
       <title></title>
-      <link>https://example.com/posts/%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB/</link>
+      <link>https://example.com/posts/%EC%B6%94%EC%B2%9C/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/posts/%E1%84%8E%E1%85%AE%E1%84%8E%E1%85%A5%E1%86%AB/</guid>
+      <guid>https://example.com/posts/%EC%B6%94%EC%B2%9C/</guid>
       <description>2020.12월 pageview 수
 https://analytics.google.com/analytics/web/?authuser=1#/report/content-pages/a143506598w204888208p198179664/_u.date00=20201201&amp;amp;_u.date01=20201231&amp;amp;explorer-table.plotKeys=%5B%5D&amp;amp;explorer-segmentExplorer.segmentId=analytics.pageGroup1/
  무신사-상품상세 페이지뷰 : 141,950,407 순조회수 : 30,479,376 브랜드-브랜드숍 페이지뷰 : 53,974,142 순조회수 : 13,030,912  ![image-20210218121750316](/Users/stones/Library/Application Support/typora-user-images/image-20210218121750316.png)

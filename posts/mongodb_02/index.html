@@ -43,10 +43,10 @@
 <meta name="twitter:image" content="https://example.com/tn.png"/>
 
 <meta name="twitter:title" content="mongodb query example"/>
-<meta name="twitter:description" content="MongoDB query sample&nbsp;¶ 저장&nbsp;¶ &gt; db.users.insert({username: &#34;smith&#34;}) WriteResult({&#34;nInserted&#34;:1})  조회&nbsp;¶ db.users.count() &gt; 2 db.users.find({username:&#34;jones&#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&#34;60346898322b4f0e916382b6&#34;)}, { username : &#34;smith&#34;} ]}) # or  db.users.find({ $or: [ { username : &#34;smith&#34;}, { username : &#34;jones&#34;} ]})  수정&nbsp;¶ ## update db.users.updateOne({username :&#34;jones&#34;}, {$set : {country: &#34;Canada&#34;}}); ## 실수하는 부문 db.users.updateOne({username :&#34;jones&#34;},{country: &#34;Canada&#34;}) db.users.find({ username : &#34;jones&#34;}) &gt;&gt;  삭제&nbsp;¶ ### delete db.users.deleteOne({username : &#34;smith&#34;}) ## collection drop db."/>
+<meta name="twitter:description" content="MongoDB query sample&nbsp;¶ 저장&nbsp;¶ db.users.insert({username: &#34;smith&#34;}) WriteResult({&#34;nInserted&#34;:1})  조회&nbsp;¶ db.users.count() &gt;&gt; 2 db.users.find({username:&#34;jones&#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&#34;60346898322b4f0e916382b6&#34;)}, { username : &#34;smith&#34;} ]}) # or  db.users.find({ $or: [ { username : &#34;smith&#34;}, { username : &#34;jones&#34;} ]})  수정&nbsp;¶ ## update db.users.updateOne({username :&#34;jones&#34;}, {$set : {country: &#34;Canada&#34;}}); ## 실수하는 부문 db.users.updateOne({username :&#34;jones&#34;},{country: &#34;Canada&#34;}) db.users.find({ username : &#34;jones&#34;}) &gt;&gt;  삭제&nbsp;¶ ### delete db.users.deleteOne({username : &#34;smith&#34;}) ## collection drop db."/>
 
 <meta property="og:title" content="mongodb query example" />
-<meta property="og:description" content="MongoDB query sample&nbsp;¶ 저장&nbsp;¶ &gt; db.users.insert({username: &#34;smith&#34;}) WriteResult({&#34;nInserted&#34;:1})  조회&nbsp;¶ db.users.count() &gt; 2 db.users.find({username:&#34;jones&#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&#34;60346898322b4f0e916382b6&#34;)}, { username : &#34;smith&#34;} ]}) # or  db.users.find({ $or: [ { username : &#34;smith&#34;}, { username : &#34;jones&#34;} ]})  수정&nbsp;¶ ## update db.users.updateOne({username :&#34;jones&#34;}, {$set : {country: &#34;Canada&#34;}}); ## 실수하는 부문 db.users.updateOne({username :&#34;jones&#34;},{country: &#34;Canada&#34;}) db.users.find({ username : &#34;jones&#34;}) &gt;&gt;  삭제&nbsp;¶ ### delete db.users.deleteOne({username : &#34;smith&#34;}) ## collection drop db." />
+<meta property="og:description" content="MongoDB query sample&nbsp;¶ 저장&nbsp;¶ db.users.insert({username: &#34;smith&#34;}) WriteResult({&#34;nInserted&#34;:1})  조회&nbsp;¶ db.users.count() &gt;&gt; 2 db.users.find({username:&#34;jones&#34;}) # and db.users.find({ $and: [ { _id : ObjectId(&#34;60346898322b4f0e916382b6&#34;)}, { username : &#34;smith&#34;} ]}) # or  db.users.find({ $or: [ { username : &#34;smith&#34;}, { username : &#34;jones&#34;} ]})  수정&nbsp;¶ ## update db.users.updateOne({username :&#34;jones&#34;}, {$set : {country: &#34;Canada&#34;}}); ## 실수하는 부문 db.users.updateOne({username :&#34;jones&#34;},{country: &#34;Canada&#34;}) db.users.find({ username : &#34;jones&#34;}) &gt;&gt;  삭제&nbsp;¶ ### delete db.users.deleteOne({username : &#34;smith&#34;}) ## collection drop db." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://example.com/posts/mongodb_02/" />
 <meta property="og:image" content="https://example.com/tn.png"/>
@@ -89,7 +89,7 @@ if (!doNotTrack) {
         
 <div class="flex-container">
     <aside role="complementary">
-        Tue Feb 23, 2021 &#183; 347 words
+        Tue Feb 23, 2021 &#183; 378 words
         <div class="tag-container">
             
             
@@ -118,12 +118,12 @@ if (!doNotTrack) {
 <h1 id="mongodb-query-sample" class="anchor-link"><a href="#mongodb-query-sample">MongoDB query sample<span class="pilcrow">&nbsp;¶</span></a></h1>
 
 <h2 id="저장" class="anchor-link"><a href="#%ec%a0%80%ec%9e%a5">저장<span class="pilcrow">&nbsp;¶</span></a></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">&gt;</span> <span style="color:#960050;background-color:#1e0010">db.users.insert(</span>{<span style="color:#960050;background-color:#1e0010">username:</span> <span style="color:#f92672">&#34;smith&#34;</span>}<span style="color:#960050;background-color:#1e0010">)</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">db.users.insert(</span>{<span style="color:#960050;background-color:#1e0010">username:</span> <span style="color:#f92672">&#34;smith&#34;</span>}<span style="color:#960050;background-color:#1e0010">)</span>
 <span style="color:#960050;background-color:#1e0010">WriteResult(</span>{<span style="color:#f92672">&#34;nInserted&#34;</span>:<span style="color:#ae81ff">1</span>}<span style="color:#960050;background-color:#1e0010">)</span>
 </code></pre></div>
 <h2 id="조회" class="anchor-link"><a href="#%ec%a1%b0%ed%9a%8c">조회<span class="pilcrow">&nbsp;¶</span></a></h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">db.users.count<span style="color:#f92672">()</span>
-&gt; <span style="color:#ae81ff">2</span>
+&gt;&gt; <span style="color:#ae81ff">2</span>
 
 db.users.find<span style="color:#f92672">({</span>username:<span style="color:#e6db74">&#34;jones&#34;</span><span style="color:#f92672">})</span>
 
@@ -314,6 +314,17 @@ db.numbers.find<span style="color:#f92672">({</span>num: <span style="color:#f92
 <span style="color:#f92672">]</span>
   
  
+</code></pre></div>
+<h1 id="rename-field" class="anchor-link"><a href="#rename-field">rename field<span class="pilcrow">&nbsp;¶</span></a></h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">
+//rename field 
+db.brand_similarity_v1.updateMany<span style="color:#f92672">({}</span>, <span style="color:#f92672">{</span>
+    $rename : <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;brand&#34;</span>: <span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">})</span>;
+
+// Rename a Field in an Embedded Document¶
+db.students.update<span style="color:#f92672">(</span> <span style="color:#f92672">{</span> _id: <span style="color:#ae81ff">1</span> <span style="color:#f92672">}</span>, <span style="color:#f92672">{</span> $rename: <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;name.first&#34;</span>: <span style="color:#e6db74">&#34;name.fname&#34;</span> <span style="color:#f92672">}</span> <span style="color:#f92672">}</span> <span style="color:#f92672">)</span>
+
 </code></pre></div>
     </article>
 </div>
