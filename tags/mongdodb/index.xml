@@ -8,6 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Feb 2021 15:33:33 +0900</lastBuildDate><atom:link href="https://example.com/tags/mongdodb/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>mongodb aggregate query example</title>
+      <link>https://example.com/posts/mongodb_03/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/posts/mongodb_03/</guid>
+      <description>match , sort, limit SQL query
+select * from brand_similarity_v1 where brand = &amp;#34;tulipalee&amp;#34; order by score desc limit 10 mongodb aggregate
+db.brand_similarity_v1.aggregate([ { $match : { brand : &amp;#34;tulipalee&amp;#34; } }, { $sort : { score: -1 // descending } }, { $limit : 10 } ]) Mongoldb index 생성
+db.brand_similarity_v1.createIndex({key: 1}) //TTL index db.brand_similarity_v1.createIndex( { &amp;#34;ts&amp;#34;: 1 }, { expireAfterSeconds: 3600 } ) // brand_similarity_v1 colllection 에 key column 을 오름차순 index 생성 </description>
+    </item>
+    
+    <item>
       <title>mongodb query example</title>
       <link>https://example.com/posts/mongodb_02/</link>
       <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>

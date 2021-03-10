@@ -33,12 +33,22 @@
   </url>
   
   <url>
+    <loc>https://example.com/tags/aggregate/</loc>
+    <lastmod>2021-02-23T15:33:33+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/tags/mongdodb/</loc>
     <lastmod>2021-02-23T15:33:33+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/mongo/</loc>
+    <lastmod>2021-02-23T15:33:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/mongodb_03/</loc>
     <lastmod>2021-02-23T15:33:33+09:00</lastmod>
   </url>
   

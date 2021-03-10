@@ -35,6 +35,15 @@
     </item>
     
     <item>
+      <title>aggregate</title>
+      <link>https://example.com/tags/aggregate/</link>
+      <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
+      
+      <guid>https://example.com/tags/aggregate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>mongdoDB</title>
       <link>https://example.com/tags/mongdodb/</link>
       <pubDate>Tue, 23 Feb 2021 15:33:33 +0900</pubDate>
