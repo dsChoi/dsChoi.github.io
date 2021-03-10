@@ -4,27 +4,32 @@
   
   <url>
     <loc>https://example.com/</loc>
-    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+    <lastmod>2021-03-09T22:22:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/python/</loc>
-    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+    <lastmod>2021-03-09T22:22:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/</loc>
-    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+    <lastmod>2021-03-09T22:22:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+    <lastmod>2021-03-09T22:22:08+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/%ED%8C%8C%EC%9D%B4%EC%8D%AC/</loc>
-    <lastmod>2021-03-01T17:22:08+09:00</lastmod>
+    <lastmod>2021-03-09T22:22:08+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/effectivepython_05/</loc>
+    <lastmod>2021-03-09T22:22:08+09:00</lastmod>
   </url>
   
   <url>

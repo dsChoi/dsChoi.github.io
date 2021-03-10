@@ -6,7 +6,16 @@
     <description>Recent content on my name is Stones</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Mar 2021 17:22:08 +0900</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Mar 2021 22:22:08 +0900</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>파이썬 코딩의 기술 better way 19 ~ 22</title>
+      <link>https://example.com/posts/effectivepython_05/</link>
+      <pubDate>Tue, 09 Mar 2021 22:22:08 +0900</pubDate>
+      
+      <guid>https://example.com/posts/effectivepython_05/</guid>
+      <description>3 함수 (better way 19 ~ 22)&amp;nbsp;¶ Better way 19. 함수가 여러 값을 반환하는 경우 절대로 네 값 이상을 언패킹하지 말라&amp;nbsp;¶ def get_stats(numbers): minimum = min(numbers) maximum = max(numbers) return minimum, maximum lengths = [63, 73, 72, 60, 67, 66, 71, 61, 72 , 70] minimum , maximum= get_stats(lengths) # 반환값이 두개 print(f&amp;#39;최소 : {minimum}, 최대 : {maximum}&amp;#39;) lengths = [63, 73, 72, 60, 67, 66, 71, 61, 72, 70] def get_avg_ratio(numbers): average = sum(numbers) / len(numbers) scaled = [x / average for x in numbers] scaled.</description>
+    </item>
+    
     <item>
       <title>파이썬 코딩의 기술 better way 15 ~ 18</title>
       <link>https://example.com/posts/effectivepython_04/</link>
