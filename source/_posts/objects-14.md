@@ -6,7 +6,8 @@ categories: 도서
 date: 2020-05-05 15:31:24
 ---
 
-
+> 14장에 해당하는 소스코드 부분은 아래 링크에 추가해 놓았으니 확인 부탁드립니다. 
+> https://github.com/dsChoi/study/tree/master/src/main/java/com/setin/study/objects/chapter14
 
 # 14. 일관성 있는 협력
 
@@ -94,7 +95,7 @@ date: 2020-05-05 15:31:24
 
 **메시지에 의해 정의된 퍼블릭 인터페이스는 객체 내부를 캡슐화한다.**
 
-<img src="objects-14/image-20200505165834142.png" alt="image-20200505165834142" style="zoom:50%;float:left" />
+<img src="objects-14/image-20200505165834142.png" alt="image-20200505165834142" style="zoom:50%" />
 
 
 
@@ -129,7 +130,7 @@ date: 2020-05-05 15:31:24
 
 **변하는 부분의 적용조건**
 
-<img src="objects-14/image-20200505220235597.png" alt="image-20200505220235597" style="zoom:50%;float:left" />
+<img src="objects-14/image-20200505220235597.png" alt="image-20200505220235597" style="zoom:50%" />
 
 변하지 않는 `규칙`으로부터 변하는 `적용조건`을 분리해야한다.
 
@@ -141,7 +142,7 @@ date: 2020-05-05 15:31:24
 
 **변경을 캡슐화하는 기본 정책과 관련된 초기 도메인 모델**
 
-<img src="objects-14/image-20200505220752427.png" alt="image-20200505220752427" style="zoom:50%;float:left" />
+<img src="objects-14/image-20200505220752427.png" alt="image-20200505220752427" style="zoom:50%" />
 
 
 
